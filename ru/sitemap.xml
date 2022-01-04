@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/ru/categories/</loc>
+    <loc>https://www.docsy.dev/ru/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://banalna.github.io/dashboards/categories/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://banalna.github.io/dashboards/ru/categories/"
+                href="/ru/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/ru/tags/</loc>
+    <loc>https://www.docsy.dev/ru/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://banalna.github.io/dashboards/tags/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://banalna.github.io/dashboards/ru/tags/"
+                href="/ru/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/ru/</loc>
+    <loc>https://www.docsy.dev/ru/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://banalna.github.io/dashboards/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://banalna.github.io/dashboards/ru/"
+                href="/ru/"
                 />
   </url>
   
