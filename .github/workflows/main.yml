@@ -1,4 +1,4 @@
-name: build and deploy
+name: Build and Deploy
 
 on:
   workflow_dispatch:
@@ -23,8 +23,11 @@ jobs:
           hugo-version: 'latest'
           extended: true
         
+      - name: Install Node dependencies
+        run: npm install
+
       - name: Build
-        run: npm install && hugo --theme=docsy
+        run: hugo --theme=docsy
         env:
           HUGO_ENV: production
         
