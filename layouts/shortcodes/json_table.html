@@ -1,32 +1,12 @@
-{{ $file := .Get 0 }}
-
-<script type="text/javascript" src="{{ $file }}"></script>
+{{ $path := .Get 0 }}
+{{ $fullPath := .Page.RelPermalink }}
+{{ $isRelative := or (eq (substr $path 0 2) "./") (eq (substr $path 0 3) "../")}}
+{{ if $isRelative }}
+    {{ $path = path.Join $fullPath $path }}
+{{ end }}
+{{ $JSON := readFile $path}}
 
 <script>
-    function loadFile(filePath, done) {
-        return new Promise(function (resolve, reject) {
-            let xhr = new XMLHttpRequest();
-            xhr.responseType = 'json';
-            xhr.open('GET', filePath, true);
-            xhr.onload = function () {
-                if (this.status >= 200 && this.status < 300) {
-                    resolve(xhr.response);
-                } else {
-                    reject({
-                        status: this.status,
-                        statusText: xhr.statusText
-                    });
-                }
-            };
-            xhr.onerror = function () {
-                reject({
-                    status: this.status,
-                    statusText: xhr.statusText
-                });
-            };
-            xhr.send();
-        });
-    };
 
     function createTable(items) {
         let columns = Object.keys(items[0]);
@@ -62,10 +42,6 @@
         return table;
     }
 
-    loadFile('{{ $file }}').then(function (items) {
-        createTable(items);
-    }).catch(function (err) {
-        throw err;
-    });
+    createTable(JSON.parse({{ $JSON }}));
 
 </script>
