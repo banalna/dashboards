@@ -3,85 +3,85 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/ui_ux_team/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/mobility_app_team/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/mobility_app_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/test_management_team/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/test_management_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/mobility_agent_team/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/mobility_agent_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/service_catalog_team/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/service_catalog_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/data_pipeline_team/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/data_pipeline_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/about/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/about/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/admin/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/admin/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/categories/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/categories/"
+                href="https://banalna.github.io/dashboards/ru/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/categories/"
+                href="https://banalna.github.io/dashboards/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/"
+                href="https://banalna.github.io/dashboards/ru/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/"
+                href="https://banalna.github.io/dashboards/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/search/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/search/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/tags/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/tags/"
+                href="https://banalna.github.io/dashboards/ru/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/tags/"
+                href="https://banalna.github.io/dashboards/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/teams/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/</loc>
   </url>
   
 </urlset>

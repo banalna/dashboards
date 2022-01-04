@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/ru/categories/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/ru/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/categories/"
+                href="https://banalna.github.io/dashboards/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/categories/"
+                href="https://banalna.github.io/dashboards/ru/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/ru/tags/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/ru/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/tags/"
+                href="https://banalna.github.io/dashboards/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/tags/"
+                href="https://banalna.github.io/dashboards/ru/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttp://example.org/ru/</loc>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/ru/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://example.org/"
+                href="https://banalna.github.io/dashboards/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="http://example.org/ru/"
+                href="https://banalna.github.io/dashboards/ru/"
                 />
   </url>
   
