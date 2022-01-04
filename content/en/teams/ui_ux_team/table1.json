@@ -18,10 +18,10 @@
         "Implement": "Planned",
         "Readme": "Yes",
         "API Docs": "No",
-        "Source (KLOC)": "12",
-        "Test (KLOC)": "5",
-        "Compliance": "10",
-        "Covarage": "60"
+        "Source (KLOC)": "3",
+        "Test (KLOC)": "17",
+        "Compliance": "8",
+        "Covarage": "14"
     },
     {
         "Component": "Component 3",
@@ -30,10 +30,10 @@
         "Implement": "Active",
         "Readme": "Yes",
         "API Docs": "No",
-        "Source (KLOC)": "12",
-        "Test (KLOC)": "5",
-        "Compliance": "10",
-        "Covarage": "60"
+        "Source (KLOC)": "31",
+        "Test (KLOC)": "3",
+        "Compliance": "21",
+        "Covarage": "70"
     }
 
 ]
