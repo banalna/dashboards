@@ -4,6 +4,8 @@
 {{ if $isRelative }}
     {{ $path = path.Join $fullPath $path }}
 {{ end }}
+<!-- Exclude subpath (fix only for github pages hosting) -->
+{{ $path = replace $path "/dashboards/" ""}}
 {{ $JSON := readFile $path}}
 
 <script>
