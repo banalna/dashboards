@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/ui_ux_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/mobility_app_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/test_management_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/mobility_agent_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/service_catalog_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/data_pipeline_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ru"
+                href="http://example.org/ru/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://example.org/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttp://example.org/teams/</loc>
+  </url>
+  
+</urlset>
