@@ -46,6 +46,11 @@
   integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
   crossorigin="anonymous"></script>
 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+    integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body class="td-section">
     <header>
@@ -250,11 +255,29 @@
 		
 		
 	</header>
-	
+	<div class="btn-group btn-group-toggle float-right mb-3" data-toggle="buttons">
+    <label class="btn btn-primary active">
+        <input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked> Table
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off"> Chart
+    </label>
+</div>
+
+<script>
+    function toggleView(e) {
+        $('#generated-table').collapse('toggle')
+        $('#generated-charts').collapse('toggle')
+    }
+</script>
+
+
+
 
 
 
     
+
 
 
 
@@ -279,7 +302,8 @@
 
     function composeTable(columns) {
         let table = document.createElement('table');
-        table.setAttribute('class', 'table table-hover generated-table');
+        table.id = 'generated-table';
+        table.setAttribute('class', 'table table-hover collapse show');
         table.setAttribute('width', '100%');
         table.createTHead();
         table.createTBody();
@@ -296,8 +320,93 @@
         return table;
     }
 
-    createTable(JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priotrty\": \"Medium\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    }\n\n]"));
+    createTable(JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priotrty\": \"Medium\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"3\",\n        \"Test (KLOC)\": \"17\",\n        \"Compliance\": \"8\",\n        \"Covarage\": \"14\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"31\",\n        \"Test (KLOC)\": \"3\",\n        \"Compliance\": \"21\",\n        \"Covarage\": \"70\"\n    }\n\n]"));
 
+</script>
+
+
+
+<div class="row collapse" id="generated-charts"></div>
+
+<script>
+    function getRandomColors(count) {
+        colors = [];
+        let letters = '0123456789ABCDEF';
+        for (let i = 0; i < count; i++) {
+            let color = '#';
+            for (var j = 0; j < 6; j++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            colors.push(color);
+        }
+        return colors
+    }
+
+    function getNumericData(items) {
+        let columns = [];
+        for (let item of items) {
+            for (let column of Object.keys(item)) {
+                if (!isNaN(parseFloat(item[column])) && !columns.includes(column)) {
+                    columns.push(column);
+                } 
+            }
+        }
+        return columns;
+    }
+
+    function generateCanvas(labels, values, parameter) {
+        let canvas = document.createElement('canvas');
+        canvas.id = 'generated-chart-' + parameter;
+        canvas.setAttribute('width', "400");
+        canvas.setAttribute('height', "250");
+        canvas.setAttribute('class', "mt-3");
+
+        const ctx = canvas.getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: parameter,
+                    data: values,
+                    backgroundColor: getRandomColors(values.length),
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        return canvas;
+    }
+
+
+    let data = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priotrty\": \"Medium\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"3\",\n        \"Test (KLOC)\": \"17\",\n        \"Compliance\": \"8\",\n        \"Covarage\": \"14\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"31\",\n        \"Test (KLOC)\": \"3\",\n        \"Compliance\": \"21\",\n        \"Covarage\": \"70\"\n    }\n\n]");
+    let columns = getNumericData(data);
+
+    for (let column of columns) {
+        let parameter = null;
+        let labels = [];
+        let values = [];
+
+        for (let item of data) {
+            labels.push(item['Component']);
+            values.push(parseFloat(item[column]));
+        }
+
+        let canvas = generateCanvas(labels, values, column);
+
+        document.getElementById('generated-charts').appendChild(canvas);
+    }
+    
+    
+    
 </script>
 
         <div class="section-index">
