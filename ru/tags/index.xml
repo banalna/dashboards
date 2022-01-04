@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Аналитическая панель – Tags</title>
-    <link>/ru/tags/</link>
+    <link>https://banalna.github.io/dashboards/ru/tags/</link>
     <description>Recent content in Tags on Аналитическая панель</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/ru/tags/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://banalna.github.io/dashboards/ru/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
       
