@@ -1,0 +1,37 @@
+{
+  "name": "dashboards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "algolia": "atomic-algolia",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server -F -D",
+    "build:algolia": "hugo && npm run algolia",
+    "build:docker": "hugo && docker run -it --env-file=.env -e \"CONFIG=$(cat ./docsearch.json | jq -r tostring)\" algolia/docsearch-scraper",
+    "build:preview": "npm run build:preview",
+    "build:production": "npm run build:production",
+    "build": "npm run build",
+    "install": "npm install",
+    "serve": "npm run serve",
+    "submodule:get": "git submodule update --init --recursive --depth 1",
+    "submodule:update": "git submodule update --remote --recursive --depth 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pip-services/pip-services-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pip-services/pip-services-docs/issues"
+  },
+  "homepage": "https://github.com/pip-services/pip-services-docs#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.1",
+    "postcss-cli": "^9.1.0"
+  },
+  "dependencies": {
+    "postcss": "^8.4.5"
+  }
+}

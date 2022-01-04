@@ -1,0 +1,30 @@
+.section-index {
+
+    .entry {
+        // padding: .75rem;
+
+        .card {
+            background-color: $td-sidebar-bg-color;
+            border-radius: 0.3rem;
+            box-shadow: 1px 1px 3px rgba(211, 211, 211, 0.8);
+
+            @include hover-focus() {
+                color: $navbar-dark-hover-color;
+                border: 1px solid $navbar-dark-border-color;
+                box-shadow: 2px 2px 5px rgba(211, 211, 211, 0.7);
+            }
+        }
+    }
+
+    h5 {
+        // margin-bottom: 0;
+
+        a {
+            font-weight: 700;
+        }
+    }
+
+    p {
+        margin-top: 0;
+    }
+}

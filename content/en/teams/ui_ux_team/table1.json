@@ -1,0 +1,39 @@
+[
+    {
+        "Component": "Component 1",
+        "Type": "Library",
+        "Priotrty": "Hight",
+        "Implement": "Stable",
+        "Readme": "Yes",
+        "API Docs": "No",
+        "Source (KLOC)": "12",
+        "Test (KLOC)": "5",
+        "Compliance": "10",
+        "Covarage": "60"
+    },
+    {
+        "Component": "Component 2",
+        "Type": "Microservice",
+        "Priotrty": "Medium",
+        "Implement": "Planned",
+        "Readme": "Yes",
+        "API Docs": "No",
+        "Source (KLOC)": "12",
+        "Test (KLOC)": "5",
+        "Compliance": "10",
+        "Covarage": "60"
+    },
+    {
+        "Component": "Component 3",
+        "Type": "Microfrontend",
+        "Priotrty": "Hight",
+        "Implement": "Active",
+        "Readme": "Yes",
+        "API Docs": "No",
+        "Source (KLOC)": "12",
+        "Test (KLOC)": "5",
+        "Compliance": "10",
+        "Covarage": "60"
+    }
+
+]

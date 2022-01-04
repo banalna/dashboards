@@ -1,0 +1,71 @@
+{{ $file := .Get 0 }}
+
+<script type="text/javascript" src="{{ $file }}"></script>
+
+<script>
+    function loadFile(filePath, done) {
+        return new Promise(function (resolve, reject) {
+            let xhr = new XMLHttpRequest();
+            xhr.responseType = 'json';
+            xhr.open('GET', filePath, true);
+            xhr.onload = function () {
+                if (this.status >= 200 && this.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject({
+                        status: this.status,
+                        statusText: xhr.statusText
+                    });
+                }
+            };
+            xhr.onerror = function () {
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                });
+            };
+            xhr.send();
+        });
+    };
+
+    function createTable(items) {
+        let columns = Object.keys(items[0]);
+        let table = composeTable(columns);
+
+        for (let item of items) {
+            let tr = table.tBodies[0].insertRow(-1);
+            for (let column of columns) {
+                let td = tr.insertCell(-1);
+                td.innerText = item[column];
+            }
+        }
+
+        document.getElementsByClassName('td-content')[0].appendChild(table);
+    }
+
+    function composeTable(columns) {
+        let table = document.createElement('table');
+        table.setAttribute('class', 'table table-hover generated-table');
+        table.setAttribute('width', '100%');
+        table.createTHead();
+        table.createTBody();
+
+        let tr = table.tHead.insertRow(0);
+
+        for (let column of columns) {
+            let th = document.createElement('th');
+            th.setAttribute('scope', 'col');
+            th.innerText = column;
+
+            tr.appendChild(th);
+        }
+        return table;
+    }
+
+    loadFile('{{ $file }}').then(function (items) {
+        createTable(items);
+    }).catch(function (err) {
+        throw err;
+    });
+
+</script>
