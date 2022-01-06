@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://banalna.github.io/dashboards/'
 title = 'VisionWorks 2.0 Delivery Dashboard'
 theme = "docsy"
 
@@ -9,22 +9,7 @@ defaultContentLanguageInSubdir = false
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
-[languages]
-  [languages.en]
-    title = "VisionWorks 2.0 Delivery Dashboard"
-    weight = 1
-    contentDir = "content/en"
-    languageName = "English"
-  [languages.ru]
-    title = "VisionWorks 2.0   Аналитическая панель"
-    weight = 2
-    contentDir = "content/ru"
-    languageName = "Russian"
-
 enableRobotsTXT = true
-
-# Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = ["docsy"]
 
 # Will give values to .Lastmod etc.
 enableGitInfo = false
