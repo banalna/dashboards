@@ -1,18 +1,345 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Delivery Dashboard – UI/UX Team</title>
-    <link>https://banalna.github.io/dashboards/teams/ui_ux_team/</link>
-    <description>Recent content in UI/UX Team on Delivery Dashboard</description>
+    <title>VisionWorks 2.0 Delivery Dashboard – UI/UX Team</title>
+    <link>/teams/ui_ux_team/</link>
+    <description>Recent content in UI/UX Team on VisionWorks 2.0 Delivery Dashboard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="https://banalna.github.io/dashboards/teams/ui_ux_team/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/teams/ui_ux_team/index.xml" rel="self" type="application/rss+xml" />
     
     
       
         
       
     
+    
+    <item>
+      <title>Teams: Component Delivery</title>
+      <link>/teams/ui_ux_team/component_delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teams/ui_ux_team/component_delivery/</guid>
+      <description>
+        
+        
+        
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
+
+&lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
+    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
+        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
+    &lt;/a&gt;
+    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Teams: Component Metrics Dashboard</title>
+      <link>/teams/ui_ux_team/component_metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teams/ui_ux_team/component_metrics/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;btn-group btn-group-toggle float-right mb-3&#34; data-toggle=&#34;buttons&#34;&gt;
+    &lt;label class=&#34;btn btn-primary active&#34;&gt;
+        &lt;input type=&#34;radio&#34; onclick=&#34;toggleView(this)&#34; id=&#34;table-btn&#34; autocomplete=&#34;off&#34; checked&gt; Table
+    &lt;/label&gt;
+    &lt;label class=&#34;btn btn-secondary&#34;&gt;
+        &lt;input type=&#34;radio&#34; onclick=&#34;toggleView(this)&#34; id=&#34;chart-btn&#34; autocomplete=&#34;off&#34;&gt; Chart
+    &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    function toggleView(e) {
+        $(&#39;#generated-table&#39;).collapse(&#39;toggle&#39;)
+        $(&#39;#generated-charts&#39;).collapse(&#39;toggle&#39;)
+    }
+&lt;/script&gt;
+
+
+
+
+
+
+    
+
+
+
+
+
+
+&lt;script&gt;
+
+    function createTable(items) {
+        let columns = Object.keys(items[0]);
+        let table = composeTable(columns);
+
+        for (let item of items) {
+            let tr = table.tBodies[0].insertRow(-1);
+            for (let column of columns) {
+                let td = tr.insertCell(-1);
+                td.innerText = item[column];
+            }
+        }
+
+        document.getElementsByClassName(&#39;td-content&#39;)[0].appendChild(table);
+    }
+
+    function composeTable(columns) {
+        let table = document.createElement(&#39;table&#39;);
+        table.id = &#39;generated-table&#39;;
+        table.setAttribute(&#39;class&#39;, &#39;table table-hover collapse show&#39;);
+        table.setAttribute(&#39;width&#39;, &#39;100%&#39;);
+        table.createTHead();
+        table.createTBody();
+
+        let tr = table.tHead.insertRow(0);
+
+        for (let column of columns) {
+            let th = document.createElement(&#39;th&#39;);
+            th.setAttribute(&#39;scope&#39;, &#39;col&#39;);
+            th.innerText = column;
+
+            tr.appendChild(th);
+        }
+        return table;
+    }
+
+    createTable(JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priotrty\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;12\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;5\&#34;,\n        \&#34;Compliance\&#34;: \&#34;10\&#34;,\n        \&#34;Covarage\&#34;: \&#34;60\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priotrty\&#34;: \&#34;Medium\&#34;,\n        \&#34;Implement\&#34;: \&#34;Planned\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;3\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;17\&#34;,\n        \&#34;Compliance\&#34;: \&#34;8\&#34;,\n        \&#34;Covarage\&#34;: \&#34;14\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priotrty\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Active\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;31\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;3\&#34;,\n        \&#34;Compliance\&#34;: \&#34;21\&#34;,\n        \&#34;Covarage\&#34;: \&#34;70\&#34;\n    }\n\n]&#34;));
+
+&lt;/script&gt;
+
+
+
+&lt;div class=&#34;row collapse&#34; id=&#34;generated-charts&#34;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    function getRandomColors(count) {
+        colors = [];
+        let letters = &#39;0123456789ABCDEF&#39;;
+        for (let i = 0; i &lt; count; i++) {
+            let color = &#39;#&#39;;
+            for (var j = 0; j &lt; 6; j++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            colors.push(color);
+        }
+        return colors
+    }
+
+    function getNumericData(items) {
+        let columns = [];
+        for (let item of items) {
+            for (let column of Object.keys(item)) {
+                if (!isNaN(parseFloat(item[column])) &amp;&amp; !columns.includes(column)) {
+                    columns.push(column);
+                } 
+            }
+        }
+        return columns;
+    }
+
+    function generateCanvas(labels, values, parameter) {
+        let canvas = document.createElement(&#39;canvas&#39;);
+        canvas.id = &#39;generated-chart-&#39; + parameter;
+        canvas.setAttribute(&#39;width&#39;, &#34;400&#34;);
+        canvas.setAttribute(&#39;height&#39;, &#34;250&#34;);
+        canvas.setAttribute(&#39;class&#39;, &#34;mt-3&#34;);
+
+        const ctx = canvas.getContext(&#39;2d&#39;);
+        const myChart = new Chart(ctx, {
+            type: &#39;bar&#39;,
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: parameter,
+                    data: values,
+                    backgroundColor: getRandomColors(values.length),
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        return canvas;
+    }
+
+
+    let data = JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priotrty\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;12\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;5\&#34;,\n        \&#34;Compliance\&#34;: \&#34;10\&#34;,\n        \&#34;Covarage\&#34;: \&#34;60\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priotrty\&#34;: \&#34;Medium\&#34;,\n        \&#34;Implement\&#34;: \&#34;Planned\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;3\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;17\&#34;,\n        \&#34;Compliance\&#34;: \&#34;8\&#34;,\n        \&#34;Covarage\&#34;: \&#34;14\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priotrty\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Active\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;31\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;3\&#34;,\n        \&#34;Compliance\&#34;: \&#34;21\&#34;,\n        \&#34;Covarage\&#34;: \&#34;70\&#34;\n    }\n\n]&#34;);
+    let columns = getNumericData(data);
+
+    for (let column of columns) {
+        let parameter = null;
+        let labels = [];
+        let values = [];
+
+        for (let item of data) {
+            labels.push(item[&#39;Component&#39;]);
+            values.push(parseFloat(item[column]));
+        }
+
+        let canvas = generateCanvas(labels, values, column);
+
+        document.getElementById(&#39;generated-charts&#39;).appendChild(canvas);
+    }
+    
+    
+    
+&lt;/script&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Teams: Component Quality</title>
+      <link>/teams/ui_ux_team/component_quality/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teams/ui_ux_team/component_quality/</guid>
+      <description>
+        
+        
+        
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
+
+&lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
+    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
+        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
+    &lt;/a&gt;
+    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Teams: Feature Delivery</title>
+      <link>/teams/ui_ux_team/feature_delivery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teams/ui_ux_team/feature_delivery/</guid>
+      <description>
+        
+        
+        
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
+
+&lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
+    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
+        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
+    &lt;/a&gt;
+    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Teams: Feature Timming</title>
+      <link>/teams/ui_ux_team/feature_timing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teams/ui_ux_team/feature_timing/</guid>
+      <description>
+        
+        
+        
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
+
+&lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
+    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
+        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
+    &lt;/a&gt;
+    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Teams: Pipeline Metrics</title>
+      <link>/teams/ui_ux_team/pipeline_metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/teams/ui_ux_team/pipeline_metrics/</guid>
+      <description>
+        
+        
+        
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
+
+&lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
+    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
+        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
+    &lt;/a&gt;
+    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
   </channel>
 </rss>

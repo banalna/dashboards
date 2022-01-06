@@ -3,85 +3,109 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/</loc>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/mobility_app_team/</loc>
+    <loc>https://www.docsy.dev/teams/mobility_app_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/test_management_team/</loc>
+    <loc>https://www.docsy.dev/teams/test_management_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/mobility_agent_team/</loc>
+    <loc>https://www.docsy.dev/teams/mobility_agent_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/service_catalog_team/</loc>
+    <loc>https://www.docsy.dev/teams/service_catalog_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/data_pipeline_team/</loc>
+    <loc>https://www.docsy.dev/teams/data_pipeline_team/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/about/</loc>
+    <loc>https://www.docsy.dev/about/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/admin/</loc>
+    <loc>https://www.docsy.dev/admin/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/categories/</loc>
+    <loc>https://www.docsy.dev/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://banalna.github.io/dashboards/ru/categories/"
+                href="/ru/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://banalna.github.io/dashboards/categories/"
+                href="/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/</loc>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/component_delivery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/component_metrics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/component_quality/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/feature_delivery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/feature_timing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.dev/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://banalna.github.io/dashboards/ru/"
+                href="/ru/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://banalna.github.io/dashboards/"
+                href="/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/search/</loc>
+    <loc>https://www.docsy.dev/teams/ui_ux_team/pipeline_metrics/</loc>
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/tags/</loc>
+    <loc>https://www.docsy.dev/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.dev/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ru"
-                href="https://banalna.github.io/dashboards/ru/tags/"
+                href="/ru/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://banalna.github.io/dashboards/tags/"
+                href="/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/</loc>
+    <loc>https://www.docsy.dev/teams/</loc>
   </url>
   
 </urlset>
