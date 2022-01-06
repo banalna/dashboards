@@ -1,12 +1,11 @@
 ---
 type: docs
-title: Teams
-linkTitle: Teams
+title: Dashboards
+linkTitle: Dashboards
 list_panels: true
 menu:
   main:
-    weight: 10
-    pre: <i class='fas fa-users'></i>
+    weight: 5
 ---
 
 
