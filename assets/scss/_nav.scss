@@ -2,23 +2,30 @@
 // Main navbar overrides
 //
 
+.breadcrumb-item {
+    a {
+        color: $breadcrumb-color;
+        font-weight: $font-weight-normal;
+
+        @include hover() {
+            color: $breadcrumb-hover-color;
+        }
+    }
+
+    &.active > a {
+        color: $breadcrumb-active-color;
+    }
+    
+
+    + .breadcrumb-item {
+        &::before {
+            font-family: $breadcrumb-divider-font;
+        }
+    }
+}
+
 .td-navbar-cover {
     background: $primary;
-
-    @include media-breakpoint-up(md) {
-        background: transparent !important;
-        border-bottom: transparent !important;
-
-        .nav-link {
-            text-shadow: 1px 1px 2px $dark;
-            color: white !important;
-        }
-
-        .navbar-brand {
-            color: white !important;
-        }
-
-    }
 
     &.navbar-bg-onscroll .nav-link {
         text-shadow: none;
@@ -45,6 +52,7 @@
     }
 }
 
+
 .td-navbar {
     border-bottom: 1px solid $border-color;
     background: $primary;
@@ -62,6 +70,18 @@
     .navbar-brand {
         text-transform: none;
         text-align: middle;
+
+        .navbar-logo {
+            svg {
+                vertical-align: bottom;
+            }
+        }
+
+        .brand-title {
+            @include media-breakpoint-down(sm) {
+                font-size: 0.95rem;
+            }
+        }
 
         .nav-link {
             display: inline-block;

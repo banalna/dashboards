@@ -1,11 +1,19 @@
-<div class="col-md-12 d-flex justify-content-center">
-    <div class="card p-3">
-        <i class="text-center card-img-top fas fa-hand-paper fa-10x" style="color: gray;"></i>
-        <div class="card-body">
-            <h2 class="card-title text-center font-weight-bold">
-                This dashboard is under construction.<br>
-                Please, come again later
-            </h2>
-        </div>
-    </div>
+<!-- hide all info -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let content = document.getElementsByClassName('td-content')[0];
+        for (let element of content.children) {
+            if (element.id != 'under-construction') {
+                element.setAttribute('hidden', true);
+            }
+        }
+    })
+</script>
+
+<div class="mx-auto text-center" id="under-construction">
+    <img src="/images/under_construction.png" class="img-fluid mx-auto pb-3" style="max-width:45%;" alt="Home img">
+    <a href="#" onclick="history.back()">
+        <h3 class="mx-auto pt-2" style="color: #004AD7;">This dashboard is under construction</h3>
+    </a>
+    <h3 class="mx-auto" style="color: #101840;">Please, come again later</h3>
 </div>

@@ -1,5 +1,5 @@
-baseURL = 'https://banalna.github.io/dashboards/'
-title = 'Delivery Dashboard'
+baseURL = '/'
+title = 'VisionWorks 2.0 Delivery Dashboard'
 theme = "docsy"
 
 # Language Configuration
@@ -11,12 +11,12 @@ enableMissingTranslationPlaceholders = true
 
 [languages]
   [languages.en]
-    title = "Delivery Dashboard"
+    title = "VisionWorks 2.0 Delivery Dashboard"
     weight = 1
     contentDir = "content/en"
     languageName = "English"
   [languages.ru]
-    title = "Аналитическая панель"
+    title = "VisionWorks 2.0   Аналитическая панель"
     weight = 2
     contentDir = "content/ru"
     languageName = "Russian"
@@ -83,7 +83,7 @@ anchor = "smart"
 # Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
+copyright = "The VisionWorks Authors"
 privacy_policy = "https://policies.google.com/privacy"
 
 # Menu title if your navbar has a versions selector to access old versions of your site.

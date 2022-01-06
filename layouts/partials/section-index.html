@@ -21,11 +21,11 @@
     <div class="row">
         {{ range $pages }}
             {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref") (relref . .Params.manualLinkRelref) .RelPermalink) }}
-            <div class="col-sm-6 pt-3 entry">
-                <div class="card">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 pt-3 entry">
+                <div class="card h-100">
                     <div class="card-body">
-                        <h5 class="card-title">{{- .Title -}}</h5>
-                        <p class="card-text">{{ .Description | markdownify }}</p>
+                        <p class="card-title font-weight-bold">{{- .Title -}}</p>
+                        <p class="card-text font-weight-bold text-muted">{{ .Description | markdownify }}</p>
                         <a href="{{ $manualLink }}"{{ with .Params.manualLinkTitle }} title="{{ . }}"{{ end }}{{ with .Params.manualLinkTarget }} target="{{ . }}"{{ if eq . "_blank" }} rel="noopener"{{ end }}{{ end }} class="stretched-link"></a>
                     </div>
                 </div>

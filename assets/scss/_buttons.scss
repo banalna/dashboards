@@ -1,0 +1,31 @@
+// Buttons
+
+#get-started-btn {
+    box-shadow: none;
+    background-color: $navbar-dark-border-color;
+    color: $primary;
+    border-radius: 0.35rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &:hover {
+        color: #fff;
+        background-color: darken($color: $navbar-dark-border-color, $amount: 7%);
+        // border-color: #545b62;
+    }
+
+    &:focus, .focus{
+        color: #fff;
+        background-color: darken($color: $navbar-dark-border-color, $amount: 12%);
+        // border-color: #545b62;
+        // box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
+    }
+}
+
+#admin-btn {
+    color: $navbar-dark-border-color;
+    border-bottom: 1px solid $navbar-dark-border-color;
+    padding-left: .15rem;
+    padding-right: .15rem;
+    font-size: medium;
+}

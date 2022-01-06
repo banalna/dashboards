@@ -2,14 +2,23 @@
 Add styles or override variables from the theme here.
 */
 
+$body-bg: #f6f7f9;
 $primary: #FFF;
 
-$navbar-dark-color: #101840;
+$navbar-dark-brand-color: #101840;
+
+$navbar-dark-color: $navbar-dark-brand-color;
 $navbar-dark-active-color: rgba($navbar-dark-color, 0.5) !default;
 $navbar-dark-hover-color: rgba($navbar-dark-color, 0.75) !default;
 $navbar-dark-border-color: #004AD7;
 
 $td-sidebar-tree-root-color: $navbar-dark-border-color;
-$td-sidebar-bg-color: #FDFDFE;
+// $td-sidebar-bg-color: $primary;
+
+$breadcrumb-divider: '>';
+$breadcrumb-divider-font: cursive;
+$breadcrumb-color: $navbar-dark-hover-color;
+$breadcrumb-hover-color: $navbar-dark-color;
+$breadcrumb-active-color: $navbar-dark-border-color;
 
 $table-accent-bg: none;

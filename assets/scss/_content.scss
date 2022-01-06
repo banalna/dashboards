@@ -2,6 +2,44 @@
 // Style Markdown content
 //
 
+.content-title {
+    background-image: url(/images/text_decorator.svg);
+    background-repeat: no-repeat;
+    width: fit-content;
+    background-position: 50% 90%;
+    background-size: contain;
+
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+    color: $navbar-dark-brand-color;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include media-breakpoint-down(sm) {
+        background-image: none;
+    }
+
+    // background: linear-gradient(0deg, $primary 30%, $body-bg 30%);
+    // background-origin: border-box;
+    // border-radius: 15px;
+    
+    // width: fit-content;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+
+    // @include media-breakpoint-down(md) {
+    //     background: linear-gradient(0deg, $primary 20%, $body-bg 20%);
+    // }
+    // @include media-breakpoint-down(xs) {
+    //     background: linear-gradient(0deg, $primary 15%, $body-bg 15%);
+    // }
+    // @include media-breakpoint-down(sm) {
+    //     word-wrap: break-word;
+    //     width: auto;
+    // }
+}
+
 .td-content {
     
     .generated-table {
