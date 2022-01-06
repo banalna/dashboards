@@ -24,7 +24,16 @@
         
         
         
-
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.png&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
@@ -215,7 +224,16 @@
         
         
         
-
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.png&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
@@ -239,7 +257,16 @@
         
         
         
-
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.png&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
@@ -263,7 +290,16 @@
         
         
         
-
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.png&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
@@ -287,7 +323,16 @@
         
         
         
-
+&lt;script&gt;
+    document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+        let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
+        for (let element of content.children) {
+            if (element.id != &#39;under-construction&#39;) {
+                element.setAttribute(&#39;hidden&#39;, true);
+            }
+        }
+    })
+&lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.png&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 

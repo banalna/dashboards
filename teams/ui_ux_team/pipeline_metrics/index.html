@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Stability of environments and failure response timings
 ">
 
-<meta itemprop="wordCount" content="9">
+<meta itemprop="wordCount" content="33">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pipeline Metrics"/>
 <meta name="twitter:description" content="Stability of environments and failure response timings
@@ -158,7 +158,16 @@
 		
 	</header>    
 	
-
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let content = document.getElementsByClassName('td-content')[0];
+        for (let element of content.children) {
+            if (element.id != 'under-construction') {
+                element.setAttribute('hidden', true);
+            }
+        }
+    })
+</script>
 
 <div class="mx-auto text-center" id="under-construction">
     <img src='https://banalna.github.io/dashboards/images/under_construction.png' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
