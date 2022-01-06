@@ -12,6 +12,8 @@ $navbar-dark-active-color: rgba($navbar-dark-color, 0.5) !default;
 $navbar-dark-hover-color: rgba($navbar-dark-color, 0.75) !default;
 $navbar-dark-border-color: #004AD7;
 
+$dashboard-title-color: $navbar-dark-border-color;
+
 $td-sidebar-tree-root-color: $navbar-dark-border-color;
 // $td-sidebar-bg-color: $primary;
 
@@ -22,3 +24,4 @@ $breadcrumb-hover-color: $navbar-dark-color;
 $breadcrumb-active-color: $navbar-dark-border-color;
 
 $table-accent-bg: none;
+$table-bg: $primary;

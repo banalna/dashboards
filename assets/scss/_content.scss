@@ -2,6 +2,10 @@
 // Style Markdown content
 //
 
+.dashboard-title {
+    color: $dashboard-title-color;
+}
+
 .content-title {
     background-image: url(/images/text_decorator.svg);
     background-repeat: no-repeat;
