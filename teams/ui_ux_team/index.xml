@@ -36,7 +36,8 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
+    alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -235,7 +236,8 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
+    alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -267,7 +269,8 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
+    alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -299,7 +302,8 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
+    alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -331,7 +335,8 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
+    alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
