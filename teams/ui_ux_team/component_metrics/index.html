@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Coding metrics and compliance of components
 ">
 
-<meta itemprop="wordCount" content="184">
+<meta itemprop="wordCount" content="110">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Component Metrics Dashboard"/>
 <meta name="twitter:description" content="Coding metrics and compliance of components
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.28d2f71f4d8a5ba12d7d0092ff90c66cbb8c261d59bea86c49fbf4c1c4d97e41.css" as="style">
-<link href="/dashboards/scss/main.min.28d2f71f4d8a5ba12d7d0092ff90c66cbb8c261d59bea86c49fbf4c1c4d97e41.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.28cff59f775b1ac5d7c1bbd7accd2e6b56ed52809d95be844d7e1f6886bdca5b.css" as="style">
+<link href="/dashboards/scss/main.min.28cff59f775b1ac5d7c1bbd7accd2e6b56ed52809d95be844d7e1f6886bdca5b.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -139,8 +139,8 @@
   </ol>
 </nav>
             
-<div class="td-content">
-	<h1>Component Metrics Dashboard</h1>
+<div class="td-content bg-primary">
+	<h3 class="dashboard-title">Component Metrics Dashboard</h3>
 	<div class="lead">Coding metrics and compliance of components</div>
 	<header class="article-meta">
 		
@@ -157,160 +157,142 @@
 		
 		
 	</header>    
-	<div class="btn-group btn-group-toggle float-right mb-3" data-toggle="buttons">
-    <label class="btn btn-primary active">
-        <input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked> Table
-    </label>
-    <label class="btn btn-secondary">
-        <input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off"> Chart
-    </label>
-</div>
-
-<script>
-    function toggleView(e) {
-        $('#generated-table').collapse('toggle')
-        $('#generated-charts').collapse('toggle')
-    }
-</script>
-
-
-
-
-
-
-    
-
-
-
-
-
-
-<script>
-
-    function createTable(items) {
-        let columns = Object.keys(items[0]);
-        let table = composeTable(columns);
-
-        for (let item of items) {
-            let tr = table.tBodies[0].insertRow(-1);
-            for (let column of columns) {
-                let td = tr.insertCell(-1);
-                td.innerText = item[column];
-            }
-        }
-
-        document.getElementsByClassName('td-content')[0].appendChild(table);
-    }
-
-    function composeTable(columns) {
-        let table = document.createElement('table');
-        table.id = 'generated-table';
-        table.setAttribute('class', 'table table-hover collapse show');
-        table.setAttribute('width', '100%');
-        table.createTHead();
-        table.createTBody();
-
-        let tr = table.tHead.insertRow(0);
-
-        for (let column of columns) {
-            let th = document.createElement('th');
-            th.setAttribute('scope', 'col');
-            th.innerText = column;
-
-            tr.appendChild(th);
-        }
-        return table;
-    }
-
-    createTable(JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priotrty\": \"Medium\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"3\",\n        \"Test (KLOC)\": \"17\",\n        \"Compliance\": \"8\",\n        \"Covarage\": \"14\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"31\",\n        \"Test (KLOC)\": \"3\",\n        \"Compliance\": \"21\",\n        \"Covarage\": \"70\"\n    }\n\n]"));
-
-</script>
-
-
-
-<div class="row collapse" id="generated-charts"></div>
-
-<script>
-    function getRandomColors(count) {
-        colors = [];
-        let letters = '0123456789ABCDEF';
-        for (let i = 0; i < count; i++) {
-            let color = '#';
-            for (var j = 0; j < 6; j++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            colors.push(color);
-        }
-        return colors
-    }
-
-    function getNumericData(items) {
-        let columns = [];
-        for (let item of items) {
-            for (let column of Object.keys(item)) {
-                if (!isNaN(parseFloat(item[column])) && !columns.includes(column)) {
-                    columns.push(column);
-                } 
-            }
-        }
-        return columns;
-    }
-
-    function generateCanvas(labels, values, parameter) {
-        let canvas = document.createElement('canvas');
-        canvas.id = 'generated-chart-' + parameter;
-        canvas.setAttribute('width', "400");
-        canvas.setAttribute('height', "250");
-        canvas.setAttribute('class', "mt-3");
-
-        const ctx = canvas.getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: parameter,
-                    data: values,
-                    backgroundColor: getRandomColors(values.length),
-
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        return canvas;
-    }
-
-
-    let data = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"5\",\n        \"Compliance\": \"10\",\n        \"Covarage\": \"60\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priotrty\": \"Medium\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"3\",\n        \"Test (KLOC)\": \"17\",\n        \"Compliance\": \"8\",\n        \"Covarage\": \"14\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priotrty\": \"Hight\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"31\",\n        \"Test (KLOC)\": \"3\",\n        \"Compliance\": \"21\",\n        \"Covarage\": \"70\"\n    }\n\n]");
-    let columns = getNumericData(data);
-
-    for (let column of columns) {
-        let parameter = null;
-        let labels = [];
-        let values = [];
-
-        for (let item of data) {
-            labels.push(item['Component']);
-            values.push(parseFloat(item[column]));
-        }
-
-        let canvas = generateCanvas(labels, values, column);
-
-        document.getElementById('generated-charts').appendChild(canvas);
-    }
-    
-    
-    
-</script>
+	<table class="generated-table table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Component</th>
+        <th scope="col" rowspan="2">Type</th>
+        <th scope="col" rowspan="2">Priotrty</th>
+        <th colspan="3">
+          Status
+          <hr class="mb-0">
+        </th>
+        <th colspan="4">
+          Metrics
+          <hr class="mb-0">
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">Implement</th>
+        <th scope="col">Readme</th>
+        <th scope="col">API Docs</th>
+        <th scope="col">Source (KLOC)</th>
+        <th scope="col">Test (KLOC)</th>
+        <th scope="col">Compliance</th>
+        <th scope="col">Covarage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="m-0"></td>
+      </tr>
+      <tr>
+        <td>Component 1</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 2</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>Component 3</td>
+        <td>@twitter</td>
+      </tr>
+      <tr>
+        <td>Component 4</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 5</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 6</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 7</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 8</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 9</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>Component 10</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </table>
 
 	
 	
