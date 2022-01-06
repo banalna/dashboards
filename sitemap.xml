@@ -1,14 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <sitemap>
-    <loc>/en/sitemap.xml</loc>
-    
-  </sitemap>
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/</loc>
+  </url>
   
-  <sitemap>
-    <loc>/ru/sitemap.xml</loc>
-    
-  </sitemap>
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/mobility_app_team/</loc>
+  </url>
   
-</sitemapindex>
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/test_management_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/mobility_agent_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/service_catalog_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/data_pipeline_team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/component_delivery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/component_metrics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/component_quality/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/feature_delivery/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/feature_timing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/ui_ux_team/pipeline_metrics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.docsy.devhttps://banalna.github.io/dashboards/teams/</loc>
+  </url>
+  
+</urlset>

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VisionWorks 2.0 Delivery Dashboard – UI/UX Team</title>
-    <link>/teams/ui_ux_team/</link>
+    <link>https://banalna.github.io/dashboards/teams/ui_ux_team/</link>
     <description>Recent content in UI/UX Team on VisionWorks 2.0 Delivery Dashboard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/teams/ui_ux_team/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://banalna.github.io/dashboards/teams/ui_ux_team/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Teams: Component Delivery</title>
-      <link>/teams/ui_ux_team/component_delivery/</link>
+      <link>https://banalna.github.io/dashboards/teams/ui_ux_team/component_delivery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teams/ui_ux_team/component_delivery/</guid>
+      <guid>https://banalna.github.io/dashboards/teams/ui_ux_team/component_delivery/</guid>
       <description>
         
         
@@ -36,7 +36,7 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -48,10 +48,10 @@
     
     <item>
       <title>Teams: Component Metrics Dashboard</title>
-      <link>/teams/ui_ux_team/component_metrics/</link>
+      <link>https://banalna.github.io/dashboards/teams/ui_ux_team/component_metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teams/ui_ux_team/component_metrics/</guid>
+      <guid>https://banalna.github.io/dashboards/teams/ui_ux_team/component_metrics/</guid>
       <description>
         
         
@@ -215,10 +215,10 @@
     
     <item>
       <title>Teams: Component Quality</title>
-      <link>/teams/ui_ux_team/component_quality/</link>
+      <link>https://banalna.github.io/dashboards/teams/ui_ux_team/component_quality/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teams/ui_ux_team/component_quality/</guid>
+      <guid>https://banalna.github.io/dashboards/teams/ui_ux_team/component_quality/</guid>
       <description>
         
         
@@ -235,7 +235,7 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -247,10 +247,10 @@
     
     <item>
       <title>Teams: Feature Delivery</title>
-      <link>/teams/ui_ux_team/feature_delivery/</link>
+      <link>https://banalna.github.io/dashboards/teams/ui_ux_team/feature_delivery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teams/ui_ux_team/feature_delivery/</guid>
+      <guid>https://banalna.github.io/dashboards/teams/ui_ux_team/feature_delivery/</guid>
       <description>
         
         
@@ -267,7 +267,7 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -279,10 +279,10 @@
     
     <item>
       <title>Teams: Feature Timming</title>
-      <link>/teams/ui_ux_team/feature_timing/</link>
+      <link>https://banalna.github.io/dashboards/teams/ui_ux_team/feature_timing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teams/ui_ux_team/feature_timing/</guid>
+      <guid>https://banalna.github.io/dashboards/teams/ui_ux_team/feature_timing/</guid>
       <description>
         
         
@@ -299,7 +299,7 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;
@@ -311,10 +311,10 @@
     
     <item>
       <title>Teams: Pipeline Metrics</title>
-      <link>/teams/ui_ux_team/pipeline_metrics/</link>
+      <link>https://banalna.github.io/dashboards/teams/ui_ux_team/pipeline_metrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teams/ui_ux_team/pipeline_metrics/</guid>
+      <guid>https://banalna.github.io/dashboards/teams/ui_ux_team/pipeline_metrics/</guid>
       <description>
         
         
@@ -331,7 +331,7 @@
 &lt;/script&gt;
 
 &lt;div class=&#34;mx-auto text-center&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#34;/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
+    &lt;img src=&#34;https://banalna.github.io/dashboards/images/under_construction.png&#34; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; alt=&#34;Home img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
         &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #004AD7;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
     &lt;/a&gt;

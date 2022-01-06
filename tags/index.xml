@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VisionWorks 2.0 Delivery Dashboard – Tags</title>
-    <link>/tags/</link>
+    <link>https://banalna.github.io/dashboards/tags/</link>
     <description>Recent content in Tags on VisionWorks 2.0 Delivery Dashboard</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	  <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://banalna.github.io/dashboards/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
       
