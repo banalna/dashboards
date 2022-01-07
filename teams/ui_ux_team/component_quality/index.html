@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Quality metrics and failures at stages in the pipeline for individual components
 ">
 
-<meta itemprop="wordCount" content="33">
+<meta itemprop="wordCount" content="32">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Component Quality"/>
 <meta name="twitter:description" content="Quality metrics and failures at stages in the pipeline for individual components
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.54b072c4359ab8602a2406e5f6c35efaef2db3e60d476ad67444dde7e5ac0a4e.css" as="style">
-<link href="/dashboards/scss/main.min.54b072c4359ab8602a2406e5f6c35efaef2db3e60d476ad67444dde7e5ac0a4e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.b467ef29e16964f828555df767134da7ddb5da98b6f2fefd31a743a7fadb07e0.css" as="style">
+<link href="/dashboards/scss/main.min.b467ef29e16964f828555df767134da7ddb5da98b6f2fefd31a743a7fadb07e0.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -159,21 +159,24 @@
 	</header>    
 	
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let content = document.getElementsByClassName('td-content')[0];
-        for (let element of content.children) {
-            if (element.id != 'under-construction') {
-                element.setAttribute('hidden', true);
-            }
+    
+        
+    
+
+    let content = document.getElementsByClassName('td-content')[0];
+    content.className = content.className.replace('bg-primary', '');
+    for (let element of content.children) {
+        if (element.id != 'under-construction') {
+            element.setAttribute('hidden', true);
         }
-    })
+    }
 </script>
 
 <div class="mx-auto text-center" id="under-construction">
-    <img src='https://banalna.github.io/dashboards/images/under_construction.png' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
+    <img src='https://banalna.github.io/dashboards/images/under_construction.svg' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
     alt="Under construction img">
     <a href="#" onclick="history.back()">
-        <h3 class="mx-auto pt-2" style="color: #004AD7;">This dashboard is under construction</h3>
+        <h3 class="mx-auto pt-2" style="color: #3357C6;">This dashboard is under construction</h3>
     </a>
     <h3 class="mx-auto" style="color: #101840;">Please, come again later</h3>
 </div>
