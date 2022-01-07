@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.f31822f757eeb8d06cd3b28425db42eb897d775185689cf0c917cc3b5944d7a7.css" as="style">
-<link href="/dashboards/scss/main.min.f31822f757eeb8d06cd3b28425db42eb897d775185689cf0c917cc3b5944d7a7.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.c6b6391e014f91075ffbedc77b39b6c49ddab4abcbdca0d66baad6ef9372b8ef.css" as="style">
+<link href="/dashboards/scss/main.min.c6b6391e014f91075ffbedc77b39b6c49ddab4abcbdca0d66baad6ef9372b8ef.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -182,7 +182,7 @@
     let content = document.getElementsByClassName('td-content')[0];
     content.className = content.className.replace('bg-primary', ''); 
     content.className = content.className.replace('border-top', '');
-    
+
     for (let element of content.children) {
         if (element.id != 'under-construction') {
             element.setAttribute('hidden', true);
@@ -190,7 +190,7 @@
     }
 </script>
 
-<div class="mx-auto text-center" id="under-construction">
+<div class="mx-auto text-center pb-5" id="under-construction">
     <img src='https://banalna.github.io/dashboards/images/under_construction.svg' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
     alt="Under construction img">
     <a href="#" onclick="history.back()">
