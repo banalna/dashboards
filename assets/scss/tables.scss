@@ -37,8 +37,7 @@ $table-boredr: 1px solid $table-border-color !important;
             }
 
         }
-    }
-    
+    }    
 
     .page-link {
         border: none;
@@ -65,6 +64,12 @@ $table-boredr: 1px solid $table-border-color !important;
     border-top: 2px solid $table-border-color;
     padding-left: 20px;
     padding-top: 12px;
+}
+
+.table-dropdown {
+    .btn {
+        border-color: $table-border-color;
+    }
 }
 
 
