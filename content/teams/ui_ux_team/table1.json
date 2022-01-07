@@ -2,7 +2,7 @@
     {
         "Component": "Component 1",
         "Type": "Library",
-        "Priotrty": "Hight",
+        "Priority": "Hight",
         "Implement": "Stable",
         "Readme": "Yes",
         "API Docs": "No",
@@ -14,7 +14,7 @@
     {
         "Component": "Component 2",
         "Type": "Microservice",
-        "Priotrty": "Medium",
+        "Priority": "Medium",
         "Implement": "Planned",
         "Readme": "Yes",
         "API Docs": "No",
@@ -26,7 +26,7 @@
     {
         "Component": "Component 3",
         "Type": "Microfrontend",
-        "Priotrty": "Hight",
+        "Priority": "Hight",
         "Implement": "Active",
         "Readme": "Yes",
         "API Docs": "No",

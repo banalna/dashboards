@@ -20,7 +20,8 @@
             {{ partial "toc.html" . }}
             {{ partial "taxonomy_terms_clouds.html" . }}
           </aside> -->
-          <main class="col-12 pr-md-5 pl-md-5" role="main">
+          
+          <main class="col-12 {{ if eq .Page.Params.role "dashboard" }}pr-0 pl-0 pb-0{{ else }}pr-md-5 pl-md-5{{ end }}" role="main">
             {{ partial "version-banner.html" . }}
             {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
             {{ block "main" . }}{{ end }}

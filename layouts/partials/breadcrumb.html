@@ -2,8 +2,9 @@
 {{ with .Parent -}}
   {{ $isSingle = .IsHome -}}
 {{ end -}}
-<nav aria-label="breadcrumb" class="td-breadcrumbs
-    {{- if $isSingle }} td-breadcrumbs__single {{- end }}">
+<nav aria-label="breadcrumb" class='td-breadcrumbs
+    {{- if $isSingle }} td-breadcrumbs__single {{- end }}
+    {{ if eq .Page.Params.role "dashboard" }}pl-md-5 pl-3{{ end }}'>
   <ol class="breadcrumb">
     {{- template "breadcrumbnav" (dict "p1" . "p2" .) }}
   </ol>

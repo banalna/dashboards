@@ -5,7 +5,9 @@
     // });
 
     let content = document.getElementsByClassName('td-content')[0];
-    content.className = content.className.replace('bg-primary', '');
+    content.className = content.className.replace('bg-primary', ''); 
+    content.className = content.className.replace('border-top', '');
+    
     for (let element of content.children) {
         if (element.id != 'under-construction') {
             element.setAttribute('hidden', true);

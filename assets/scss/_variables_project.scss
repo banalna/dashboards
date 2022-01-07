@@ -19,9 +19,19 @@ $td-sidebar-tree-root-color: $navbar-dark-border-color;
 
 $breadcrumb-divider: '>';
 $breadcrumb-divider-font: cursive;
+$breadcrumb-bg: transparrent;
 $breadcrumb-color: $navbar-dark-hover-color;
 $breadcrumb-hover-color: $navbar-dark-color;
 $breadcrumb-active-color: $navbar-dark-border-color;
 
 $table-accent-bg: none;
 $table-bg: $primary;
+$table-button-color: #BDBEC0;
+$table-button-active-color: $navbar-dark-border-color;
+$table-cell-padding: 0.75rem;
+
+$pagination-color: $navbar-dark-brand-color;
+$pagination-hover-color: $primary;
+$pagination-hover-bg: $navbar-dark-border-color;
+$pagination-focus-outline: none;
+$pagination-focus-box-shadow: none;
