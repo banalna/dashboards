@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.b467ef29e16964f828555df767134da7ddb5da98b6f2fefd31a743a7fadb07e0.css" as="style">
-<link href="/dashboards/scss/main.min.b467ef29e16964f828555df767134da7ddb5da98b6f2fefd31a743a7fadb07e0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.13caa20d921ae44a7c6a78d6346f00e5f3a063ad6d3d0544d78872778a0b1269.css" as="style">
+<link href="/dashboards/scss/main.min.13caa20d921ae44a7c6a78d6346f00e5f3a063ad6d3d0544d78872778a0b1269.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -111,11 +111,13 @@
           
           
           
+          
           <main class="col-12 pr-md-5 pl-md-5" role="main">
             
   
 
-            <nav aria-label="breadcrumb" class="td-breadcrumbs td-breadcrumbs__single">
+            <nav aria-label="breadcrumb" class='td-breadcrumbs td-breadcrumbs__single
+    '>
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="https://banalna.github.io/dashboards/">Home</a>
@@ -151,7 +153,9 @@
     
 
     let content = document.getElementsByClassName('td-content')[0];
-    content.className = content.className.replace('bg-primary', '');
+    content.className = content.className.replace('bg-primary', ''); 
+    content.className = content.className.replace('border-top', '');
+    
     for (let element of content.children) {
         if (element.id != 'under-construction') {
             element.setAttribute('hidden', true);

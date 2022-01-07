@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Timings of delivery individual features
 ">
 
-<meta itemprop="wordCount" content="32">
+<meta itemprop="wordCount" content="36">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Feature Timming"/>
 <meta name="twitter:description" content="Timings of delivery individual features
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.b467ef29e16964f828555df767134da7ddb5da98b6f2fefd31a743a7fadb07e0.css" as="style">
-<link href="/dashboards/scss/main.min.b467ef29e16964f828555df767134da7ddb5da98b6f2fefd31a743a7fadb07e0.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.13caa20d921ae44a7c6a78d6346f00e5f3a063ad6d3d0544d78872778a0b1269.css" as="style">
+<link href="/dashboards/scss/main.min.13caa20d921ae44a7c6a78d6346f00e5f3a063ad6d3d0544d78872778a0b1269.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -118,11 +118,13 @@
           
           
           
+          
           <main class="col-12 pr-md-5 pl-md-5" role="main">
             
   
 
-            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+            <nav aria-label="breadcrumb" class='td-breadcrumbs
+    '>
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="https://banalna.github.io/dashboards/">Home</a>
@@ -139,10 +141,24 @@
   </ol>
 </nav>
             
-<div class="td-content bg-primary">
-	<h3 class="dashboard-title">Feature Timming</h3>
-	<div class="lead">Timings of delivery individual features</div>
-	<header class="article-meta">
+<div class="td-content bg-primary border-top">
+	<div class="col-12 row pl-4 pr-4">
+		<h3 class="col-md-6 dashboard-title">Feature Timming</h3>
+		
+		<div class="col-md-6 m-auto table-buttons" data-toggle="buttons">
+			<div class="btn-group btn-group-toggle float-right">
+				<label class="btn active">
+					<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 17C8 17.5523 8.44772 18 9 18h2C11.5523 18 12 17.5523 12 17V15C12 14.4477 11.5523 14 11 14H9C8.44772 14 8 14.4477 8 15v2zm0 5C8 22.5523 8.44772 23 9 23h2C11.5523 23 12 22.5523 12 22V20C12 19.4477 11.5523 19 11 19H9C8.44772 19 8 19.4477 8 20v2zM8 12C8 12.5523 8.44772 13 9 13h2C11.5523 13 12 12.5523 12 12V10C12 9.44772 11.5523 9 11 9H9c-.55228.0-1 .44772-1 1v2zm5 5C13 17.5523 13.4477 18 14 18H24C24.5523 18 25 17.5523 25 17V15C25 14.4477 24.5523 14 24 14H14C13.4477 14 13 14.4477 13 15v2zm0 5C13 22.5523 13.4477 23 14 23H24C24.5523 23 25 22.5523 25 22V20C25 19.4477 24.5523 19 24 19H14C13.4477 19 13 19.4477 13 20v2zM14 9C13.4477 9 13 9.44772 13 10v2C13 12.5523 13.4477 13 14 13H24C24.5523 13 25 12.5523 25 12V10C25 9.44772 24.5523 9 24 9H14z" fill="#3357c6"/></svg>
+					<input type="radio" onclick="" id="table-btn" autocomplete="off" checked>
+				</label>
+				<label class="btn">
+					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="16" width="4" height="7" rx="1" fill="#3357c6"/><rect x="14" y="9" width="4" height="14" rx="1" fill="#3357c6"/><rect x="8" y="12" width="4" height="11" rx="1" fill="#3357c6"/></svg>
+					<input type="radio" onclick="" id="chart-btn" autocomplete="off">
+				</label>
+			</div>
+		</div>
+	</div>
+	<header class="article-meta m-0">
 		
 		
 			
@@ -164,7 +180,9 @@
     
 
     let content = document.getElementsByClassName('td-content')[0];
-    content.className = content.className.replace('bg-primary', '');
+    content.className = content.className.replace('bg-primary', ''); 
+    content.className = content.className.replace('border-top', '');
+    
     for (let element of content.children) {
         if (element.id != 'under-construction') {
             element.setAttribute('hidden', true);
