@@ -2,24 +2,34 @@
 // Main navbar overrides
 //
 
-.breadcrumb-item {
-    a {
-        color: $breadcrumb-color;
-        font-weight: $font-weight-normal;
+.td-breadcrumbs {
 
-        @include hover() {
-            color: $breadcrumb-hover-color;
-        }
-    }
+    .breadcrumb {
+        padding: 0rem;
+        margin-bottom: 1.3rem;
+        font-size: 14px;
+        line-height: 20px;
 
-    &.active > a {
-        color: $breadcrumb-active-color;
-    }
-    
+        .breadcrumb-item {
+            a {
+                color: $breadcrumb-color;
+                font-weight: 500;
 
-    + .breadcrumb-item {
-        &::before {
-            font-family: $breadcrumb-divider-font;
+                @include hover() {
+                    color: $breadcrumb-hover-color;
+                }
+            }
+
+            &.active > a {
+                color: $breadcrumb-active-color;
+            }
+        
+
+            + .breadcrumb-item {
+                &::before {
+                    font-family: $breadcrumb-divider-font;
+                }
+            }
         }
     }
 }

@@ -1,6 +1,10 @@
 // Buttons
 
 #get-started-btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
     box-shadow: none;
     background-color: $navbar-dark-border-color;
     color: $primary;
@@ -23,9 +27,13 @@
 }
 
 #admin-btn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
     color: $navbar-dark-border-color;
     border-bottom: 1px solid $navbar-dark-border-color;
     padding-left: .15rem;
     padding-right: .15rem;
-    font-size: medium;
+    // font-size: medium;
 }

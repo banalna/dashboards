@@ -161,7 +161,7 @@ description: >
     </tbody>
   </table>
 
-<div class="row">
+<div class="table-pagination row">
   
   <nav class="table-buttons col-sm-12 col-md-8" aria-label="Table pagination">
     <ul class="pagination">
@@ -173,7 +173,7 @@ description: >
         <a class="page-link" href="#">2</a>
       </li>
       <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">...</a></li>
+      <li class="page-item"><a class="page-link page-divider" href="#">...</a></li>
       <li class="page-item"><a class="page-link" href="#">10</a></li>
       <li class="page-item">
         <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
@@ -181,7 +181,7 @@ description: >
     </ul>
   </nav>
 
-  <div class="row col-sm-12 col-md-4 pl-sm-5">
+  <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
     <p class="pt-2 pr-3">Rows per page</p>
     <div class="table-dropdown dropdown float-right">
     <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"   aria-haspopup="true" aria-expanded="false">

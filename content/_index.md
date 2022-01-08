@@ -12,7 +12,7 @@ linkTitle: Home
 	</h2>
 	<img src="images/home.svg" class="img-fluid mx-auto pb-3" style="max-width:50%;" alt="Home img">
 	<div>
-		<a class="btn btn-lg mb-4" id="get-started-btn" href="{{< relref "/teams" >}}">
+		<a class="btn btn-lg mb-3" id="get-started-btn" href="{{< relref "/teams" >}}">
 			GET STARTED
 		</a>
 	</div>
