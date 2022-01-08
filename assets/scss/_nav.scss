@@ -83,11 +83,21 @@
 
         .navbar-logo {
             svg {
+                height: 30px;
+                width: 30px;
+                margin-bottom: 3px;
                 vertical-align: bottom;
+
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: 2px;
+                    height: 26px;
+                    width: 26px;
+                }
             }
         }
 
         .brand-title {
+            // font-size: 1.3rem;
             @include media-breakpoint-down(sm) {
                 font-size: 0.95rem;
             }
