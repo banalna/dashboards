@@ -85,6 +85,9 @@ $table-boredr: 1px solid $table-border-color !important;
     thead {
 
         th {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            
             border: none !important;
             vertical-align: middle !important;
             text-align: center;

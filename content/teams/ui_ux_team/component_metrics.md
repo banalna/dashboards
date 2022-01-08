@@ -8,7 +8,7 @@ description: >
 ---
 
 <div class="table-responsive pr-3 pl-3">
-<hr class="m-0 mb-3">
+<hr class="m-0 mb-2">
 <table class="generated-table table table-hover">
     <thead>
       <tr>
@@ -17,11 +17,11 @@ description: >
         <th scope="col" rowspan="2">Priority</th>
         <th colspan="3">
           Status
-          <hr class="mb-0">
+          <hr class="mb-2 mt-2">
         </th>
         <th colspan="4">
           Metrics
-          <hr class="mb-0">
+          <hr class="mb-2 mt-2">
         </th>
       </tr>
       <tr>
