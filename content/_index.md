@@ -10,7 +10,7 @@ linkTitle: Home
 		Ship quality software <br>
 		<span style="color: #3357C6;">on time</span> and <span style="color: #3357C6;"> on budget</span> 
 	</h2>
-	<img src="images/home.svg" class="img-fluid mx-auto pb-3" style="max-width:50%;" alt="Home img">
+	<img src="images/home.svg" class="img-fluid mx-auto pb-3" style="max-width:55%;" alt="Home img">
 	<div>
 		<a class="btn btn-lg mb-3" id="get-started-btn" href="{{< relref "/teams" >}}">
 			GET STARTED
