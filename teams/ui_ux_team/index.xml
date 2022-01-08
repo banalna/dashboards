@@ -62,7 +62,7 @@
         
         
         &lt;div class=&#34;table-responsive pr-3 pl-3&#34;&gt;
-&lt;hr class=&#34;m-0 mb-3&#34;&gt;
+&lt;hr class=&#34;m-0 mb-2&#34;&gt;
 &lt;table class=&#34;generated-table table table-hover&#34;&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -71,11 +71,11 @@
         &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Priority&lt;/th&gt;
         &lt;th colspan=&#34;3&#34;&gt;
           Status
-          &lt;hr class=&#34;mb-0&#34;&gt;
+          &lt;hr class=&#34;mb-2 mt-2&#34;&gt;
         &lt;/th&gt;
         &lt;th colspan=&#34;4&#34;&gt;
           Metrics
-          &lt;hr class=&#34;mb-0&#34;&gt;
+          &lt;hr class=&#34;mb-2 mt-2&#34;&gt;
         &lt;/th&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
