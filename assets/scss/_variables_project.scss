@@ -2,13 +2,18 @@
 Add styles or override variables from the theme here.
 */
 
+// Font
 $google_font_name: "Quicksand" !default;
 $google_font_family: "Quicksand:300,300i,400,400i,500,600,700,700i,800" !default;
 $web-font-path: "https://fonts.googleapis.com/css?family=#{$google_font_family}&display=swap";
 
-
+// Main
 $body-bg: #F6F7F9;
 $primary: #FFF;
+
+// Navbar
+$navbar-padding-y: 0rem;
+// $navbar-padding-x: 0rem;
 
 $navbar-brand-font-size: 1.5rem;
 
@@ -19,17 +24,24 @@ $navbar-dark-active-color: $navbar-dark-color; // rgba($navbar-dark-color, 0.5) 
 $navbar-dark-hover-color: rgba($navbar-dark-color, 0.75) !default;
 $navbar-dark-border-color: #3357C6;
 
-$dashboard-title-color: $navbar-dark-border-color;
 
+
+// Sidebar
 $td-sidebar-tree-root-color: $navbar-dark-border-color;
 // $td-sidebar-bg-color: $primary;
 
+$td-block-space-bottom-base: 0rem;
+
+// Breadcrumb
 $breadcrumb-divider: '>';
 $breadcrumb-divider-font: cursive;
 $breadcrumb-bg: transparrent;
 $breadcrumb-color: $navbar-dark-color;
 $breadcrumb-hover-color: rgba($navbar-dark-color, 0.75) !default;
 $breadcrumb-active-color: $navbar-dark-border-color;
+
+// Dashboards
+$dashboard-title-color: $navbar-dark-border-color;
 
 $table-accent-bg: none;
 $table-bg: $primary;
