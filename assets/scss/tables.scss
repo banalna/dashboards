@@ -40,6 +40,19 @@ $table-boredr: 1px solid $table-border-color !important;
     .page-item {
         padding-left: 3px;
         padding-right: 3px;
+        
+        a {
+            margin-left: 0px;
+            width: 24px !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            height: 24px !important;
+            text-align: center;
+            padding: 0px;
+            padding-top: 3px;
+            // margin: auto;
+            // vertical-align: middle;
+        }
 
         &.disabled {
             i { 

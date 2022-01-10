@@ -163,7 +163,7 @@ description: >
 
 <div class="table-pagination row">
   
-  <nav class="table-buttons col-sm-12 col-md-8" aria-label="Table pagination">
+  <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
     <ul class="pagination">
       <li class="page-item">
         <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-chevron-left"></i></a>
@@ -182,7 +182,7 @@ description: >
   </nav>
 
   <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
-    <p class="pt-2 pr-3">Rows per page</p>
+    <p class="pt-2 pb-2 pr-3">Rows per page</p>
     <div class="table-dropdown dropdown float-right">
     <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"   aria-haspopup="true" aria-expanded="false">
       10
@@ -194,7 +194,7 @@ description: >
       <a class="dropdown-item" href="#">100</a>
     </div>
   </div>
-  <p class="pl-4 pt-2">Shown <span style="color: #3357C6;">1-10</span></p>
+  <p class="pl-4 pt-2 pb-2">Shown <span style="color: #3357C6;">1-10</span></p>
   </div>
 </div>
 </div>
