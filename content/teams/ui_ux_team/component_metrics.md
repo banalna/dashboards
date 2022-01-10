@@ -15,23 +15,23 @@ description: >
         <th scope="col" rowspan="2">Component</th>
         <th scope="col" rowspan="2">Type</th>
         <th scope="col" rowspan="2">Priority</th>
-        <th colspan="3">
+        <th class="text-center" colspan="3">
           Status
           <hr class="mb-2 mt-2">
         </th>
-        <th colspan="4">
+        <th class="text-center" colspan="4">
           Metrics
           <hr class="mb-2 mt-2">
         </th>
       </tr>
       <tr>
-        <th scope="col">Implement</th>
-        <th scope="col">Readme</th>
-        <th scope="col">API Docs</th>
-        <th scope="col">Source (KLOC)</th>
-        <th scope="col">Test (KLOC)</th>
-        <th scope="col">Compliance</th>
-        <th scope="col">Covarage</th>
+        <th class="text-center" scope="col">Implement</th>
+        <th class="text-center" scope="col">Readme</th>
+        <th class="text-center" scope="col">API Docs</th>
+        <th class="text-center" scope="col">Source (KLOC)</th>
+        <th class="text-center" scope="col">Test (KLOC)</th>
+        <th class="text-center" scope="col">Compliance</th>
+        <th class="text-center" scope="col">Covarage (%)</th>
       </tr>
     </thead>
     <tbody>
@@ -41,8 +41,8 @@ description: >
       <tr>
         <td>Component 1</td>
         <td>Library</td>
-        <td class="hight-icon"></td>
-        <td>Stable</td>
+        <td class="hight-icon text-left"></td>
+        <td class="text-center">Stable</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -53,8 +53,8 @@ description: >
       <tr>
         <td>Component 2</td>
         <td>Microservice</td>
-        <td class="medium-icon"></td>
-        <td>Planned</td>
+        <td class="medium-icon text-left"></td>
+        <td class="text-center">Planned</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -65,8 +65,8 @@ description: >
       <tr>
         <td>Component 3</td>
         <td>Microfrontend</td>
-        <td class="hight-icon"></td>
-        <td>Stable</td>
+        <td class="hight-icon text-left"></td>
+        <td class="text-center">Stable</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -77,8 +77,8 @@ description: >
       <tr>
         <td>Component 4</td>
         <td>Library</td>
-        <td class="low-icon"></td>
-        <td>Active</td>
+        <td class="low-icon text-left"></td>
+        <td class="text-center">Active</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -89,8 +89,8 @@ description: >
       <tr>
         <td>Component 5</td>
         <td>Microservice</td>
-        <td class="hight-icon"></td>
-        <td>Planned</td>
+        <td class="hight-icon text-left"></td>
+        <td class="text-center">Planned</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -101,8 +101,8 @@ description: >
       <tr>
         <td>Component 6</td>
         <td>Microfrontend</td>
-        <td class="medium-icon"></td>
-        <td>Stable</td>
+        <td class="medium-icon text-left"></td>
+        <td class="text-center">Stable</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -113,8 +113,8 @@ description: >
       <tr>
         <td>Component 7</td>
         <td>Library</td>
-        <td class="low-icon"></td>
-        <td>Active</td>
+        <td class="low-icon text-left"></td>
+        <td class="text-center">Active</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -125,8 +125,8 @@ description: >
       <tr>
         <td>Component 8</td>
         <td>Microservice</td>
-        <td class="hight-icon"></td>
-        <td>Planned</td>
+        <td class="hight-icon text-left"></td>
+        <td class="text-center">Planned</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -137,8 +137,8 @@ description: >
       <tr>
         <td>Component 9</td>
         <td>Microfrontend</td>
-        <td class="medium-icon"></td>
-        <td>Stable</td>
+        <td class="medium-icon text-left"></td>
+        <td class="text-center">Stable</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>
@@ -149,8 +149,8 @@ description: >
       <tr>
         <td>Component 10</td>
         <td>Microfrontend</td>
-        <td class="medium-icon"></td>
-        <td>Stable</td>
+        <td class="medium-icon text-left"></td>
+        <td class="text-center">Stable</td>
         <td class="yes-icon"></td>
         <td class="no-icon"></td>
         <td class="yes-icon">12</td>

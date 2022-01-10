@@ -73,9 +73,9 @@
 
         .navbar-logo {
             svg {
-                height: 30px;
-                width: 30px;
-                margin-bottom: 3px;
+                height: 32px;
+                width: 32px;
+                margin-bottom: 2px;
                 vertical-align: bottom;
 
                 @include media-breakpoint-down(sm) {

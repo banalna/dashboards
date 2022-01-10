@@ -10,9 +10,22 @@ $table-boredr: 1px solid $table-border-color !important;
 
 .table-pagination {
     p {
-        font-weight: 500;
+        font-weight: 600;
         font-size: 14px;
         line-height: 24px;
+    }
+
+    .table-dropdown {
+        .dropdown-menu {
+            min-width: 1.5rem;
+        }
+
+        .btn, .dropdown-item {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
+            border-color: $table-button-color;
+        }
     }
 }
 
@@ -48,10 +61,12 @@ $table-boredr: 1px solid $table-border-color !important;
     }    
 
     .page-link {
+        font-weight: 600;
+        font-size: 14px;
+        // line-height: 24px;
+
         border: none;
         border-radius: 5px;
-        font-size: 14px;
-        font-weight: 500;
 
         .page-divider {
             padding-left: 15px;
@@ -82,12 +97,6 @@ $table-boredr: 1px solid $table-border-color !important;
     // padding-top: 12px;
 }
 
-.table-dropdown {
-    .btn {
-        border-color: $table-border-color;
-    }
-}
-
 
 .generated-table {
     white-space: nowrap;
@@ -101,13 +110,16 @@ $table-boredr: 1px solid $table-border-color !important;
     thead {
 
         th {
-            font-weight: 800;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+
             padding-top: 0px;
             padding-bottom: 0px;
             
             border: none !important;
             vertical-align: middle !important;
-            text-align: center;
+            // text-align: center;
 
             &:not(:last-of-type) {
                 border-right: $table-boredr;
@@ -123,7 +135,9 @@ $table-boredr: 1px solid $table-border-color !important;
         
         td {
             border: none !important;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
         }
 
         tr {
