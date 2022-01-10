@@ -40,7 +40,7 @@
     }
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-5&#34; id=&#34;under-construction&#34;&gt;
+&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
     alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
@@ -69,23 +69,23 @@
         &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Component&lt;/th&gt;
         &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Type&lt;/th&gt;
         &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Priority&lt;/th&gt;
-        &lt;th colspan=&#34;3&#34;&gt;
+        &lt;th class=&#34;text-center&#34; colspan=&#34;3&#34;&gt;
           Status
           &lt;hr class=&#34;mb-2 mt-2&#34;&gt;
         &lt;/th&gt;
-        &lt;th colspan=&#34;4&#34;&gt;
+        &lt;th class=&#34;text-center&#34; colspan=&#34;4&#34;&gt;
           Metrics
           &lt;hr class=&#34;mb-2 mt-2&#34;&gt;
         &lt;/th&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-        &lt;th scope=&#34;col&#34;&gt;Implement&lt;/th&gt;
-        &lt;th scope=&#34;col&#34;&gt;Readme&lt;/th&gt;
-        &lt;th scope=&#34;col&#34;&gt;API Docs&lt;/th&gt;
-        &lt;th scope=&#34;col&#34;&gt;Source (KLOC)&lt;/th&gt;
-        &lt;th scope=&#34;col&#34;&gt;Test (KLOC)&lt;/th&gt;
-        &lt;th scope=&#34;col&#34;&gt;Compliance&lt;/th&gt;
-        &lt;th scope=&#34;col&#34;&gt;Covarage&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Implement&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Readme&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;API Docs&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Source (KLOC)&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Test (KLOC)&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Compliance&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Covarage&lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
@@ -95,8 +95,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 1&lt;/td&gt;
         &lt;td&gt;Library&lt;/td&gt;
-        &lt;td class=&#34;hight-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Stable&lt;/td&gt;
+        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -107,8 +107,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 2&lt;/td&gt;
         &lt;td&gt;Microservice&lt;/td&gt;
-        &lt;td class=&#34;medium-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Planned&lt;/td&gt;
+        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Planned&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -119,8 +119,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 3&lt;/td&gt;
         &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;hight-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Stable&lt;/td&gt;
+        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -131,8 +131,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 4&lt;/td&gt;
         &lt;td&gt;Library&lt;/td&gt;
-        &lt;td class=&#34;low-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Active&lt;/td&gt;
+        &lt;td class=&#34;low-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Active&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -143,8 +143,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 5&lt;/td&gt;
         &lt;td&gt;Microservice&lt;/td&gt;
-        &lt;td class=&#34;hight-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Planned&lt;/td&gt;
+        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Planned&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -155,8 +155,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 6&lt;/td&gt;
         &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;medium-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Stable&lt;/td&gt;
+        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -167,8 +167,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 7&lt;/td&gt;
         &lt;td&gt;Library&lt;/td&gt;
-        &lt;td class=&#34;low-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Active&lt;/td&gt;
+        &lt;td class=&#34;low-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Active&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -179,8 +179,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 8&lt;/td&gt;
         &lt;td&gt;Microservice&lt;/td&gt;
-        &lt;td class=&#34;hight-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Planned&lt;/td&gt;
+        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Planned&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -191,8 +191,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 9&lt;/td&gt;
         &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;medium-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Stable&lt;/td&gt;
+        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -203,8 +203,8 @@
       &lt;tr&gt;
         &lt;td&gt;Component 10&lt;/td&gt;
         &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;medium-icon&#34;&gt;&lt;/td&gt;
-        &lt;td&gt;Stable&lt;/td&gt;
+        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
+        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
         &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
@@ -278,7 +278,7 @@
     }
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-5&#34; id=&#34;under-construction&#34;&gt;
+&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
     alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
@@ -316,7 +316,7 @@
     }
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-5&#34; id=&#34;under-construction&#34;&gt;
+&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
     alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
@@ -354,7 +354,7 @@
     }
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-5&#34; id=&#34;under-construction&#34;&gt;
+&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
     alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
@@ -392,7 +392,7 @@
     }
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-5&#34; id=&#34;under-construction&#34;&gt;
+&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
     &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
     alt=&#34;Under construction img&#34;&gt;
     &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
