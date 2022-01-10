@@ -3,10 +3,10 @@
     .entry {
         .card {
             border-radius: 0.3rem;
-            box-shadow: 1px 1px 3px rgba(211, 211, 211, 0.8);
+            box-shadow: 0px 1px 4px 0px #00000008;
 
             @include hover-focus() {
-                color: $navbar-dark-hover-color;
+                color: darken($navbar-dark-hover-color, 30%);
                 border: 1px solid $navbar-dark-border-color;
                 box-shadow: 2px 2px 5px rgba(211, 211, 211, 0.7);
             }

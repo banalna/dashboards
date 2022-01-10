@@ -2,8 +2,8 @@
 Add styles or override variables from the theme here.
 */
 
-$google_font_name: "Open Sans" !default;
-$google_font_family: "Open+Sans:300,300i,400,400i,500,600,700,700i,800" !default;
+$google_font_name: "Quicksand" !default;
+$google_font_family: "Quicksand:300,300i,400,400i,500,600,700,700i,800" !default;
 $web-font-path: "https://fonts.googleapis.com/css?family=#{$google_font_family}&display=swap";
 
 
@@ -14,8 +14,8 @@ $navbar-brand-font-size: 1.5rem;
 
 $navbar-dark-brand-color: #101840;
 
-$navbar-dark-color: $navbar-dark-brand-color;
-$navbar-dark-active-color: rgba($navbar-dark-color, 0.5) !default;
+$navbar-dark-color: #666C6F;
+$navbar-dark-active-color: $navbar-dark-color; // rgba($navbar-dark-color, 0.5) !default;
 $navbar-dark-hover-color: rgba($navbar-dark-color, 0.75) !default;
 $navbar-dark-border-color: #3357C6;
 
@@ -27,8 +27,8 @@ $td-sidebar-tree-root-color: $navbar-dark-border-color;
 $breadcrumb-divider: '>';
 $breadcrumb-divider-font: cursive;
 $breadcrumb-bg: transparrent;
-$breadcrumb-color: $navbar-dark-hover-color;
-$breadcrumb-hover-color: $navbar-dark-color;
+$breadcrumb-color: $navbar-dark-color;
+$breadcrumb-hover-color: rgba($navbar-dark-color, 0.75) !default;
 $breadcrumb-active-color: $navbar-dark-border-color;
 
 $table-accent-bg: none;

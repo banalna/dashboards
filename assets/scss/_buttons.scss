@@ -1,17 +1,18 @@
 // Buttons
 
 #get-started-btn {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 14px;
+    letter-spacing: 0.5px;
     // line-height: 18px;
 
     box-shadow: none;
     background-color: $navbar-dark-border-color;
     color: $primary;
-    border-radius: 0.25rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-
+    border-radius: 4px;
+    padding: 8px 22px;
+    margin: 10px 0px;
+    
     &:hover {
         color: #fff;
         background-color: darken($color: $navbar-dark-border-color, $amount: 7%);
@@ -27,13 +28,16 @@
 }
 
 #admin-btn {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
-    line-height: 18px;
-
+    line-height: 20px;
+    text-transform: uppercase;
+    text-decoration-line: underline;
     color: $navbar-dark-border-color;
-    border-bottom: 1px solid $navbar-dark-border-color;
-    padding-left: .15rem;
-    padding-right: .15rem;
+    letter-spacing: 0.5px;
+    
+    // padding-left: .15rem;
+    // padding-right: .15rem;
+    // border-bottom: 1px solid $navbar-dark-border-color;
     // font-size: medium;
 }
