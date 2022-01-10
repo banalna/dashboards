@@ -62,7 +62,7 @@
         
         
         &lt;div class=&#34;table-responsive pr-3 pl-3&#34;&gt;
-&lt;hr class=&#34;m-0 mb-2&#34;&gt;
+&lt;hr class=&#34;m-0 mb-2&#34; style=&#34;background-color:#C4C4C4;&#34;&gt;
 &lt;table class=&#34;generated-table table table-hover&#34;&gt;
     &lt;thead&gt;
       &lt;tr&gt;
