@@ -30,6 +30,12 @@ $table-boredr: 1px solid $table-border-color !important;
 }
 
 .table-buttons {
+    .btn-group-toggle {
+        label.btn {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
 
     .page-item {
         padding-left: 3px;
@@ -120,6 +126,10 @@ $table-boredr: 1px solid $table-border-color !important;
             border: none !important;
             vertical-align: middle !important;
             // text-align: center;
+
+            hr {
+                background-color: $table-border-color;
+            }
 
             &:not(:last-of-type) {
                 border-right: $table-boredr;

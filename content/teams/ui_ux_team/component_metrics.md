@@ -8,7 +8,7 @@ description: >
 ---
 
 <div class="table-responsive pr-3 pl-3">
-<hr class="m-0 mb-2">
+<hr class="m-0 mb-2" style="background-color:#C4C4C4;">
 <table class="generated-table table table-hover">
     <thead>
       <tr>
