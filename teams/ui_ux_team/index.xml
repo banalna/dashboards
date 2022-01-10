@@ -85,7 +85,7 @@
         &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Source (KLOC)&lt;/th&gt;
         &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Test (KLOC)&lt;/th&gt;
         &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Compliance&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Covarage&lt;/th&gt;
+        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Covarage (%)&lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
