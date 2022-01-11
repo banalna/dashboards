@@ -2,8 +2,9 @@
 type: docs
 title: Pipeline Metrics
 linkTitle: Pipeline Metrics Dashboard
+role: dashboard
 description: >
   Stability of environments and failure response timings
 ---
 
-{{< under_construction >}}
+{{< json_table "../table1.json" >}}

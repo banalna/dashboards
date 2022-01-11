@@ -1,18 +1,49 @@
-<div class="btn-group btn-group-toggle float-right mb-3" data-toggle="buttons">
-    <label class="btn btn-primary active">
-        <input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked> Table
-    </label>
-    <label class="btn btn-secondary">
-        <input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off"> Chart
-    </label>
-</div>
+<!-- Connect charts lib and config -->
+<script src='{{ "/js/echarts.min.js" | relURL }}'></script>
+<script src='{{ "/js/echarts.config.js" | relURL }}'></script>
+<script src='{{ "/js/chart-generator.js" | relURL }}'></script>
 
-<script>
-    function toggleView(e) {
-        $('#generated-table').collapse('toggle')
-        $('#generated-charts').collapse('toggle')
-    }
-</script>
+
+
+<div class="row collapse justify-content-center pr-4 pl-4 ml-0 mr-0 pb-2" id="generated-charts"></div>
+<div class="table-responsive pr-3 pl-3">
+    <div class="table-pagination row">
+        <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
+            <ul class="pagination" id="page-nav">
+                <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-chevron-left"></i></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item" aria-current="page">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link page-divider" href="#">...</a></li>
+                <li class="page-item"><a class="page-link" href="#">10</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    
+        <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
+            <p class="pt-2 pb-2 pr-3">Rows per page</p>
+            <div class="table-dropdown dropdown float-right">
+                <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    10
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">10</a>
+                    <a class="dropdown-item" href="#">25</a>
+                    <a class="dropdown-item" href="#">50</a>
+                    <a class="dropdown-item" href="#">100</a>
+                </div>
+            </div>
+            <p class="pl-4 pt-2 pb-2">Shown <span style="color: #3357C6;">1-10</span></p>
+        </div>
+    </div>
+</div>
 
 
 {{ $path := .Get 0 }}
@@ -28,50 +59,207 @@
 <!-- Loading and creating JSON tables -->
 <script>
 
+    
+    function findNestedObj(entireObj, keyToFind) {
+        let foundObj;
+        JSON.stringify(entireObj, (_, nestedValue) => {
+            if (nestedValue) {
+                foundObj = nestedValue;
+            }
+            return nestedValue;
+        });
+        return foundObj;
+    };
+
     function createTable(items) {
-        let columns = Object.keys(items[0]);
-        let table = composeTable(columns);
+        let columns = [];
+        // get all column names
+        for (let key of Object.keys(items[0])) {
+            if (Array.isArray(items[0][key])) {
+                for (let subItem of items[0][key]) {
+                    columns = [...columns, ...Object.keys(subItem)];
+                }
+            } else {
+                columns.push(key);
+            }
+        }
+
+        let table = composeTable(items[0]);
+        let tr = table.tBodies[0].insertRow(0);
+        tr.insertCell(0).setAttribute('class', 'm-0');
 
         for (let item of items) {
             let tr = table.tBodies[0].insertRow(-1);
             for (let column of columns) {
                 let td = tr.insertCell(-1);
-                td.innerText = item[column];
+
+                if (item[column] == undefined) {
+                    for (let key of Object.keys(item)) {
+                        
+                        if (Array.isArray(item[key])) {
+                            var obj = item[key].filter((o) => o[column] != undefined)
+                            if (obj.length > 0) {
+                                td.innerText = obj[0][column];
+                                td.setAttribute('class', 'text-center')
+                                break;
+                            }
+                        }
+                    }
+                    
+                } else {
+                    td.innerText = item[column];
+                }
+
+                // set icon
+                switch (td.cellIndex) {
+                    case 'yes':
+                        td.setAttribute('class', 'yes-icon');
+                        td.textContent = '';
+                        break;
+                    case 'no':
+                        td.setAttribute('class', 'no-icon');
+                        td.textContent = '';
+                        break;
+                    case 2:
+                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon text-left');
+                        td.textContent = '';
+                        break;
+                    case 4:
+                    case 5:
+                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon');
+                        td.textContent = '';
+                        break;
+                    case 6:
+                        if (parseInt(td.innerText.toLowerCase()) >= 30) {
+                            td.setAttribute('class', 'yes-icon');
+                        } else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                    case 7:
+                        if (parseInt(td.innerText.toLowerCase()) >= 25) {
+                            td.setAttribute('class', 'yes-icon');
+                        } else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                    case 8:
+                        if (parseInt(td.innerText.toLowerCase()) >= 50) {
+                            td.setAttribute('class', 'yes-icon');
+                        } else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                    case 9:
+                        if (parseInt(td.innerText.toLowerCase()) >= 30 && parseInt(td.innerText.toLowerCase()) <= 80) {
+                            td.setAttribute('class', 'warning-icon');
+                        } else if(parseInt(td.innerText.toLowerCase()) >= 90) {
+                            td.setAttribute('class', 'yes-icon');
+                        }
+                        else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                }
             }
         }
 
-        document.getElementsByClassName('td-content')[0].appendChild(table);
+        let pagination = document.getElementsByClassName('table-pagination')[0];
+        let container = pagination.parentElement;
+        container.insertBefore(table, pagination);
     }
 
-    function composeTable(columns) {
+    function composeTable(item) {
+        let tHead = [];
+        let rowspan = 1;
+
+        // detect rowscount
+        for (let key of Object.keys(item)) {
+            if (Array.isArray(item[key])) {
+                rowspan = 2;
+                break;
+            }
+        }
+
+         
+        if (rowspan > 1) {
+            let subColumns = [];
+            let columns = [];
+
+            for (let key of Object.keys(item)) {
+                let column = {};
+                column.rowspan = rowspan;
+                column.name = key;
+
+                if (Array.isArray(item[key])) {
+                    column.colspan = item[key].length;
+                    
+  
+                    for (let subItem of item[key]) {
+                        subColumns.push({ name: Object.keys(subItem)[0] });
+                    }
+                }
+                columns.push(column);
+            }
+            
+            tHead.push(columns);
+            tHead.push(subColumns);
+        } else {
+            // todo: for 1 level table
+            tHead = Object.keys(item);
+        }
+
+        
         let table = document.createElement('table');
         table.id = 'generated-table';
-        table.setAttribute('class', 'table table-hover collapse show');
-        table.setAttribute('width', '100%');
+        table.setAttribute('class', 'generated-table table table-hover collapse show'); //show
         table.createTHead();
         table.createTBody();
 
-        let tr = table.tHead.insertRow(0);
+        for (let level = 0; level < tHead.length; level++) {
+            let tr = table.tHead.insertRow(-1);
 
-        for (let column of columns) {
-            let th = document.createElement('th');
-            th.setAttribute('scope', 'col');
-            th.innerText = column;
+            for (let column of tHead[level]) {
+                let th = document.createElement('th');
+                
+                if (level > 0) {
+                    th.setAttribute('scope', 'col');
+                    th.setAttribute('class', 'text-center');
+                } else {
+                    // first level prepare
+                    th.setAttribute('scope', 'col');
 
-            tr.appendChild(th);
+                    if (column.colspan != undefined) {
+                        th.setAttribute('colspan', column.colspan);
+                        th.setAttribute('class', 'text-center');
+                    } else {
+                        th.setAttribute('rowspan', column.rowspan);
+                    }
+                }
+
+                if (column.colspan != undefined) {
+                    let hr = document.createElement('hr');
+                    hr.setAttribute('class', 'mb-2 mt-2');
+                    th.append(document.createTextNode(column.name), hr);
+                } else {
+                    th.append(document.createTextNode(column.name));
+                }
+                
+                tr.appendChild(th);
+            }
         }
+
         return table;
     }
 
-    createTable(JSON.parse({{ $JSON }}));
+    let jsonData = JSON.parse({{ $JSON }});
+    createTable(jsonData);
 
 </script>
 
-
 <!-- Generating charts -->
-<div class="row collapse" id="generated-charts"></div>
-
 <script>
+
     function getRandomColors(count) {
         colors = [];
         let letters = '0123456789ABCDEF';
@@ -97,58 +285,100 @@
         return columns;
     }
 
-    function generateCanvas(labels, values, parameter) {
-        let canvas = document.createElement('canvas');
-        canvas.id = 'generated-chart-' + parameter;
-        canvas.setAttribute('width', "400");
-        canvas.setAttribute('height', "250");
-        canvas.setAttribute('class', "mt-3");
+    function toFlatData(jsonData) {
+        let flatObjects = [];
 
-        const ctx = canvas.getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: parameter,
-                    data: values,
-                    backgroundColor: getRandomColors(values.length),
+        for (let item of jsonData) {
+            let obj = {};
 
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                // responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
+            for (let key of Object.keys(item)) {
+                if (item[key] instanceof Object) {
+                    for (let subItem of item[key]) {
+                        for(let subKey of Object.keys(subItem)) {
+                            obj[subKey] = subItem[subKey];
+                        }
                     }
-                }
-            }
-        });
-
-        return canvas;
+                } else {
+                    obj[key] = item[key]; 
+                } 
+            } 
+            flatObjects.push(obj);
+        }
+        return flatObjects;
     }
 
+    function composeChartsData(jsonData) {
+        jsonData = toFlatData(jsonData);
 
-    let data = JSON.parse({{ $JSON }});
-    let columns = getNumericData(data);
+        let columns = getNumericData(jsonData);
 
-    for (let column of columns) {
-        let parameter = null;
-        let labels = [];
-        let values = [];
+        let chartData = {
+            legends: [],
+            xAxisName: [],
+            series: []
+        };
 
-        for (let item of data) {
-            labels.push(item['Component']);
-            values.push(parseFloat(item[column]));
+        for (let item of jsonData) {
+            chartData.xAxisName.push(item['Component']);
+
+            let series = [];
+            let legend = [];
+
+            for (let column of columns) {
+                series.push([item[column]]);
+                legend.push(column);
+            }
+
+            chartData.series.push(series);
+            chartData.legends.push(legend);
+
         }
 
-        let canvas = generateCanvas(labels, values, column);
-
-        document.getElementById('generated-charts').appendChild(canvas);
+        return chartData;
     }
-    
-    
-    
+
+
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById('generated-charts');
+
+    for (let i=0; i < chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            'Metrics for ' + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+
 </script>
+
+
+<!-- Table pagination -->
+
+<!-- <script>
+    $(document).ready(function () {
+        $('#generated-table').after('<div id="nav"></div>');
+        var rowsShown = 4;
+        var rowsTotal = $('#generated-table tbody tr').length;
+        var numPages = rowsTotal / rowsShown;
+        for (i = 0; i < numPages; i++) {
+            var pageNum = i + 1;
+            $('#page-nav').append('<li class="page-item"><a class="page-link" href="#">' + pageNum + '</a></li>');
+        }
+        $('#generated-table tbody tr').hide();
+        $('#generated-table tbody tr').slice(0, rowsShown).show();
+        $('#nav a:first').addClass('active');
+        $('#nav a').bind('click', function () {
+
+            $('#nav a').removeClass('active');
+            $(this).addClass('active');
+            var currPage = $(this).attr('rel');
+            var startItem = currPage * rowsShown;
+            var endItem = startItem + rowsShown;
+            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                css('display', 'table-row').animate({ opacity: 1 }, 300);
+        });
+    });
+</script> -->

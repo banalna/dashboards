@@ -1,0 +1,146 @@
+---
+type: docs
+title: Feature Timming
+linkTitle: Feature Timming Dashboard
+role: dashboard
+description: >
+  Timings of delivery individual features
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ECharts</title>
+  <!-- Include the ECharts file you just downloaded -->
+  <script src="../echarts.js"></script>
+  <script src="../echarts.config.js"></script>
+</head>
+
+<body>
+  <!-- Prepare a DOM with a defined width and height for ECharts -->
+  
+
+  <div class="row pb-2" id="generated-charts">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 pt-3 pr-2 pl-2 entry">
+      <div class="card h-100">
+        <div class="card-body p-0 m-auto">
+          <div id="main2" style="min-width: 325px;min-height:285px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script type="text/javascript">
+    function getChartBlock() {
+      let parser = new DOMParser();
+      const chartBlock = `
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 pt-3 pr-2 pl-2 entry">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <div id="main2" style="width: 325px;min-height:285px;"></div>
+          </div>
+        </div>
+      </div>`;
+
+
+      var doc = parser.parseFromString(str, 'text/html');
+      return doc.body;
+    }
+    
+    
+
+    let itemStyle = {
+        barBorderRadius: [6, 6, 0, 0],
+    };
+    let barMaxWidth = 24;
+    // Initialize the echarts instance based on the prepared dom
+    var myChart = echarts.init(document.getElementById('main2'), 'echarts.config', { renderer: 'svg' });
+
+    // Specify the configuration items and data for the chart
+    var option = {
+      
+      textStyle: {
+        align: "center",
+        fontSize: 12,
+        fontFamily: 'quicksand',
+        fontWeight: 600,
+        lineHeight: 24
+      },
+
+      title: {
+        top: '5%',
+        left: 'center',
+        textStyle: {
+          fontSize: 16,
+          fontWeight: 600
+        },
+        text: 'Started Example',
+        // subtext: 'Subtitle'
+      },
+      tooltip: {},
+      legend: {
+        itemHeight: 12,
+        itemWidth: 12,
+        bottom: '3%',
+        //itemGap: '1%',
+        data: ['Source', 'Test', 'Compiliance', 'Coverage']
+      },
+      xAxis: {
+        //type: 'category',
+        data: ['Component1'],
+        axisTick: {
+          alignWithLabel: true,
+          show: false
+        },
+      },
+      yAxis: {
+        splitLine: {
+          lineStyle: {
+            type: [7, 5],
+            dashOffset: 3
+          }
+        },
+        type: 'value',
+      },
+      series: [
+        {
+          name: 'Source',
+          type: 'bar',
+          data: [3],
+          itemStyle: itemStyle,
+          barMaxWidth: barMaxWidth
+          
+        },
+        {
+          name: 'Test',
+          type: 'bar',
+          data: [17],
+          itemStyle: itemStyle,
+          barMaxWidth: barMaxWidth
+        },
+        {
+          name: 'Compiliance',
+          type: 'bar',
+          data: [8],
+          itemStyle: itemStyle,
+          barMaxWidth: barMaxWidth
+        },
+        {
+          name: 'Coverage',
+          type: 'bar',
+          data: [14],
+          itemStyle: itemStyle,
+          barMaxWidth: barMaxWidth
+        }
+      ]
+    };
+
+    // Display the chart using the configuration items and data just specified.
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>
