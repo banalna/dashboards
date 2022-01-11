@@ -141,6 +141,18 @@
   </ol>
 </nav>
             
+<script>
+	function toggleView(e) {
+		if (e.id == 'table-btn') {
+			$('#generated-table').collapse('show');
+			$('#generated-charts').collapse('hide');
+		} else {
+			$('#generated-table').collapse('hide');
+			$('#generated-charts').collapse('show');
+		}
+	}
+</script>
+
 <div class="td-content bg-primary border-top">
 	<div class="col-12 row pl-4 pr-0">
 		<h3 class="col-md-6 dashboard-title">Feature Delivery</h3>
@@ -149,14 +161,18 @@
 			<div class="btn-group btn-group-toggle float-right">
 				<label class="btn active">
 					<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 17C8 17.5523 8.44772 18 9 18h2C11.5523 18 12 17.5523 12 17V15C12 14.4477 11.5523 14 11 14H9C8.44772 14 8 14.4477 8 15v2zm0 5C8 22.5523 8.44772 23 9 23h2C11.5523 23 12 22.5523 12 22V20C12 19.4477 11.5523 19 11 19H9C8.44772 19 8 19.4477 8 20v2zM8 12C8 12.5523 8.44772 13 9 13h2C11.5523 13 12 12.5523 12 12V10C12 9.44772 11.5523 9 11 9H9c-.55228.0-1 .44772-1 1v2zm5 5C13 17.5523 13.4477 18 14 18H24C24.5523 18 25 17.5523 25 17V15C25 14.4477 24.5523 14 24 14H14C13.4477 14 13 14.4477 13 15v2zm0 5C13 22.5523 13.4477 23 14 23H24C24.5523 23 25 22.5523 25 22V20C25 19.4477 24.5523 19 24 19H14C13.4477 19 13 19.4477 13 20v2zM14 9C13.4477 9 13 9.44772 13 10v2C13 12.5523 13.4477 13 14 13H24C24.5523 13 25 12.5523 25 12V10C25 9.44772 24.5523 9 24 9H14z" fill="#3357c6"/></svg>
-					<input type="radio" onclick="" id="table-btn" autocomplete="off" checked>
+					<input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked>
 				</label>
 				<label class="btn">
 					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="16" width="4" height="7" rx="1" fill="#3357c6"/><rect x="14" y="9" width="4" height="14" rx="1" fill="#3357c6"/><rect x="8" y="12" width="4" height="11" rx="1" fill="#3357c6"/></svg>
-					<input type="radio" onclick="" id="chart-btn" autocomplete="off">
+					<input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off">
 				</label>
 			</div>
 		</div>
+	</div>
+	<div class="pr-3 pl-3">
+		<hr class="m-0 mb-2" style="background-color:#C4C4C4;">
+	
 	</div>
 	<header class="article-meta m-0">
 		

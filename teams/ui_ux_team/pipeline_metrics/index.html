@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Stability of environments and failure response timings
 ">
 
-<meta itemprop="wordCount" content="36">
+<meta itemprop="wordCount" content="775">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pipeline Metrics"/>
 <meta name="twitter:description" content="Stability of environments and failure response timings
@@ -119,12 +119,12 @@
           
           
           
-          <main class="col-12 pr-md-5 pl-md-5" role="main">
+          <main class="col-12 pr-0 pl-0 pb-0" role="main">
             
   
 
             <nav aria-label="breadcrumb" class='td-breadcrumbs
-    '>
+    pl-md-5 pl-3'>
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="https://banalna.github.io/dashboards/">Home</a>
@@ -141,6 +141,18 @@
   </ol>
 </nav>
             
+<script>
+	function toggleView(e) {
+		if (e.id == 'table-btn') {
+			$('#generated-table').collapse('show');
+			$('#generated-charts').collapse('hide');
+		} else {
+			$('#generated-table').collapse('hide');
+			$('#generated-charts').collapse('show');
+		}
+	}
+</script>
+
 <div class="td-content bg-primary border-top">
 	<div class="col-12 row pl-4 pr-0">
 		<h3 class="col-md-6 dashboard-title">Pipeline Metrics</h3>
@@ -149,14 +161,18 @@
 			<div class="btn-group btn-group-toggle float-right">
 				<label class="btn active">
 					<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 17C8 17.5523 8.44772 18 9 18h2C11.5523 18 12 17.5523 12 17V15C12 14.4477 11.5523 14 11 14H9C8.44772 14 8 14.4477 8 15v2zm0 5C8 22.5523 8.44772 23 9 23h2C11.5523 23 12 22.5523 12 22V20C12 19.4477 11.5523 19 11 19H9C8.44772 19 8 19.4477 8 20v2zM8 12C8 12.5523 8.44772 13 9 13h2C11.5523 13 12 12.5523 12 12V10C12 9.44772 11.5523 9 11 9H9c-.55228.0-1 .44772-1 1v2zm5 5C13 17.5523 13.4477 18 14 18H24C24.5523 18 25 17.5523 25 17V15C25 14.4477 24.5523 14 24 14H14C13.4477 14 13 14.4477 13 15v2zm0 5C13 22.5523 13.4477 23 14 23H24C24.5523 23 25 22.5523 25 22V20C25 19.4477 24.5523 19 24 19H14C13.4477 19 13 19.4477 13 20v2zM14 9C13.4477 9 13 9.44772 13 10v2C13 12.5523 13.4477 13 14 13H24C24.5523 13 25 12.5523 25 12V10C25 9.44772 24.5523 9 24 9H14z" fill="#3357c6"/></svg>
-					<input type="radio" onclick="" id="table-btn" autocomplete="off" checked>
+					<input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked>
 				</label>
 				<label class="btn">
 					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="16" width="4" height="7" rx="1" fill="#3357c6"/><rect x="14" y="9" width="4" height="14" rx="1" fill="#3357c6"/><rect x="8" y="12" width="4" height="11" rx="1" fill="#3357c6"/></svg>
-					<input type="radio" onclick="" id="chart-btn" autocomplete="off">
+					<input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off">
 				</label>
 			</div>
 		</div>
+	</div>
+	<div class="pr-3 pl-3">
+		<hr class="m-0 mb-2" style="background-color:#C4C4C4;">
+	
 	</div>
 	<header class="article-meta m-0">
 		
@@ -174,30 +190,365 @@
 		
 	</header>    
 	
+<script src='/dashboards/js/echarts.min.js'></script>
+<script src='/dashboards/js/echarts.config.js'></script>
+<script src='/dashboards/js/chart-generator.js'></script>
+
+
+
+<div class="row collapse justify-content-center pr-4 pl-4 ml-0 mr-0 pb-2" id="generated-charts"></div>
+<div class="table-responsive pr-3 pl-3">
+    <div class="table-pagination row">
+        <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
+            <ul class="pagination" id="page-nav">
+                <li class="page-item">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-chevron-left"></i></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item" aria-current="page">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link page-divider" href="#">...</a></li>
+                <li class="page-item"><a class="page-link" href="#">10</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    
+        <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
+            <p class="pt-2 pb-2 pr-3">Rows per page</p>
+            <div class="table-dropdown dropdown float-right">
+                <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    10
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">10</a>
+                    <a class="dropdown-item" href="#">25</a>
+                    <a class="dropdown-item" href="#">50</a>
+                    <a class="dropdown-item" href="#">100</a>
+                </div>
+            </div>
+            <p class="pl-4 pt-2 pb-2">Shown <span style="color: #3357C6;">1-10</span></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+
+
+
+
+
 <script>
+
     
+    function findNestedObj(entireObj, keyToFind) {
+        let foundObj;
+        JSON.stringify(entireObj, (_, nestedValue) => {
+            if (nestedValue) {
+                foundObj = nestedValue;
+            }
+            return nestedValue;
+        });
+        return foundObj;
+    };
+
+    function createTable(items) {
+        let columns = [];
         
-    
-
-    let content = document.getElementsByClassName('td-content')[0];
-    content.className = content.className.replace('bg-primary', ''); 
-    content.className = content.className.replace('border-top', '');
-
-    for (let element of content.children) {
-        if (element.id != 'under-construction') {
-            element.setAttribute('hidden', true);
+        for (let key of Object.keys(items[0])) {
+            if (Array.isArray(items[0][key])) {
+                for (let subItem of items[0][key]) {
+                    columns = [...columns, ...Object.keys(subItem)];
+                }
+            } else {
+                columns.push(key);
+            }
         }
+
+        let table = composeTable(items[0]);
+        let tr = table.tBodies[0].insertRow(0);
+        tr.insertCell(0).setAttribute('class', 'm-0');
+
+        for (let item of items) {
+            let tr = table.tBodies[0].insertRow(-1);
+            for (let column of columns) {
+                let td = tr.insertCell(-1);
+
+                if (item[column] == undefined) {
+                    for (let key of Object.keys(item)) {
+                        
+                        if (Array.isArray(item[key])) {
+                            var obj = item[key].filter((o) => o[column] != undefined)
+                            if (obj.length > 0) {
+                                td.innerText = obj[0][column];
+                                td.setAttribute('class', 'text-center')
+                                break;
+                            }
+                        }
+                    }
+                    
+                } else {
+                    td.innerText = item[column];
+                }
+
+                
+                switch (td.cellIndex) {
+                    case 'yes':
+                        td.setAttribute('class', 'yes-icon');
+                        td.textContent = '';
+                        break;
+                    case 'no':
+                        td.setAttribute('class', 'no-icon');
+                        td.textContent = '';
+                        break;
+                    case 2:
+                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon text-left');
+                        td.textContent = '';
+                        break;
+                    case 4:
+                    case 5:
+                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon');
+                        td.textContent = '';
+                        break;
+                    case 6:
+                        if (parseInt(td.innerText.toLowerCase()) >= 30) {
+                            td.setAttribute('class', 'yes-icon');
+                        } else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                    case 7:
+                        if (parseInt(td.innerText.toLowerCase()) >= 25) {
+                            td.setAttribute('class', 'yes-icon');
+                        } else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                    case 8:
+                        if (parseInt(td.innerText.toLowerCase()) >= 50) {
+                            td.setAttribute('class', 'yes-icon');
+                        } else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                    case 9:
+                        if (parseInt(td.innerText.toLowerCase()) >= 30 && parseInt(td.innerText.toLowerCase()) <= 80) {
+                            td.setAttribute('class', 'warning-icon');
+                        } else if(parseInt(td.innerText.toLowerCase()) >= 90) {
+                            td.setAttribute('class', 'yes-icon');
+                        }
+                        else {
+                            td.setAttribute('class', 'no-icon');
+                        }
+                        break;
+                }
+            }
+        }
+
+        let pagination = document.getElementsByClassName('table-pagination')[0];
+        let container = pagination.parentElement;
+        container.insertBefore(table, pagination);
     }
+
+    function composeTable(item) {
+        let tHead = [];
+        let rowspan = 1;
+
+        
+        for (let key of Object.keys(item)) {
+            if (Array.isArray(item[key])) {
+                rowspan = 2;
+                break;
+            }
+        }
+
+         
+        if (rowspan > 1) {
+            let subColumns = [];
+            let columns = [];
+
+            for (let key of Object.keys(item)) {
+                let column = {};
+                column.rowspan = rowspan;
+                column.name = key;
+
+                if (Array.isArray(item[key])) {
+                    column.colspan = item[key].length;
+                    
+  
+                    for (let subItem of item[key]) {
+                        subColumns.push({ name: Object.keys(subItem)[0] });
+                    }
+                }
+                columns.push(column);
+            }
+            
+            tHead.push(columns);
+            tHead.push(subColumns);
+        } else {
+            
+            tHead = Object.keys(item);
+        }
+
+        
+        let table = document.createElement('table');
+        table.id = 'generated-table';
+        table.setAttribute('class', 'generated-table table table-hover collapse show'); 
+        table.createTHead();
+        table.createTBody();
+
+        for (let level = 0; level < tHead.length; level++) {
+            let tr = table.tHead.insertRow(-1);
+
+            for (let column of tHead[level]) {
+                let th = document.createElement('th');
+                
+                if (level > 0) {
+                    th.setAttribute('scope', 'col');
+                    th.setAttribute('class', 'text-center');
+                } else {
+                    
+                    th.setAttribute('scope', 'col');
+
+                    if (column.colspan != undefined) {
+                        th.setAttribute('colspan', column.colspan);
+                        th.setAttribute('class', 'text-center');
+                    } else {
+                        th.setAttribute('rowspan', column.rowspan);
+                    }
+                }
+
+                if (column.colspan != undefined) {
+                    let hr = document.createElement('hr');
+                    hr.setAttribute('class', 'mb-2 mt-2');
+                    th.append(document.createTextNode(column.name), hr);
+                } else {
+                    th.append(document.createTextNode(column.name));
+                }
+                
+                tr.appendChild(th);
+            }
+        }
+
+        return table;
+    }
+
+    let jsonData = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"40\"},\n            {\"Test (KLOC)\": \"25\"},\n            {\"Compliance\": \"32\"},\n            {\"Covarage (%)\": \"48\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"25\"},\n            {\"Test (KLOC)\": \"30\"},\n            {\"Compliance\": \"37\"},\n            {\"Covarage (%)\": \"95\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"12\"},\n            {\"Test (KLOC)\": \"64\"},\n            {\"Compliance\": \"15\"},\n            {\"Covarage (%)\": \"10\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 4\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Status\": [\n            {\"Implement\": \"Active\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"32\"},\n            {\"Test (KLOC)\": \"11\"},\n            {\"Compliance\": \"12\"},\n            {\"Covarage (%)\": \"55\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 5\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"24\"},\n            {\"Test (KLOC)\": \"18\"},\n            {\"Compliance\": \"35\"},\n            {\"Covarage (%)\": \"75\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 6\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"37\"},\n            {\"Test (KLOC)\": \"20\"},\n            {\"Compliance\": \"43\"},\n            {\"Covarage (%)\": \"27\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 7\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Status\": [\n            {\"Implement\": \"Active\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"14\"},\n            {\"Test (KLOC)\": \"7\"},\n            {\"Compliance\": \"15\"},\n            {\"Covarage (%)\": \"24\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 8\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"46\"},\n            {\"Test (KLOC)\": \"23\"},\n            {\"Compliance\": \"34\"},\n            {\"Covarage (%)\": \"77\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 9\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"46\"},\n            {\"Test (KLOC)\": \"30\"},\n            {\"Compliance\": \"25\"},\n            {\"Covarage (%)\": \"93\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 10\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"40\"},\n            {\"Test (KLOC)\": \"8\"},\n            {\"Compliance\": \"55\"},\n            {\"Covarage (%)\": \"30\"}\n        ]\n    }\n\n]");
+    createTable(jsonData);
+
 </script>
 
-<div class="mx-auto text-center pb-0" id="under-construction">
-    <img src='https://banalna.github.io/dashboards/images/under_construction.svg' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
-    alt="Under construction img">
-    <a href="#" onclick="history.back()">
-        <h3 class="mx-auto pt-2" style="color: #3357C6;">This dashboard is under construction</h3>
-    </a>
-    <h3 class="mx-auto" style="color: #101840;">Please, come again later</h3>
-</div>
+
+<script>
+
+    function getRandomColors(count) {
+        colors = [];
+        let letters = '0123456789ABCDEF';
+        for (let i = 0; i < count; i++) {
+            let color = '#';
+            for (var j = 0; j < 6; j++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            colors.push(color);
+        }
+        return colors
+    }
+
+    function getNumericData(items) {
+        let columns = [];
+        for (let item of items) {
+            for (let column of Object.keys(item)) {
+                if (!isNaN(parseFloat(item[column])) && !columns.includes(column)) {
+                    columns.push(column);
+                } 
+            }
+        }
+        return columns;
+    }
+
+    function toFlatData(jsonData) {
+        let flatObjects = [];
+
+        for (let item of jsonData) {
+            let obj = {};
+
+            for (let key of Object.keys(item)) {
+                if (item[key] instanceof Object) {
+                    for (let subItem of item[key]) {
+                        for(let subKey of Object.keys(subItem)) {
+                            obj[subKey] = subItem[subKey];
+                        }
+                    }
+                } else {
+                    obj[key] = item[key]; 
+                } 
+            } 
+            flatObjects.push(obj);
+        }
+        return flatObjects;
+    }
+
+    function composeChartsData(jsonData) {
+        jsonData = toFlatData(jsonData);
+
+        let columns = getNumericData(jsonData);
+
+        let chartData = {
+            legends: [],
+            xAxisName: [],
+            series: []
+        };
+
+        for (let item of jsonData) {
+            chartData.xAxisName.push(item['Component']);
+
+            let series = [];
+            let legend = [];
+
+            for (let column of columns) {
+                series.push([item[column]]);
+                legend.push(column);
+            }
+
+            chartData.series.push(series);
+            chartData.legends.push(legend);
+
+        }
+
+        return chartData;
+    }
+
+
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById('generated-charts');
+
+    for (let i=0; i < chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            'Metrics for ' + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+
+</script>
+
+
+
+
+
 
 	
 	
