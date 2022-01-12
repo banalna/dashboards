@@ -24,30 +24,51 @@
         
         
         
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/component-delivery-gen.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 &lt;script&gt;
-    
-        
-    
-
-    let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
-    content.className = content.className.replace(&#39;bg-primary&#39;, &#39;&#39;); 
-    content.className = content.className.replace(&#39;border-top&#39;, &#39;&#39;);
-
-    for (let element of content.children) {
-        if (element.id != &#39;under-construction&#39;) {
-            element.setAttribute(&#39;hidden&#39;, true);
-        }
-    }
+    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dev\&#34;: \&#34;2.0.1\&#34;,\n        \&#34;CI\&#34;: \&#34;2.0.1\&#34;,\n        \&#34;QA\&#34;: \&#34;2.0.1\&#34;,\n        \&#34;Stage\&#34;: \&#34;2.0.1\&#34;,\n        \&#34;Prod\&#34;: \&#34;2.0.1\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Dev\&#34;: \&#34;N/A\&#34;,\n        \&#34;CI\&#34;: \&#34;N/A\&#34;,\n        \&#34;QA\&#34;: \&#34;N/A\&#34;,\n        \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.1.5\&#34;,\n        \&#34;CI\&#34;: \&#34;1.1.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 4\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.5.1\&#34;,\n        \&#34;CI\&#34;: \&#34;0.9.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.4\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.1.0\&#34;,\n        \&#34;Prod\&#34;: \&#34;1.0.0\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 5\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.1.0\&#34;,\n        \&#34;CI\&#34;: \&#34;N/A\&#34;,\n        \&#34;QA\&#34;: \&#34;N/A\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.0.0\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 6\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.4.5\&#34;,\n        \&#34;CI\&#34;: \&#34;0.5.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.4.3\&#34;,\n        \&#34;Prod\&#34;: \&#34;1.0.0\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 7\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Dev\&#34;: \&#34;0.0.1\&#34;,\n        \&#34;CI\&#34;: \&#34;N/A\&#34;,\n        \&#34;QA\&#34;: \&#34;N/A\&#34;,\n        \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 8\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.1.5\&#34;,\n        \&#34;CI\&#34;: \&#34;1.1.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 9\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.5.1\&#34;,\n        \&#34;CI\&#34;: \&#34;0.9.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.4\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.1.0\&#34;,\n        \&#34;Prod\&#34;: \&#34;1.0.0\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 10\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.1.0\&#34;,\n        \&#34;CI\&#34;: \&#34;N/A\&#34;,\n        \&#34;QA\&#34;: \&#34;N/A\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.0.0\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 11\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dev\&#34;: \&#34;2.0.0\&#34;,\n        \&#34;CI\&#34;: \&#34;1.5.1\&#34;,\n        \&#34;QA\&#34;: \&#34;1.7.1\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.8.1\&#34;,\n        \&#34;Prod\&#34;: \&#34;1.5.0\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 12\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.0.1\&#34;,\n        \&#34;CI\&#34;: \&#34;N/A\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.0\&#34;,\n        \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 13\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.1.5\&#34;,\n        \&#34;CI\&#34;: \&#34;1.1.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.0.3\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 14\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.5.1\&#34;,\n        \&#34;CI\&#34;: \&#34;0.9.5\&#34;,\n        \&#34;QA\&#34;: \&#34;1.0.4\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.1.0\&#34;,\n        \&#34;Prod\&#34;: \&#34;1.0.0\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 15\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Dev\&#34;: \&#34;1.1.0\&#34;,\n        \&#34;CI\&#34;: \&#34;0.4.0\&#34;,\n        \&#34;QA\&#34;: \&#34;0.5.0\&#34;,\n        \&#34;Stage\&#34;: \&#34;1.0.0\&#34;,\n        \&#34;Prod\&#34;: \&#34;N/A\&#34;\n    }\n]&#34;);
+    createTable(jsonData);
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
-    alt=&#34;Under construction img&#34;&gt;
-    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
-        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #3357C6;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
-&lt;/div&gt;
+
+&lt;script&gt;
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById(&#39;generated-charts&#39;);
+
+    for (let i = 0; i &lt; chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            &#39;Metrics for &#39; + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+&lt;/script&gt;
 
       </description>
     </item>
@@ -61,193 +82,53 @@
       <description>
         
         
-        &lt;div class=&#34;table-responsive pr-3 pl-3&#34;&gt;
-&lt;table class=&#34;generated-table table table-hover&#34;&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Component&lt;/th&gt;
-        &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Type&lt;/th&gt;
-        &lt;th scope=&#34;col&#34; rowspan=&#34;2&#34;&gt;Priority&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; colspan=&#34;3&#34;&gt;
-          Status
-          &lt;hr class=&#34;mb-2 mt-2&#34;&gt;
-        &lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; colspan=&#34;4&#34;&gt;
-          Metrics
-          &lt;hr class=&#34;mb-2 mt-2&#34;&gt;
-        &lt;/th&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Implement&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Readme&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;API Docs&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Source (KLOC)&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Test (KLOC)&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Compliance&lt;/th&gt;
-        &lt;th class=&#34;text-center&#34; scope=&#34;col&#34;&gt;Covarage (%)&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td class=&#34;m-0&#34;&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 1&lt;/td&gt;
-        &lt;td&gt;Library&lt;/td&gt;
-        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 2&lt;/td&gt;
-        &lt;td&gt;Microservice&lt;/td&gt;
-        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Planned&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 3&lt;/td&gt;
-        &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 4&lt;/td&gt;
-        &lt;td&gt;Library&lt;/td&gt;
-        &lt;td class=&#34;low-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Active&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 5&lt;/td&gt;
-        &lt;td&gt;Microservice&lt;/td&gt;
-        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Planned&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 6&lt;/td&gt;
-        &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 7&lt;/td&gt;
-        &lt;td&gt;Library&lt;/td&gt;
-        &lt;td class=&#34;low-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Active&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 8&lt;/td&gt;
-        &lt;td&gt;Microservice&lt;/td&gt;
-        &lt;td class=&#34;hight-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Planned&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 9&lt;/td&gt;
-        &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Component 10&lt;/td&gt;
-        &lt;td&gt;Microfrontend&lt;/td&gt;
-        &lt;td class=&#34;medium-icon text-left&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;text-center&#34;&gt;Stable&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;12&lt;/td&gt;
-        &lt;td class=&#34;yes-icon&#34;&gt;5&lt;/td&gt;
-        &lt;td class=&#34;no-icon&#34;&gt;10&lt;/td&gt;
-        &lt;td class=&#34;warning-icon&#34;&gt;60&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;div class=&#34;table-pagination row&#34;&gt;
-  &lt;nav class=&#34;table-buttons col-sm-12 col-md-8 pt-2&#34; aria-label=&#34;Table pagination&#34;&gt;
-    &lt;ul class=&#34;pagination&#34;&gt;
-      &lt;li class=&#34;page-item&#34;&gt;
-        &lt;a class=&#34;page-link&#34; href=&#34;#&#34; tabindex=&#34;-1&#34; aria-disabled=&#34;true&#34;&gt;&lt;i class=&#34;fas fa-chevron-left&#34;&gt;&lt;/i&gt;&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li class=&#34;page-item active&#34;&gt;&lt;a class=&#34;page-link&#34; href=&#34;#&#34;&gt;1&lt;/a&gt;&lt;/li&gt;
-      &lt;li class=&#34;page-item&#34; aria-current=&#34;page&#34;&gt;
-        &lt;a class=&#34;page-link&#34; href=&#34;#&#34;&gt;2&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li class=&#34;page-item&#34;&gt;&lt;a class=&#34;page-link&#34; href=&#34;#&#34;&gt;3&lt;/a&gt;&lt;/li&gt;
-      &lt;li class=&#34;page-item&#34;&gt;&lt;a class=&#34;page-link page-divider&#34; href=&#34;#&#34;&gt;...&lt;/a&gt;&lt;/li&gt;
-      &lt;li class=&#34;page-item&#34;&gt;&lt;a class=&#34;page-link&#34; href=&#34;#&#34;&gt;10&lt;/a&gt;&lt;/li&gt;
-      &lt;li class=&#34;page-item&#34;&gt;
-        &lt;a class=&#34;page-link&#34; href=&#34;#&#34;&gt;&lt;i class=&#34;fas fa-chevron-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-  &lt;div class=&#34;row col-sm-12 col-md-4 pl-sm-5 justify-content-end&#34;&gt;
-    &lt;p class=&#34;pt-2 pb-2 pr-3&#34;&gt;Rows per page&lt;/p&gt;
-    &lt;div class=&#34;table-dropdown dropdown float-right&#34;&gt;
-    &lt;button class=&#34;btn dropdown-toggle &#34; type=&#34;button&#34; id=&#34;dropdownMenuButton&#34; data-toggle=&#34;dropdown&#34;   aria-haspopup=&#34;true&#34; aria-expanded=&#34;false&#34;&gt;
-      10
-    &lt;/button&gt;
-    &lt;div class=&#34;dropdown-menu&#34; aria-labelledby=&#34;dropdownMenuButton&#34;&gt;
-      &lt;a class=&#34;dropdown-item&#34; href=&#34;#&#34;&gt;10&lt;/a&gt;
-      &lt;a class=&#34;dropdown-item&#34; href=&#34;#&#34;&gt;25&lt;/a&gt;
-      &lt;a class=&#34;dropdown-item&#34; href=&#34;#&#34;&gt;50&lt;/a&gt;
-      &lt;a class=&#34;dropdown-item&#34; href=&#34;#&#34;&gt;100&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p class=&#34;pl-4 pt-2 pb-2&#34;&gt;Shown &lt;span style=&#34;color: #3357C6;&#34;&gt;1-10&lt;/span&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+        
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/component-metrics-gen.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+&lt;script&gt;
+    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;40\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;25\&#34;,\n        \&#34;Compliance\&#34;: \&#34;32\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;48\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Implement\&#34;: \&#34;Planned\&#34;,\n        \&#34;Readme\&#34;: \&#34;No\&#34;,\n        \&#34;API Docs\&#34;: \&#34;Yes\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;25\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;30\&#34;,\n        \&#34;Compliance\&#34;: \&#34;37\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;95\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;12\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;64\&#34;,\n        \&#34;Compliance\&#34;: \&#34;15\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;10\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 4\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Low\&#34;,\n        \&#34;Implement\&#34;: \&#34;Active\&#34;,\n        \&#34;Readme\&#34;: \&#34;No\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;32\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;11\&#34;,\n        \&#34;Compliance\&#34;: \&#34;12\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;55\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 5\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Implement\&#34;: \&#34;Planned\&#34;,\n        \&#34;Readme\&#34;: \&#34;No\&#34;,\n        \&#34;API Docs\&#34;: \&#34;Yes\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;24\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;18\&#34;,\n        \&#34;Compliance\&#34;: \&#34;35\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;75\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 6\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;37\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;20\&#34;,\n        \&#34;Compliance\&#34;: \&#34;43\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;27\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 7\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Low\&#34;,\n        \&#34;Implement\&#34;: \&#34;Active\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;Yes\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;14\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;7\&#34;,\n        \&#34;Compliance\&#34;: \&#34;15\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;24\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 8\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n\n        \&#34;Implement\&#34;: \&#34;Planned\&#34;,\n        \&#34;Readme\&#34;: \&#34;No\&#34;,\n        \&#34;API Docs\&#34;: \&#34;Yes\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;46\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;23\&#34;,\n        \&#34;Compliance\&#34;: \&#34;34\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;77\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 9\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;Yes\&#34;,\n        \&#34;API Docs\&#34;: \&#34;No\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;46\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;30\&#34;,\n        \&#34;Compliance\&#34;: \&#34;25\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;93\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 10\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Implement\&#34;: \&#34;Stable\&#34;,\n        \&#34;Readme\&#34;: \&#34;No\&#34;,\n        \&#34;API Docs\&#34;: \&#34;Yes\&#34;,\n        \&#34;Source (KLOC)\&#34;: \&#34;40\&#34;,\n        \&#34;Test (KLOC)\&#34;: \&#34;8\&#34;,\n        \&#34;Compliance\&#34;: \&#34;55\&#34;,\n        \&#34;Covarage (%)\&#34;: \&#34;30\&#34;\n    }\n]&#34;);
+    createTable(jsonData);
+&lt;/script&gt;
+
+
+&lt;script&gt;
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById(&#39;generated-charts&#39;);
+
+    for (let i = 0; i &lt; chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            &#39;Metrics for &#39; + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+&lt;/script&gt;
+
       </description>
     </item>
     
@@ -261,30 +142,51 @@
         
         
         
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/component-quality-gen.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 &lt;script&gt;
-    
-        
-    
-
-    let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
-    content.className = content.className.replace(&#39;bg-primary&#39;, &#39;&#39;); 
-    content.className = content.className.replace(&#39;border-top&#39;, &#39;&#39;);
-
-    for (let element of content.children) {
-        if (element.id != &#39;under-construction&#39;) {
-            element.setAttribute(&#39;hidden&#39;, true);
-        }
-    }
+    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Coverage\&#34;: \&#34;80%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;11\&#34;,\n        \&#34;Dev\&#34;: \&#34;37%\&#34;,\n        \&#34;CI\&#34;: \&#34;50%\&#34;,\n        \&#34;QA\&#34;: \&#34;10%\&#34;,\n        \&#34;Stage\&#34;: \&#34;5%\&#34;,\n        \&#34;Reported\&#34;: \&#34;5\&#34;,\n        \&#34;In progress\&#34;: \&#34;0\&#34;,\n        \&#34;Completed\&#34;: \&#34;25\&#34;,\n        \&#34;Count\&#34;: \&#34;15\&#34;,\n        \&#34;Failures\&#34;: \&#34;30%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Coverage\&#34;: \&#34;35%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;3\&#34;,\n        \&#34;Dev\&#34;: \&#34;55%\&#34;,\n        \&#34;CI\&#34;: \&#34;55%\&#34;,\n        \&#34;QA\&#34;: \&#34;15%\&#34;,\n        \&#34;Stage\&#34;: \&#34;4%\&#34;,\n        \&#34;Reported\&#34;: \&#34;1\&#34;,\n        \&#34;In progress\&#34;: \&#34;12\&#34;,\n        \&#34;Completed\&#34;: \&#34;7\&#34;,\n        \&#34;Count\&#34;: \&#34;4\&#34;,\n        \&#34;Failures\&#34;: \&#34;57%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Coverage\&#34;: \&#34;0%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;0\&#34;,\n        \&#34;Dev\&#34;: \&#34;78%\&#34;,\n        \&#34;CI\&#34;: \&#34;0%\&#34;,\n        \&#34;QA\&#34;: \&#34;5%\&#34;,\n        \&#34;Stage\&#34;: \&#34;1%\&#34;,\n        \&#34;Reported\&#34;: \&#34;0\&#34;,\n        \&#34;In progress\&#34;: \&#34;21\&#34;,\n        \&#34;Completed\&#34;: \&#34;3\&#34;,\n        \&#34;Count\&#34;: \&#34;1\&#34;,\n        \&#34;Failures\&#34;: \&#34;7%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 4\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Coverage\&#34;: \&#34;75%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;87%\&#34;,\n        \&#34;CI\&#34;: \&#34;54%\&#34;,\n        \&#34;QA\&#34;: \&#34;50%\&#34;,\n        \&#34;Stage\&#34;: \&#34;78%\&#34;,\n        \&#34;Reported\&#34;: \&#34;24\&#34;,\n        \&#34;In progress\&#34;: \&#34;7\&#34;,\n        \&#34;Completed\&#34;: \&#34;30\&#34;,\n        \&#34;Count\&#34;: \&#34;15\&#34;,\n        \&#34;Failures\&#34;: \&#34;35%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 5\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Coverage\&#34;: \&#34;50%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;97%\&#34;,\n        \&#34;CI\&#34;: \&#34;55%\&#34;,\n        \&#34;QA\&#34;: \&#34;12%\&#34;,\n        \&#34;Stage\&#34;: \&#34;15%\&#34;,\n        \&#34;Reported\&#34;: \&#34;7\&#34;,\n        \&#34;In progress\&#34;: \&#34;8\&#34;,\n        \&#34;Completed\&#34;: \&#34;17\&#34;,\n        \&#34;Count\&#34;: \&#34;12\&#34;,\n        \&#34;Failures\&#34;: \&#34;31%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 6\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Coverage\&#34;: \&#34;15%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;5\&#34;,\n        \&#34;Dev\&#34;: \&#34;45%\&#34;,\n        \&#34;CI\&#34;: \&#34;25%\&#34;,\n        \&#34;QA\&#34;: \&#34;17%\&#34;,\n        \&#34;Stage\&#34;: \&#34;9%\&#34;,\n        \&#34;Reported\&#34;: \&#34;11\&#34;,\n        \&#34;In progress\&#34;: \&#34;12\&#34;,\n        \&#34;Completed\&#34;: \&#34;3\&#34;,\n        \&#34;Count\&#34;: \&#34;4\&#34;,\n        \&#34;Failures\&#34;: \&#34;21%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 7\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Coverage\&#34;: \&#34;0%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;0\&#34;,\n        \&#34;Dev\&#34;: \&#34;3%\&#34;,\n        \&#34;CI\&#34;: \&#34;0%\&#34;,\n        \&#34;QA\&#34;: \&#34;5%\&#34;,\n        \&#34;Stage\&#34;: \&#34;1%\&#34;,\n        \&#34;Reported\&#34;: \&#34;0\&#34;,\n        \&#34;In progress\&#34;: \&#34;21\&#34;,\n        \&#34;Completed\&#34;: \&#34;3\&#34;,\n        \&#34;Count\&#34;: \&#34;1\&#34;,\n        \&#34;Failures\&#34;: \&#34;7%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 8\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Coverage\&#34;: \&#34;75%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;77%\&#34;,\n        \&#34;CI\&#34;: \&#34;54%\&#34;,\n        \&#34;QA\&#34;: \&#34;50%\&#34;,\n        \&#34;Stage\&#34;: \&#34;78%\&#34;,\n        \&#34;Reported\&#34;: \&#34;24\&#34;,\n        \&#34;In progress\&#34;: \&#34;7\&#34;,\n        \&#34;Completed\&#34;: \&#34;30\&#34;,\n        \&#34;Count\&#34;: \&#34;15\&#34;,\n        \&#34;Failures\&#34;: \&#34;35%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 9\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Coverage\&#34;: \&#34;50%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;51%\&#34;,\n        \&#34;CI\&#34;: \&#34;55%\&#34;,\n        \&#34;QA\&#34;: \&#34;12%\&#34;,\n        \&#34;Stage\&#34;: \&#34;15%\&#34;,\n        \&#34;Reported\&#34;: \&#34;7\&#34;,\n        \&#34;In progress\&#34;: \&#34;8\&#34;,\n        \&#34;Completed\&#34;: \&#34;17\&#34;,\n        \&#34;Count\&#34;: \&#34;12\&#34;,\n        \&#34;Failures\&#34;: \&#34;31%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 10\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Coverage\&#34;: \&#34;80%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;11\&#34;,\n        \&#34;Dev\&#34;: \&#34;0%\&#34;,\n        \&#34;CI\&#34;: \&#34;50%\&#34;,\n        \&#34;QA\&#34;: \&#34;10%\&#34;,\n        \&#34;Stage\&#34;: \&#34;5%\&#34;,\n        \&#34;Reported\&#34;: \&#34;5\&#34;,\n        \&#34;In progress\&#34;: \&#34;0\&#34;,\n        \&#34;Completed\&#34;: \&#34;25\&#34;,\n        \&#34;Count\&#34;: \&#34;15\&#34;,\n        \&#34;Failures\&#34;: \&#34;30%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 11\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Coverage\&#34;: \&#34;0%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;0\&#34;,\n        \&#34;Dev\&#34;: \&#34;3%\&#34;,\n        \&#34;CI\&#34;: \&#34;0%\&#34;,\n        \&#34;QA\&#34;: \&#34;5%\&#34;,\n        \&#34;Stage\&#34;: \&#34;1%\&#34;,\n        \&#34;Reported\&#34;: \&#34;0\&#34;,\n        \&#34;In progress\&#34;: \&#34;21\&#34;,\n        \&#34;Completed\&#34;: \&#34;3\&#34;,\n        \&#34;Count\&#34;: \&#34;1\&#34;,\n        \&#34;Failures\&#34;: \&#34;7%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 12\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Coverage\&#34;: \&#34;50%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;10%\&#34;,\n        \&#34;CI\&#34;: \&#34;55%\&#34;,\n        \&#34;QA\&#34;: \&#34;12%\&#34;,\n        \&#34;Stage\&#34;: \&#34;15%\&#34;,\n        \&#34;Reported\&#34;: \&#34;7\&#34;,\n        \&#34;In progress\&#34;: \&#34;8\&#34;,\n        \&#34;Completed\&#34;: \&#34;17\&#34;,\n        \&#34;Count\&#34;: \&#34;12\&#34;,\n        \&#34;Failures\&#34;: \&#34;31%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 13\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Coverage\&#34;: \&#34;15%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;5\&#34;,\n        \&#34;Dev\&#34;: \&#34;14%\&#34;,\n        \&#34;CI\&#34;: \&#34;25%\&#34;,\n        \&#34;QA\&#34;: \&#34;17%\&#34;,\n        \&#34;Stage\&#34;: \&#34;9%\&#34;,\n        \&#34;Reported\&#34;: \&#34;11\&#34;,\n        \&#34;In progress\&#34;: \&#34;12\&#34;,\n        \&#34;Completed\&#34;: \&#34;3\&#34;,\n        \&#34;Count\&#34;: \&#34;4\&#34;,\n        \&#34;Failures\&#34;: \&#34;21%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 14\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Coverage\&#34;: \&#34;0%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;0\&#34;,\n        \&#34;Dev\&#34;: \&#34;3%\&#34;,\n        \&#34;CI\&#34;: \&#34;0%\&#34;,\n        \&#34;QA\&#34;: \&#34;5%\&#34;,\n        \&#34;Stage\&#34;: \&#34;1%\&#34;,\n        \&#34;Reported\&#34;: \&#34;0\&#34;,\n        \&#34;In progress\&#34;: \&#34;21\&#34;,\n        \&#34;Completed\&#34;: \&#34;3\&#34;,\n        \&#34;Count\&#34;: \&#34;1\&#34;,\n        \&#34;Failures\&#34;: \&#34;7%\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 15\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Status\&#34;: \&#34;Stable\&#34;,\n        \&#34;Coverage\&#34;: \&#34;75%\&#34;,\n        \&#34;Compiliance\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;84%\&#34;,\n        \&#34;CI\&#34;: \&#34;54%\&#34;,\n        \&#34;QA\&#34;: \&#34;50%\&#34;,\n        \&#34;Stage\&#34;: \&#34;78%\&#34;,\n        \&#34;Reported\&#34;: \&#34;24\&#34;,\n        \&#34;In progress\&#34;: \&#34;7\&#34;,\n        \&#34;Completed\&#34;: \&#34;30\&#34;,\n        \&#34;Count\&#34;: \&#34;15\&#34;,\n        \&#34;Failures\&#34;: \&#34;35%\&#34;\n    }\n]&#34;);
+    createTable(jsonData);
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
-    alt=&#34;Under construction img&#34;&gt;
-    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
-        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #3357C6;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
-&lt;/div&gt;
+
+&lt;script&gt;
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById(&#39;generated-charts&#39;);
+
+    for (let i = 0; i &lt; chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            &#39;Metrics for &#39; + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+&lt;/script&gt;
 
       </description>
     </item>
@@ -299,30 +201,51 @@
         
         
         
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/feature-delivery-gen.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 &lt;script&gt;
-    
-        
-    
-
-    let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
-    content.className = content.className.replace(&#39;bg-primary&#39;, &#39;&#39;); 
-    content.className = content.className.replace(&#39;border-top&#39;, &#39;&#39;);
-
-    for (let element of content.children) {
-        if (element.id != &#39;under-construction&#39;) {
-            element.setAttribute(&#39;hidden&#39;, true);
-        }
-    }
+    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Feature\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Component 1\&#34;: {\n            \&#34;CI\&#34;: \&#34;1.0.1\&#34;,\n            \&#34;QA\&#34;: \&#34;1.0.1\&#34;,\n            \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n            \&#34;Prod\&#34;: \&#34;N/A\&#34;\n        },\n        \&#34;Component 2\&#34;: {\n            \&#34;CI\&#34;: \&#34;2.1.0\&#34;,\n            \&#34;QA\&#34;: \&#34;2.1.0\&#34;,\n            \&#34;Stage\&#34;: \&#34;2.0.0\&#34;,\n            \&#34;Prod\&#34;: \&#34;2.0.0\&#34;\n        },\n        \&#34;Component 3\&#34;: {\n            \&#34;CI\&#34;: \&#34;N/A\&#34;,\n            \&#34;QA\&#34;: \&#34;N/A\&#34;,\n            \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n            \&#34;Prod\&#34;: \&#34;N/A\&#34;\n        }\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Status\&#34;: \&#34;Planned\&#34;,\n        \&#34;Component 1\&#34;: {\n            \&#34;CI\&#34;: \&#34;N/A\&#34;,\n            \&#34;QA\&#34;: \&#34;N/A\&#34;,\n            \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n            \&#34;Prod\&#34;: \&#34;N/A\&#34;\n        },\n        \&#34;Component 2\&#34;: {\n            \&#34;CI\&#34;: \&#34;1.1.0\&#34;,\n            \&#34;QA\&#34;: \&#34;1.1.0\&#34;,\n            \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n            \&#34;Prod\&#34;: \&#34;N/A\&#34;\n        },\n        \&#34;Component 3\&#34;: {\n            \&#34;CI\&#34;: \&#34;1.0.0\&#34;,\n            \&#34;QA\&#34;: \&#34;1.0.0\&#34;,\n            \&#34;Stage\&#34;: \&#34;N/A\&#34;,\n            \&#34;Prod\&#34;: \&#34;N/A\&#34;\n        }\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Component 1\&#34;: {\n            \&#34;CI\&#34;: \&#34;2.1.0\&#34;,\n            \&#34;QA\&#34;: \&#34;2.1.0\&#34;,\n            \&#34;Stage\&#34;: \&#34;3.0.0\&#34;,\n            \&#34;Prod\&#34;: \&#34;3.0.0\&#34;\n        },\n        \&#34;Component 2\&#34;: {\n            \&#34;CI\&#34;: \&#34;2.1.0\&#34;,\n            \&#34;QA\&#34;: \&#34;2.1.0\&#34;,\n            \&#34;Stage\&#34;: \&#34;2.0.0\&#34;,\n            \&#34;Prod\&#34;: \&#34;2.0.0\&#34;\n        },\n        \&#34;Component 3\&#34;: {\n            \&#34;CI\&#34;: \&#34;1.1.0\&#34;,\n            \&#34;QA\&#34;: \&#34;1.1.0\&#34;,\n            \&#34;Stage\&#34;: \&#34;2.0.0\&#34;,\n            \&#34;Prod\&#34;: \&#34;2.0.0\&#34;\n        }\n    }\n]&#34;);
+    createTable(jsonData);
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
-    alt=&#34;Under construction img&#34;&gt;
-    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
-        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #3357C6;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
-&lt;/div&gt;
+
+&lt;script&gt;
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById(&#39;generated-charts&#39;);
+
+    for (let i = 0; i &lt; chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            &#39;Metrics for &#39; + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+&lt;/script&gt;
 
       </description>
     </item>
@@ -337,30 +260,51 @@
         
         
         
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/feature-timing-gen.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 &lt;script&gt;
-    
-        
-    
-
-    let content = document.getElementsByClassName(&#39;td-content&#39;)[0];
-    content.className = content.className.replace(&#39;bg-primary&#39;, &#39;&#39;); 
-    content.className = content.className.replace(&#39;border-top&#39;, &#39;&#39;);
-
-    for (let element of content.children) {
-        if (element.id != &#39;under-construction&#39;) {
-            element.setAttribute(&#39;hidden&#39;, true);
-        }
-    }
+    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 1\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;5\&#34;,\n        \&#34;CI\&#34;: \&#34;2\&#34;,\n        \&#34;QA\&#34;: \&#34;5\&#34;,\n        \&#34;Stage\&#34;: \&#34;15\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 2\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;15\&#34;,\n        \&#34;Dev\&#34;: \&#34;7\&#34;,\n        \&#34;CI\&#34;: \&#34;3\&#34;,\n        \&#34;QA\&#34;: \&#34;7\&#34;,\n        \&#34;Stage\&#34;: \&#34;10\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 3\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;25\&#34;,\n        \&#34;Dev\&#34;: \&#34;12\&#34;,\n        \&#34;CI\&#34;: \&#34;5\&#34;,\n        \&#34;QA\&#34;: \&#34;8\&#34;,\n        \&#34;Stage\&#34;: \&#34;7\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 4\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;35\&#34;,\n        \&#34;Dev\&#34;: \&#34;17\&#34;,\n        \&#34;CI\&#34;: \&#34;1\&#34;,\n        \&#34;QA\&#34;: \&#34;11\&#34;,\n        \&#34;Stage\&#34;: \&#34;4\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 5\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;5\&#34;,\n        \&#34;CI\&#34;: \&#34;2\&#34;,\n        \&#34;QA\&#34;: \&#34;5\&#34;,\n        \&#34;Stage\&#34;: \&#34;15\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 6\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;27\&#34;,\n        \&#34;Dev\&#34;: \&#34;4\&#34;,\n        \&#34;CI\&#34;: \&#34;5\&#34;,\n        \&#34;QA\&#34;: \&#34;8\&#34;,\n        \&#34;Stage\&#34;: \&#34;10\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 7\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;35\&#34;,\n        \&#34;Dev\&#34;: \&#34;17\&#34;,\n        \&#34;CI\&#34;: \&#34;1\&#34;,\n        \&#34;QA\&#34;: \&#34;11\&#34;,\n        \&#34;Stage\&#34;: \&#34;4\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 8\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;10\&#34;,\n        \&#34;Dev\&#34;: \&#34;3\&#34;,\n        \&#34;CI\&#34;: \&#34;4\&#34;,\n        \&#34;QA\&#34;: \&#34;1\&#34;,\n        \&#34;Stage\&#34;: \&#34;3\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 9\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;5\&#34;,\n        \&#34;CI\&#34;: \&#34;2\&#34;,\n        \&#34;QA\&#34;: \&#34;5\&#34;,\n        \&#34;Stage\&#34;: \&#34;15\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 10\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;17\&#34;,\n        \&#34;Dev\&#34;: \&#34;10\&#34;,\n        \&#34;CI\&#34;: \&#34;2\&#34;,\n        \&#34;QA\&#34;: \&#34;4\&#34;,\n        \&#34;Stage\&#34;: \&#34;1\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 11\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;5\&#34;,\n        \&#34;CI\&#34;: \&#34;2\&#34;,\n        \&#34;QA\&#34;: \&#34;5\&#34;,\n        \&#34;Stage\&#34;: \&#34;15\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 12\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;12\&#34;,\n        \&#34;Dev\&#34;: \&#34;5\&#34;,\n        \&#34;CI\&#34;: \&#34;2\&#34;,\n        \&#34;QA\&#34;: \&#34;5\&#34;,\n        \&#34;Stage\&#34;: \&#34;15\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 13\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;27\&#34;,\n        \&#34;Dev\&#34;: \&#34;4\&#34;,\n        \&#34;CI\&#34;: \&#34;5\&#34;,\n        \&#34;QA\&#34;: \&#34;8\&#34;,\n        \&#34;Stage\&#34;: \&#34;10\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 14\&#34;,\n        \&#34;Status\&#34;: \&#34;Completed\&#34;,\n        \&#34;Planned\&#34;: \&#34;35\&#34;,\n        \&#34;Dev\&#34;: \&#34;17\&#34;,\n        \&#34;CI\&#34;: \&#34;1\&#34;,\n        \&#34;QA\&#34;: \&#34;11\&#34;,\n        \&#34;Stage\&#34;: \&#34;4\&#34;\n    },\n    {\n        \&#34;Feature\&#34;: \&#34;Feature 15\&#34;,\n        \&#34;Status\&#34;: \&#34;In progress\&#34;,\n        \&#34;Planned\&#34;: \&#34;15\&#34;,\n        \&#34;Dev\&#34;: \&#34;7\&#34;,\n        \&#34;CI\&#34;: \&#34;3\&#34;,\n        \&#34;QA\&#34;: \&#34;7\&#34;,\n        \&#34;Stage\&#34;: \&#34;10\&#34;\n    }\n]&#34;);
+    createTable(jsonData);
 &lt;/script&gt;
 
-&lt;div class=&#34;mx-auto text-center pb-0&#34; id=&#34;under-construction&#34;&gt;
-    &lt;img src=&#39;https://banalna.github.io/dashboards/images/under_construction.svg&#39; class=&#34;img-fluid mx-auto pb-3&#34; style=&#34;max-width:45%;&#34; 
-    alt=&#34;Under construction img&#34;&gt;
-    &lt;a href=&#34;#&#34; onclick=&#34;history.back()&#34;&gt;
-        &lt;h3 class=&#34;mx-auto pt-2&#34; style=&#34;color: #3357C6;&#34;&gt;This dashboard is under construction&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;h3 class=&#34;mx-auto&#34; style=&#34;color: #101840;&#34;&gt;Please, come again later&lt;/h3&gt;
-&lt;/div&gt;
+
+&lt;script&gt;
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById(&#39;generated-charts&#39;);
+
+    for (let i = 0; i &lt; chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            &#39;Metrics for &#39; + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+&lt;/script&gt;
 
       </description>
     </item>
@@ -384,6 +328,14 @@
 
 
 
+    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/pipeline-metrics-gen.js&#39;&gt;&lt;/script&gt;
+
+
+
+
+
+
+
     
 
 
@@ -392,290 +344,16 @@
 
 
 &lt;script&gt;
-
-    
-    function findNestedObj(entireObj, keyToFind) {
-        let foundObj;
-        JSON.stringify(entireObj, (_, nestedValue) =&gt; {
-            if (nestedValue) {
-                foundObj = nestedValue;
-            }
-            return nestedValue;
-        });
-        return foundObj;
-    };
-
-    function createTable(items) {
-        let columns = [];
-        
-        for (let key of Object.keys(items[0])) {
-            if (Array.isArray(items[0][key])) {
-                for (let subItem of items[0][key]) {
-                    columns = [...columns, ...Object.keys(subItem)];
-                }
-            } else {
-                columns.push(key);
-            }
-        }
-
-        let table = composeTable(items[0]);
-        let tr = table.tBodies[0].insertRow(0);
-        tr.insertCell(0).setAttribute(&#39;class&#39;, &#39;m-0&#39;);
-
-        for (let item of items) {
-            let tr = table.tBodies[0].insertRow(-1);
-            for (let column of columns) {
-                let td = tr.insertCell(-1);
-
-                if (item[column] == undefined) {
-                    for (let key of Object.keys(item)) {
-                        
-                        if (Array.isArray(item[key])) {
-                            var obj = item[key].filter((o) =&gt; o[column] != undefined)
-                            if (obj.length &gt; 0) {
-                                td.innerText = obj[0][column];
-                                td.setAttribute(&#39;class&#39;, &#39;text-center&#39;)
-                                break;
-                            }
-                        }
-                    }
-                    
-                } else {
-                    td.innerText = item[column];
-                }
-
-                
-                switch (td.cellIndex) {
-                    case &#39;yes&#39;:
-                        td.setAttribute(&#39;class&#39;, &#39;yes-icon&#39;);
-                        td.textContent = &#39;&#39;;
-                        break;
-                    case &#39;no&#39;:
-                        td.setAttribute(&#39;class&#39;, &#39;no-icon&#39;);
-                        td.textContent = &#39;&#39;;
-                        break;
-                    case 2:
-                        td.setAttribute(&#39;class&#39;, td.innerText.toLowerCase() + &#39;-icon text-left&#39;);
-                        td.textContent = &#39;&#39;;
-                        break;
-                    case 4:
-                    case 5:
-                        td.setAttribute(&#39;class&#39;, td.innerText.toLowerCase() + &#39;-icon&#39;);
-                        td.textContent = &#39;&#39;;
-                        break;
-                    case 6:
-                        if (parseInt(td.innerText.toLowerCase()) &gt;= 30) {
-                            td.setAttribute(&#39;class&#39;, &#39;yes-icon&#39;);
-                        } else {
-                            td.setAttribute(&#39;class&#39;, &#39;no-icon&#39;);
-                        }
-                        break;
-                    case 7:
-                        if (parseInt(td.innerText.toLowerCase()) &gt;= 25) {
-                            td.setAttribute(&#39;class&#39;, &#39;yes-icon&#39;);
-                        } else {
-                            td.setAttribute(&#39;class&#39;, &#39;no-icon&#39;);
-                        }
-                        break;
-                    case 8:
-                        if (parseInt(td.innerText.toLowerCase()) &gt;= 50) {
-                            td.setAttribute(&#39;class&#39;, &#39;yes-icon&#39;);
-                        } else {
-                            td.setAttribute(&#39;class&#39;, &#39;no-icon&#39;);
-                        }
-                        break;
-                    case 9:
-                        if (parseInt(td.innerText.toLowerCase()) &gt;= 30 &amp;&amp; parseInt(td.innerText.toLowerCase()) &lt;= 80) {
-                            td.setAttribute(&#39;class&#39;, &#39;warning-icon&#39;);
-                        } else if(parseInt(td.innerText.toLowerCase()) &gt;= 90) {
-                            td.setAttribute(&#39;class&#39;, &#39;yes-icon&#39;);
-                        }
-                        else {
-                            td.setAttribute(&#39;class&#39;, &#39;no-icon&#39;);
-                        }
-                        break;
-                }
-            }
-        }
-
-        let pagination = document.getElementsByClassName(&#39;table-pagination&#39;)[0];
-        let container = pagination.parentElement;
-        container.insertBefore(table, pagination);
-    }
-
-    function composeTable(item) {
-        let tHead = [];
-        let rowspan = 1;
-
-        
-        for (let key of Object.keys(item)) {
-            if (Array.isArray(item[key])) {
-                rowspan = 2;
-                break;
-            }
-        }
-
-         
-        if (rowspan &gt; 1) {
-            let subColumns = [];
-            let columns = [];
-
-            for (let key of Object.keys(item)) {
-                let column = {};
-                column.rowspan = rowspan;
-                column.name = key;
-
-                if (Array.isArray(item[key])) {
-                    column.colspan = item[key].length;
-                    
-  
-                    for (let subItem of item[key]) {
-                        subColumns.push({ name: Object.keys(subItem)[0] });
-                    }
-                }
-                columns.push(column);
-            }
-            
-            tHead.push(columns);
-            tHead.push(subColumns);
-        } else {
-            
-            tHead = Object.keys(item);
-        }
-
-        
-        let table = document.createElement(&#39;table&#39;);
-        table.id = &#39;generated-table&#39;;
-        table.setAttribute(&#39;class&#39;, &#39;generated-table table table-hover&#39;); 
-        table.createTHead();
-        table.createTBody();
-
-        for (let level = 0; level &lt; tHead.length; level++) {
-            let tr = table.tHead.insertRow(-1);
-
-            for (let column of tHead[level]) {
-                let th = document.createElement(&#39;th&#39;);
-                
-                if (level &gt; 0) {
-                    th.setAttribute(&#39;scope&#39;, &#39;col&#39;);
-                    th.setAttribute(&#39;class&#39;, &#39;text-center&#39;);
-                } else {
-                    
-                    th.setAttribute(&#39;scope&#39;, &#39;col&#39;);
-
-                    if (column.colspan != undefined) {
-                        th.setAttribute(&#39;colspan&#39;, column.colspan);
-                        th.setAttribute(&#39;class&#39;, &#39;text-center&#39;);
-                    } else {
-                        th.setAttribute(&#39;rowspan&#39;, column.rowspan);
-                    }
-                }
-
-                if (column.colspan != undefined) {
-                    let hr = document.createElement(&#39;hr&#39;);
-                    hr.setAttribute(&#39;class&#39;, &#39;mb-2 mt-2&#39;);
-                    th.append(document.createTextNode(column.name), hr);
-                } else {
-                    th.append(document.createTextNode(column.name));
-                }
-                
-                tr.appendChild(th);
-            }
-        }
-
-        return table;
-    }
-
-    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;40\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;25\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;32\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;48\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Planned\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;25\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;30\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;37\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;95\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;12\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;64\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;15\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;10\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 4\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Low\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Active\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;32\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;11\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;12\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;55\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 5\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Planned\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;24\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;18\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;35\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;75\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 6\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;37\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;20\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;43\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;27\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 7\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Low\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Active\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;14\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;7\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;15\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;24\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 8\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Planned\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;46\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;23\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;34\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;77\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 9\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;46\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;30\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;25\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;93\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 10\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;40\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;8\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;55\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;30\&#34;}\n        ]\n    },\n        {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;40\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;25\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;32\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;48\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Planned\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;25\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;30\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;37\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;95\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;12\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;64\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;15\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;10\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 4\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Low\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Active\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;32\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;11\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;12\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;55\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 5\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Planned\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;24\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;18\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;35\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;75\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 6\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;37\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;20\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;43\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;27\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 7\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Priority\&#34;: \&#34;Low\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Active\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;14\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;7\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;15\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;24\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 8\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Priority\&#34;: \&#34;Hight\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Planned\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;46\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;23\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;34\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;77\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 9\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;Yes\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;No\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;46\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;30\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;25\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;93\&#34;}\n        ]\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 10\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Priority\&#34;: \&#34;Medium\&#34;,\n        \&#34;Status\&#34;: [\n            {\&#34;Implement\&#34;: \&#34;Stable\&#34;},\n            {\&#34;Readme\&#34;: \&#34;No\&#34;},\n            {\&#34;API Docs\&#34;: \&#34;Yes\&#34;}\n        ],\n        \&#34;Metrics\&#34;: [\n            {\&#34;Source (KLOC)\&#34;: \&#34;40\&#34;},\n            {\&#34;Test (KLOC)\&#34;: \&#34;8\&#34;},\n            {\&#34;Compliance\&#34;: \&#34;55\&#34;},\n            {\&#34;Covarage (%)\&#34;: \&#34;30\&#34;}\n        ]\n    }\n\n]&#34;);
+    let jsonData = JSON.parse(&#34;[\n    {\n        \&#34;Component\&#34;: \&#34;Component 1\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Unplanned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;N/A\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 1, Dep 2, Dep 3\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 2\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Planned\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 3, Dep 4\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 3\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Active\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 2\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 5, Dep 6\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 4\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Design\&#34;: \&#34;Unplanned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 1, Dep 7\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 5\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;N/A\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 6\&#34;,\n        \&#34;Type\&#34;: \&#34;Microservice\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Active\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1, Component 2\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 7\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Planned\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 2\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 3, Dep 4\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 8\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Design\&#34;: \&#34;Unplanned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 4\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 3, Dep 5\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 9\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Active\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 10\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfrontend\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 5\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 11\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Active\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 2\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 5, Dep 6\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 12\&#34;,\n        \&#34;Type\&#34;: \&#34;Microfronted\&#34;,\n        \&#34;Design\&#34;: \&#34;Unplanned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 1, Dep 7\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 13\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Stable\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;N/A\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;N/A\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 14\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Planned\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 1\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;Dep 3, Dep 4\&#34;\n    },\n    {\n        \&#34;Component\&#34;: \&#34;Component 15\&#34;,\n        \&#34;Type\&#34;: \&#34;Library\&#34;,\n        \&#34;Design\&#34;: \&#34;Planned\&#34;,\n        \&#34;Development\&#34;: \&#34;Active\&#34;,\n        \&#34;Dependencies\&#34;: \&#34;Component 3\&#34;,\n        \&#34;3rd Party Dependencies\&#34;: \&#34;N/A\&#34;\n    }\n]&#34;);
     createTable(jsonData);
-
 &lt;/script&gt;
 
 
 &lt;script&gt;
-
-    function getRandomColors(count) {
-        colors = [];
-        let letters = &#39;0123456789ABCDEF&#39;;
-        for (let i = 0; i &lt; count; i++) {
-            let color = &#39;#&#39;;
-            for (var j = 0; j &lt; 6; j++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            colors.push(color);
-        }
-        return colors
-    }
-
-    function getNumericData(items) {
-        let columns = [];
-        for (let item of items) {
-            for (let column of Object.keys(item)) {
-                if (!isNaN(parseFloat(item[column])) &amp;&amp; !columns.includes(column)) {
-                    columns.push(column);
-                } 
-            }
-        }
-        return columns;
-    }
-
-    function toFlatData(jsonData) {
-        let flatObjects = [];
-
-        for (let item of jsonData) {
-            let obj = {};
-
-            for (let key of Object.keys(item)) {
-                if (item[key] instanceof Object) {
-                    for (let subItem of item[key]) {
-                        for(let subKey of Object.keys(subItem)) {
-                            obj[subKey] = subItem[subKey];
-                        }
-                    }
-                } else {
-                    obj[key] = item[key]; 
-                } 
-            } 
-            flatObjects.push(obj);
-        }
-        return flatObjects;
-    }
-
-    function composeChartsData(jsonData) {
-        jsonData = toFlatData(jsonData);
-
-        let columns = getNumericData(jsonData);
-
-        let chartData = {
-            legends: [],
-            xAxisName: [],
-            series: []
-        };
-
-        for (let item of jsonData) {
-            chartData.xAxisName.push(item[&#39;Component&#39;]);
-
-            let series = [];
-            let legend = [];
-
-            for (let column of columns) {
-                series.push([item[column]]);
-                legend.push(column);
-            }
-
-            chartData.series.push(series);
-            chartData.legends.push(legend);
-
-        }
-
-        return chartData;
-    }
-
-
     let chartsData = composeChartsData(jsonData);
     let chartsBlock = document.getElementById(&#39;generated-charts&#39;);
 
-    for (let i=0; i &lt; chartsData.series.length; i++) {
+    for (let i = 0; i &lt; chartsData.series.length; i++) {
         let chart = generateBarChart(
             &#39;Metrics for &#39; + chartsData.xAxisName[i],
             chartsData.legends[i],
@@ -685,7 +363,6 @@
 
         chartsBlock.appendChild(chart);
     }
-
 &lt;/script&gt;
 
       </description>

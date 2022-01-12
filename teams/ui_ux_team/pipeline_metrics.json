@@ -1,0 +1,122 @@
+[
+    {
+        "Component": "Component 1",
+        "Type": "Library",
+        "Design": "Unplanned",
+        "Development": "Stable",
+        "Dependencies": "N/A",
+        "3rd Party Dependencies": "Dep 1, Dep 2, Dep 3"
+    },
+    {
+        "Component": "Component 2",
+        "Type": "Microservice",
+        "Design": "Planned",
+        "Development": "Planned",
+        "Dependencies": "Component 1",
+        "3rd Party Dependencies": "Dep 3, Dep 4"
+    },
+    {
+        "Component": "Component 3",
+        "Type": "Microfronted",
+        "Design": "Planned",
+        "Development": "Active",
+        "Dependencies": "Component 2",
+        "3rd Party Dependencies": "Dep 5, Dep 6"
+    },
+    {
+        "Component": "Component 4",
+        "Type": "Microfronted",
+        "Design": "Unplanned",
+        "Development": "Stable",
+        "Dependencies": "Component 1",
+        "3rd Party Dependencies": "Dep 1, Dep 7"
+    },
+    {
+        "Component": "Component 5",
+        "Type": "Library",
+        "Design": "Planned",
+        "Development": "Stable",
+        "Dependencies": "N/A",
+        "3rd Party Dependencies": "N/A"
+    },
+    {
+        "Component": "Component 6",
+        "Type": "Microservice",
+        "Design": "Planned",
+        "Development": "Active",
+        "Dependencies": "Component 1, Component 2",
+        "3rd Party Dependencies": "N/A"
+    },
+    {
+        "Component": "Component 7",
+        "Type": "Library",
+        "Design": "Planned",
+        "Development": "Planned",
+        "Dependencies": "Component 2",
+        "3rd Party Dependencies": "Dep 3, Dep 4"
+    },
+    {
+        "Component": "Component 8",
+        "Type": "Microfrontend",
+        "Design": "Unplanned",
+        "Development": "Stable",
+        "Dependencies": "Component 4",
+        "3rd Party Dependencies": "Dep 3, Dep 5"
+    },
+    {
+        "Component": "Component 9",
+        "Type": "Library",
+        "Design": "Planned",
+        "Development": "Active",
+        "Dependencies": "Component 1",
+        "3rd Party Dependencies": "N/A"
+    },
+    {
+        "Component": "Component 10",
+        "Type": "Microfrontend",
+        "Design": "Planned",
+        "Development": "Stable",
+        "Dependencies": "Component 1",
+        "3rd Party Dependencies": "Dep 5"
+    },
+    {
+        "Component": "Component 11",
+        "Type": "Microfronted",
+        "Design": "Planned",
+        "Development": "Active",
+        "Dependencies": "Component 2",
+        "3rd Party Dependencies": "Dep 5, Dep 6"
+    },
+    {
+        "Component": "Component 12",
+        "Type": "Microfronted",
+        "Design": "Unplanned",
+        "Development": "Stable",
+        "Dependencies": "Component 1",
+        "3rd Party Dependencies": "Dep 1, Dep 7"
+    },
+    {
+        "Component": "Component 13",
+        "Type": "Library",
+        "Design": "Planned",
+        "Development": "Stable",
+        "Dependencies": "N/A",
+        "3rd Party Dependencies": "N/A"
+    },
+    {
+        "Component": "Component 14",
+        "Type": "Library",
+        "Design": "Planned",
+        "Development": "Planned",
+        "Dependencies": "Component 1",
+        "3rd Party Dependencies": "Dep 3, Dep 4"
+    },
+    {
+        "Component": "Component 15",
+        "Type": "Library",
+        "Design": "Planned",
+        "Development": "Active",
+        "Dependencies": "Component 3",
+        "3rd Party Dependencies": "N/A"
+    }
+]

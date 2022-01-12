@@ -1,0 +1,68 @@
+[
+    {
+        "Feature": "Component 1",
+        "Status": "In progress",
+        "Component 1": {
+            "CI": "1.0.1",
+            "QA": "1.0.1",
+            "Stage": "N/A",
+            "Prod": "N/A"
+        },
+        "Component 2": {
+            "CI": "2.1.0",
+            "QA": "2.1.0",
+            "Stage": "2.0.0",
+            "Prod": "2.0.0"
+        },
+        "Component 3": {
+            "CI": "N/A",
+            "QA": "N/A",
+            "Stage": "N/A",
+            "Prod": "N/A"
+        }
+    },
+    {
+        "Feature": "Component 2",
+        "Status": "Planned",
+        "Component 1": {
+            "CI": "N/A",
+            "QA": "N/A",
+            "Stage": "N/A",
+            "Prod": "N/A"
+        },
+        "Component 2": {
+            "CI": "1.1.0",
+            "QA": "1.1.0",
+            "Stage": "N/A",
+            "Prod": "N/A"
+        },
+        "Component 3": {
+            "CI": "1.0.0",
+            "QA": "1.0.0",
+            "Stage": "N/A",
+            "Prod": "N/A"
+        }
+    },
+    {
+        "Feature": "Component 3",
+        "Status": "Completed",
+        "Component 1": {
+            "CI": "2.1.0",
+            "QA": "2.1.0",
+            "Stage": "3.0.0",
+            "Prod": "3.0.0"
+        },
+        "Component 2": {
+            "CI": "2.1.0",
+            "QA": "2.1.0",
+            "Stage": "2.0.0",
+            "Prod": "2.0.0"
+        },
+        "Component 3": {
+            "CI": "1.1.0",
+            "QA": "1.1.0",
+            "Stage": "2.0.0",
+            "Prod": "2.0.0"
+        }
+    }
+]

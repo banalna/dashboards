@@ -1,0 +1,137 @@
+[
+    {
+        "Feature": "Feature 1",
+        "Status": "Completed",
+        "Planned": "12",
+        "Dev": "5",
+        "CI": "2",
+        "QA": "5",
+        "Stage": "15"
+    },
+    {
+        "Feature": "Feature 2",
+        "Status": "In progress",
+        "Planned": "15",
+        "Dev": "7",
+        "CI": "3",
+        "QA": "7",
+        "Stage": "10"
+    },
+    {
+        "Feature": "Feature 3",
+        "Status": "In progress",
+        "Planned": "25",
+        "Dev": "12",
+        "CI": "5",
+        "QA": "8",
+        "Stage": "7"
+    },
+    {
+        "Feature": "Feature 4",
+        "Status": "Completed",
+        "Planned": "35",
+        "Dev": "17",
+        "CI": "1",
+        "QA": "11",
+        "Stage": "4"
+    },
+    {
+        "Feature": "Feature 5",
+        "Status": "Completed",
+        "Planned": "12",
+        "Dev": "5",
+        "CI": "2",
+        "QA": "5",
+        "Stage": "15"
+    },
+    {
+        "Feature": "Feature 6",
+        "Status": "In progress",
+        "Planned": "27",
+        "Dev": "4",
+        "CI": "5",
+        "QA": "8",
+        "Stage": "10"
+    },
+    {
+        "Feature": "Feature 7",
+        "Status": "Completed",
+        "Planned": "35",
+        "Dev": "17",
+        "CI": "1",
+        "QA": "11",
+        "Stage": "4"
+    },
+    {
+        "Feature": "Feature 8",
+        "Status": "Completed",
+        "Planned": "10",
+        "Dev": "3",
+        "CI": "4",
+        "QA": "1",
+        "Stage": "3"
+    },
+    {
+        "Feature": "Feature 9",
+        "Status": "In progress",
+        "Planned": "12",
+        "Dev": "5",
+        "CI": "2",
+        "QA": "5",
+        "Stage": "15"
+    },
+    {
+        "Feature": "Feature 10",
+        "Status": "In progress",
+        "Planned": "17",
+        "Dev": "10",
+        "CI": "2",
+        "QA": "4",
+        "Stage": "1"
+    },
+    {
+        "Feature": "Feature 11",
+        "Status": "Completed",
+        "Planned": "12",
+        "Dev": "5",
+        "CI": "2",
+        "QA": "5",
+        "Stage": "15"
+    },
+    {
+        "Feature": "Feature 12",
+        "Status": "Completed",
+        "Planned": "12",
+        "Dev": "5",
+        "CI": "2",
+        "QA": "5",
+        "Stage": "15"
+    },
+    {
+        "Feature": "Feature 13",
+        "Status": "In progress",
+        "Planned": "27",
+        "Dev": "4",
+        "CI": "5",
+        "QA": "8",
+        "Stage": "10"
+    },
+    {
+        "Feature": "Feature 14",
+        "Status": "Completed",
+        "Planned": "35",
+        "Dev": "17",
+        "CI": "1",
+        "QA": "11",
+        "Stage": "4"
+    },
+    {
+        "Feature": "Feature 15",
+        "Status": "In progress",
+        "Planned": "15",
+        "Dev": "7",
+        "CI": "3",
+        "QA": "7",
+        "Stage": "10"
+    }
+]

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.91.2" />
+<meta name="generator" content="Hugo 0.92.0" />
 <meta name="robots" content="index, follow">
 
 
@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Quality metrics and failures at stages in the pipeline for individual components
 ">
 
-<meta itemprop="wordCount" content="36">
+<meta itemprop="wordCount" content="505">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Component Quality"/>
 <meta name="twitter:description" content="Quality metrics and failures at stages in the pipeline for individual components
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" as="style">
-<link href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" as="style">
+<link href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -119,12 +119,12 @@
           
           
           
-          <main class="col-12 pr-md-5 pl-md-5" role="main">
+          <main class="col-12 pr-0 pl-0 pb-0" role="main">
             
   
 
             <nav aria-label="breadcrumb" class='td-breadcrumbs
-    '>
+    pl-md-5 pl-3'>
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="https://banalna.github.io/dashboards/">Home</a>
@@ -291,12 +291,12 @@
             var startItem = currPage * rowsShown + 1;
             var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
 
-            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
-                css('display', 'table-row').animate({ opacity: 1 }, 300);
+            var showItems = $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem);
+            showItems.css('display', 'table-row').animate({ opacity: 1 }, 300);
 
             $('#generated-table tbody tr:first').show();
 
-            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+            $('#shownRows').text(`${startItem}-${showItems.length}`);
         });
 
         //});
@@ -305,30 +305,51 @@
     }
 </script>
 	
+<script src='/dashboards/js/echarts.min.js'></script>
+<script src='/dashboards/js/echarts.config.js'></script>
+<script src='/dashboards/js/chart-generator.js'></script>
+
+
+
+
+
+
+    <script src='/dashboards/js/component-quality-gen.js'></script>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 <script>
-    
-        
-    
-
-    let content = document.getElementsByClassName('td-content')[0];
-    content.className = content.className.replace('bg-primary', ''); 
-    content.className = content.className.replace('border-top', '');
-
-    for (let element of content.children) {
-        if (element.id != 'under-construction') {
-            element.setAttribute('hidden', true);
-        }
-    }
+    let jsonData = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Status\": \"Stable\",\n        \"Coverage\": \"80%\",\n        \"Compiliance\": \"11\",\n        \"Dev\": \"37%\",\n        \"CI\": \"50%\",\n        \"QA\": \"10%\",\n        \"Stage\": \"5%\",\n        \"Reported\": \"5\",\n        \"In progress\": \"0\",\n        \"Completed\": \"25\",\n        \"Count\": \"15\",\n        \"Failures\": \"30%\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Status\": \"In progress\",\n        \"Coverage\": \"35%\",\n        \"Compiliance\": \"3\",\n        \"Dev\": \"55%\",\n        \"CI\": \"55%\",\n        \"QA\": \"15%\",\n        \"Stage\": \"4%\",\n        \"Reported\": \"1\",\n        \"In progress\": \"12\",\n        \"Completed\": \"7\",\n        \"Count\": \"4\",\n        \"Failures\": \"57%\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microservice\",\n        \"Status\": \"Planned\",\n        \"Coverage\": \"0%\",\n        \"Compiliance\": \"0\",\n        \"Dev\": \"78%\",\n        \"CI\": \"0%\",\n        \"QA\": \"5%\",\n        \"Stage\": \"1%\",\n        \"Reported\": \"0\",\n        \"In progress\": \"21\",\n        \"Completed\": \"3\",\n        \"Count\": \"1\",\n        \"Failures\": \"7%\"\n    },\n    {\n        \"Component\": \"Component 4\",\n        \"Type\": \"Microfronted\",\n        \"Status\": \"Stable\",\n        \"Coverage\": \"75%\",\n        \"Compiliance\": \"12\",\n        \"Dev\": \"87%\",\n        \"CI\": \"54%\",\n        \"QA\": \"50%\",\n        \"Stage\": \"78%\",\n        \"Reported\": \"24\",\n        \"In progress\": \"7\",\n        \"Completed\": \"30\",\n        \"Count\": \"15\",\n        \"Failures\": \"35%\"\n    },\n    {\n        \"Component\": \"Component 5\",\n        \"Type\": \"Library\",\n        \"Status\": \"In progress\",\n        \"Coverage\": \"50%\",\n        \"Compiliance\": \"12\",\n        \"Dev\": \"97%\",\n        \"CI\": \"55%\",\n        \"QA\": \"12%\",\n        \"Stage\": \"15%\",\n        \"Reported\": \"7\",\n        \"In progress\": \"8\",\n        \"Completed\": \"17\",\n        \"Count\": \"12\",\n        \"Failures\": \"31%\"\n    },\n    {\n        \"Component\": \"Component 6\",\n        \"Type\": \"Microfrontend\",\n        \"Status\": \"In progress\",\n        \"Coverage\": \"15%\",\n        \"Compiliance\": \"5\",\n        \"Dev\": \"45%\",\n        \"CI\": \"25%\",\n        \"QA\": \"17%\",\n        \"Stage\": \"9%\",\n        \"Reported\": \"11\",\n        \"In progress\": \"12\",\n        \"Completed\": \"3\",\n        \"Count\": \"4\",\n        \"Failures\": \"21%\"\n    },\n    {\n        \"Component\": \"Component 7\",\n        \"Type\": \"Microfrontend\",\n        \"Status\": \"Planned\",\n        \"Coverage\": \"0%\",\n        \"Compiliance\": \"0\",\n        \"Dev\": \"3%\",\n        \"CI\": \"0%\",\n        \"QA\": \"5%\",\n        \"Stage\": \"1%\",\n        \"Reported\": \"0\",\n        \"In progress\": \"21\",\n        \"Completed\": \"3\",\n        \"Count\": \"1\",\n        \"Failures\": \"7%\"\n    },\n    {\n        \"Component\": \"Component 8\",\n        \"Type\": \"Microfronted\",\n        \"Status\": \"Stable\",\n        \"Coverage\": \"75%\",\n        \"Compiliance\": \"12\",\n        \"Dev\": \"77%\",\n        \"CI\": \"54%\",\n        \"QA\": \"50%\",\n        \"Stage\": \"78%\",\n        \"Reported\": \"24\",\n        \"In progress\": \"7\",\n        \"Completed\": \"30\",\n        \"Count\": \"15\",\n        \"Failures\": \"35%\"\n    },\n    {\n        \"Component\": \"Component 9\",\n        \"Type\": \"Library\",\n        \"Status\": \"In progress\",\n        \"Coverage\": \"50%\",\n        \"Compiliance\": \"12\",\n        \"Dev\": \"51%\",\n        \"CI\": \"55%\",\n        \"QA\": \"12%\",\n        \"Stage\": \"15%\",\n        \"Reported\": \"7\",\n        \"In progress\": \"8\",\n        \"Completed\": \"17\",\n        \"Count\": \"12\",\n        \"Failures\": \"31%\"\n    },\n    {\n        \"Component\": \"Component 10\",\n        \"Type\": \"Library\",\n        \"Status\": \"Stable\",\n        \"Coverage\": \"80%\",\n        \"Compiliance\": \"11\",\n        \"Dev\": \"0%\",\n        \"CI\": \"50%\",\n        \"QA\": \"10%\",\n        \"Stage\": \"5%\",\n        \"Reported\": \"5\",\n        \"In progress\": \"0\",\n        \"Completed\": \"25\",\n        \"Count\": \"15\",\n        \"Failures\": \"30%\"\n    },\n    {\n        \"Component\": \"Component 11\",\n        \"Type\": \"Microservice\",\n        \"Status\": \"Planned\",\n        \"Coverage\": \"0%\",\n        \"Compiliance\": \"0\",\n        \"Dev\": \"3%\",\n        \"CI\": \"0%\",\n        \"QA\": \"5%\",\n        \"Stage\": \"1%\",\n        \"Reported\": \"0\",\n        \"In progress\": \"21\",\n        \"Completed\": \"3\",\n        \"Count\": \"1\",\n        \"Failures\": \"7%\"\n    },\n    {\n        \"Component\": \"Component 12\",\n        \"Type\": \"Library\",\n        \"Status\": \"In progress\",\n        \"Coverage\": \"50%\",\n        \"Compiliance\": \"12\",\n        \"Dev\": \"10%\",\n        \"CI\": \"55%\",\n        \"QA\": \"12%\",\n        \"Stage\": \"15%\",\n        \"Reported\": \"7\",\n        \"In progress\": \"8\",\n        \"Completed\": \"17\",\n        \"Count\": \"12\",\n        \"Failures\": \"31%\"\n    },\n    {\n        \"Component\": \"Component 13\",\n        \"Type\": \"Microfrontend\",\n        \"Status\": \"In progress\",\n        \"Coverage\": \"15%\",\n        \"Compiliance\": \"5\",\n        \"Dev\": \"14%\",\n        \"CI\": \"25%\",\n        \"QA\": \"17%\",\n        \"Stage\": \"9%\",\n        \"Reported\": \"11\",\n        \"In progress\": \"12\",\n        \"Completed\": \"3\",\n        \"Count\": \"4\",\n        \"Failures\": \"21%\"\n    },\n    {\n        \"Component\": \"Component 14\",\n        \"Type\": \"Microfrontend\",\n        \"Status\": \"Planned\",\n        \"Coverage\": \"0%\",\n        \"Compiliance\": \"0\",\n        \"Dev\": \"3%\",\n        \"CI\": \"0%\",\n        \"QA\": \"5%\",\n        \"Stage\": \"1%\",\n        \"Reported\": \"0\",\n        \"In progress\": \"21\",\n        \"Completed\": \"3\",\n        \"Count\": \"1\",\n        \"Failures\": \"7%\"\n    },\n    {\n        \"Component\": \"Component 15\",\n        \"Type\": \"Microfronted\",\n        \"Status\": \"Stable\",\n        \"Coverage\": \"75%\",\n        \"Compiliance\": \"12\",\n        \"Dev\": \"84%\",\n        \"CI\": \"54%\",\n        \"QA\": \"50%\",\n        \"Stage\": \"78%\",\n        \"Reported\": \"24\",\n        \"In progress\": \"7\",\n        \"Completed\": \"30\",\n        \"Count\": \"15\",\n        \"Failures\": \"35%\"\n    }\n]");
+    createTable(jsonData);
 </script>
 
-<div class="mx-auto text-center pb-0" id="under-construction">
-    <img src='https://banalna.github.io/dashboards/images/under_construction.svg' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
-    alt="Under construction img">
-    <a href="#" onclick="history.back()">
-        <h3 class="mx-auto pt-2" style="color: #3357C6;">This dashboard is under construction</h3>
-    </a>
-    <h3 class="mx-auto" style="color: #101840;">Please, come again later</h3>
-</div>
+
+<script>
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById('generated-charts');
+
+    for (let i = 0; i < chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            'Metrics for ' + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+</script>
 
 	
 	

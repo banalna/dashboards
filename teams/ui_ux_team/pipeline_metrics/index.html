@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.91.2" />
+<meta name="generator" content="Hugo 0.92.0" />
 <meta name="robots" content="index, follow">
 
 
@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Stability of environments and failure response timings
 ">
 
-<meta itemprop="wordCount" content="1088">
+<meta itemprop="wordCount" content="318">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pipeline Metrics"/>
 <meta name="twitter:description" content="Stability of environments and failure response timings
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" as="style">
-<link href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" as="style">
+<link href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -291,12 +291,12 @@
             var startItem = currPage * rowsShown + 1;
             var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
 
-            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
-                css('display', 'table-row').animate({ opacity: 1 }, 300);
+            var showItems = $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem);
+            showItems.css('display', 'table-row').animate({ opacity: 1 }, 300);
 
             $('#generated-table tbody tr:first').show();
 
-            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+            $('#shownRows').text(`${startItem}-${showItems.length}`);
         });
 
         //});
@@ -314,6 +314,14 @@
 
 
 
+    <script src='/dashboards/js/pipeline-metrics-gen.js'></script>
+
+
+
+
+
+
+
     
 
 
@@ -322,290 +330,16 @@
 
 
 <script>
-
-    
-    function findNestedObj(entireObj, keyToFind) {
-        let foundObj;
-        JSON.stringify(entireObj, (_, nestedValue) => {
-            if (nestedValue) {
-                foundObj = nestedValue;
-            }
-            return nestedValue;
-        });
-        return foundObj;
-    };
-
-    function createTable(items) {
-        let columns = [];
-        
-        for (let key of Object.keys(items[0])) {
-            if (Array.isArray(items[0][key])) {
-                for (let subItem of items[0][key]) {
-                    columns = [...columns, ...Object.keys(subItem)];
-                }
-            } else {
-                columns.push(key);
-            }
-        }
-
-        let table = composeTable(items[0]);
-        let tr = table.tBodies[0].insertRow(0);
-        tr.insertCell(0).setAttribute('class', 'm-0');
-
-        for (let item of items) {
-            let tr = table.tBodies[0].insertRow(-1);
-            for (let column of columns) {
-                let td = tr.insertCell(-1);
-
-                if (item[column] == undefined) {
-                    for (let key of Object.keys(item)) {
-                        
-                        if (Array.isArray(item[key])) {
-                            var obj = item[key].filter((o) => o[column] != undefined)
-                            if (obj.length > 0) {
-                                td.innerText = obj[0][column];
-                                td.setAttribute('class', 'text-center')
-                                break;
-                            }
-                        }
-                    }
-                    
-                } else {
-                    td.innerText = item[column];
-                }
-
-                
-                switch (td.cellIndex) {
-                    case 'yes':
-                        td.setAttribute('class', 'yes-icon');
-                        td.textContent = '';
-                        break;
-                    case 'no':
-                        td.setAttribute('class', 'no-icon');
-                        td.textContent = '';
-                        break;
-                    case 2:
-                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon text-left');
-                        td.textContent = '';
-                        break;
-                    case 4:
-                    case 5:
-                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon');
-                        td.textContent = '';
-                        break;
-                    case 6:
-                        if (parseInt(td.innerText.toLowerCase()) >= 30) {
-                            td.setAttribute('class', 'yes-icon');
-                        } else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                    case 7:
-                        if (parseInt(td.innerText.toLowerCase()) >= 25) {
-                            td.setAttribute('class', 'yes-icon');
-                        } else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                    case 8:
-                        if (parseInt(td.innerText.toLowerCase()) >= 50) {
-                            td.setAttribute('class', 'yes-icon');
-                        } else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                    case 9:
-                        if (parseInt(td.innerText.toLowerCase()) >= 30 && parseInt(td.innerText.toLowerCase()) <= 80) {
-                            td.setAttribute('class', 'warning-icon');
-                        } else if(parseInt(td.innerText.toLowerCase()) >= 90) {
-                            td.setAttribute('class', 'yes-icon');
-                        }
-                        else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                }
-            }
-        }
-
-        let pagination = document.getElementsByClassName('table-pagination')[0];
-        let container = pagination.parentElement;
-        container.insertBefore(table, pagination);
-    }
-
-    function composeTable(item) {
-        let tHead = [];
-        let rowspan = 1;
-
-        
-        for (let key of Object.keys(item)) {
-            if (Array.isArray(item[key])) {
-                rowspan = 2;
-                break;
-            }
-        }
-
-         
-        if (rowspan > 1) {
-            let subColumns = [];
-            let columns = [];
-
-            for (let key of Object.keys(item)) {
-                let column = {};
-                column.rowspan = rowspan;
-                column.name = key;
-
-                if (Array.isArray(item[key])) {
-                    column.colspan = item[key].length;
-                    
-  
-                    for (let subItem of item[key]) {
-                        subColumns.push({ name: Object.keys(subItem)[0] });
-                    }
-                }
-                columns.push(column);
-            }
-            
-            tHead.push(columns);
-            tHead.push(subColumns);
-        } else {
-            
-            tHead = Object.keys(item);
-        }
-
-        
-        let table = document.createElement('table');
-        table.id = 'generated-table';
-        table.setAttribute('class', 'generated-table table table-hover'); 
-        table.createTHead();
-        table.createTBody();
-
-        for (let level = 0; level < tHead.length; level++) {
-            let tr = table.tHead.insertRow(-1);
-
-            for (let column of tHead[level]) {
-                let th = document.createElement('th');
-                
-                if (level > 0) {
-                    th.setAttribute('scope', 'col');
-                    th.setAttribute('class', 'text-center');
-                } else {
-                    
-                    th.setAttribute('scope', 'col');
-
-                    if (column.colspan != undefined) {
-                        th.setAttribute('colspan', column.colspan);
-                        th.setAttribute('class', 'text-center');
-                    } else {
-                        th.setAttribute('rowspan', column.rowspan);
-                    }
-                }
-
-                if (column.colspan != undefined) {
-                    let hr = document.createElement('hr');
-                    hr.setAttribute('class', 'mb-2 mt-2');
-                    th.append(document.createTextNode(column.name), hr);
-                } else {
-                    th.append(document.createTextNode(column.name));
-                }
-                
-                tr.appendChild(th);
-            }
-        }
-
-        return table;
-    }
-
-    let jsonData = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"40\"},\n            {\"Test (KLOC)\": \"25\"},\n            {\"Compliance\": \"32\"},\n            {\"Covarage (%)\": \"48\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"25\"},\n            {\"Test (KLOC)\": \"30\"},\n            {\"Compliance\": \"37\"},\n            {\"Covarage (%)\": \"95\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"12\"},\n            {\"Test (KLOC)\": \"64\"},\n            {\"Compliance\": \"15\"},\n            {\"Covarage (%)\": \"10\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 4\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Status\": [\n            {\"Implement\": \"Active\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"32\"},\n            {\"Test (KLOC)\": \"11\"},\n            {\"Compliance\": \"12\"},\n            {\"Covarage (%)\": \"55\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 5\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"24\"},\n            {\"Test (KLOC)\": \"18\"},\n            {\"Compliance\": \"35\"},\n            {\"Covarage (%)\": \"75\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 6\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"37\"},\n            {\"Test (KLOC)\": \"20\"},\n            {\"Compliance\": \"43\"},\n            {\"Covarage (%)\": \"27\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 7\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Status\": [\n            {\"Implement\": \"Active\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"14\"},\n            {\"Test (KLOC)\": \"7\"},\n            {\"Compliance\": \"15\"},\n            {\"Covarage (%)\": \"24\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 8\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"46\"},\n            {\"Test (KLOC)\": \"23\"},\n            {\"Compliance\": \"34\"},\n            {\"Covarage (%)\": \"77\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 9\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"46\"},\n            {\"Test (KLOC)\": \"30\"},\n            {\"Compliance\": \"25\"},\n            {\"Covarage (%)\": \"93\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 10\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"40\"},\n            {\"Test (KLOC)\": \"8\"},\n            {\"Compliance\": \"55\"},\n            {\"Covarage (%)\": \"30\"}\n        ]\n    },\n        {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"40\"},\n            {\"Test (KLOC)\": \"25\"},\n            {\"Compliance\": \"32\"},\n            {\"Covarage (%)\": \"48\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"25\"},\n            {\"Test (KLOC)\": \"30\"},\n            {\"Compliance\": \"37\"},\n            {\"Covarage (%)\": \"95\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"12\"},\n            {\"Test (KLOC)\": \"64\"},\n            {\"Compliance\": \"15\"},\n            {\"Covarage (%)\": \"10\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 4\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Status\": [\n            {\"Implement\": \"Active\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"32\"},\n            {\"Test (KLOC)\": \"11\"},\n            {\"Compliance\": \"12\"},\n            {\"Covarage (%)\": \"55\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 5\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"24\"},\n            {\"Test (KLOC)\": \"18\"},\n            {\"Compliance\": \"35\"},\n            {\"Covarage (%)\": \"75\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 6\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"37\"},\n            {\"Test (KLOC)\": \"20\"},\n            {\"Compliance\": \"43\"},\n            {\"Covarage (%)\": \"27\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 7\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Status\": [\n            {\"Implement\": \"Active\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"14\"},\n            {\"Test (KLOC)\": \"7\"},\n            {\"Compliance\": \"15\"},\n            {\"Covarage (%)\": \"24\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 8\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Status\": [\n            {\"Implement\": \"Planned\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"46\"},\n            {\"Test (KLOC)\": \"23\"},\n            {\"Compliance\": \"34\"},\n            {\"Covarage (%)\": \"77\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 9\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"Yes\"},\n            {\"API Docs\": \"No\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"46\"},\n            {\"Test (KLOC)\": \"30\"},\n            {\"Compliance\": \"25\"},\n            {\"Covarage (%)\": \"93\"}\n        ]\n    },\n    {\n        \"Component\": \"Component 10\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Status\": [\n            {\"Implement\": \"Stable\"},\n            {\"Readme\": \"No\"},\n            {\"API Docs\": \"Yes\"}\n        ],\n        \"Metrics\": [\n            {\"Source (KLOC)\": \"40\"},\n            {\"Test (KLOC)\": \"8\"},\n            {\"Compliance\": \"55\"},\n            {\"Covarage (%)\": \"30\"}\n        ]\n    }\n\n]");
+    let jsonData = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Design\": \"Unplanned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"N/A\",\n        \"3rd Party Dependencies\": \"Dep 1, Dep 2, Dep 3\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Planned\",\n        \"Dependencies\": \"Component 1\",\n        \"3rd Party Dependencies\": \"Dep 3, Dep 4\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfronted\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Active\",\n        \"Dependencies\": \"Component 2\",\n        \"3rd Party Dependencies\": \"Dep 5, Dep 6\"\n    },\n    {\n        \"Component\": \"Component 4\",\n        \"Type\": \"Microfronted\",\n        \"Design\": \"Unplanned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"Component 1\",\n        \"3rd Party Dependencies\": \"Dep 1, Dep 7\"\n    },\n    {\n        \"Component\": \"Component 5\",\n        \"Type\": \"Library\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"N/A\",\n        \"3rd Party Dependencies\": \"N/A\"\n    },\n    {\n        \"Component\": \"Component 6\",\n        \"Type\": \"Microservice\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Active\",\n        \"Dependencies\": \"Component 1, Component 2\",\n        \"3rd Party Dependencies\": \"N/A\"\n    },\n    {\n        \"Component\": \"Component 7\",\n        \"Type\": \"Library\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Planned\",\n        \"Dependencies\": \"Component 2\",\n        \"3rd Party Dependencies\": \"Dep 3, Dep 4\"\n    },\n    {\n        \"Component\": \"Component 8\",\n        \"Type\": \"Microfrontend\",\n        \"Design\": \"Unplanned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"Component 4\",\n        \"3rd Party Dependencies\": \"Dep 3, Dep 5\"\n    },\n    {\n        \"Component\": \"Component 9\",\n        \"Type\": \"Library\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Active\",\n        \"Dependencies\": \"Component 1\",\n        \"3rd Party Dependencies\": \"N/A\"\n    },\n    {\n        \"Component\": \"Component 10\",\n        \"Type\": \"Microfrontend\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"Component 1\",\n        \"3rd Party Dependencies\": \"Dep 5\"\n    },\n    {\n        \"Component\": \"Component 11\",\n        \"Type\": \"Microfronted\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Active\",\n        \"Dependencies\": \"Component 2\",\n        \"3rd Party Dependencies\": \"Dep 5, Dep 6\"\n    },\n    {\n        \"Component\": \"Component 12\",\n        \"Type\": \"Microfronted\",\n        \"Design\": \"Unplanned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"Component 1\",\n        \"3rd Party Dependencies\": \"Dep 1, Dep 7\"\n    },\n    {\n        \"Component\": \"Component 13\",\n        \"Type\": \"Library\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Stable\",\n        \"Dependencies\": \"N/A\",\n        \"3rd Party Dependencies\": \"N/A\"\n    },\n    {\n        \"Component\": \"Component 14\",\n        \"Type\": \"Library\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Planned\",\n        \"Dependencies\": \"Component 1\",\n        \"3rd Party Dependencies\": \"Dep 3, Dep 4\"\n    },\n    {\n        \"Component\": \"Component 15\",\n        \"Type\": \"Library\",\n        \"Design\": \"Planned\",\n        \"Development\": \"Active\",\n        \"Dependencies\": \"Component 3\",\n        \"3rd Party Dependencies\": \"N/A\"\n    }\n]");
     createTable(jsonData);
-
 </script>
 
 
 <script>
-
-    function getRandomColors(count) {
-        colors = [];
-        let letters = '0123456789ABCDEF';
-        for (let i = 0; i < count; i++) {
-            let color = '#';
-            for (var j = 0; j < 6; j++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            colors.push(color);
-        }
-        return colors
-    }
-
-    function getNumericData(items) {
-        let columns = [];
-        for (let item of items) {
-            for (let column of Object.keys(item)) {
-                if (!isNaN(parseFloat(item[column])) && !columns.includes(column)) {
-                    columns.push(column);
-                } 
-            }
-        }
-        return columns;
-    }
-
-    function toFlatData(jsonData) {
-        let flatObjects = [];
-
-        for (let item of jsonData) {
-            let obj = {};
-
-            for (let key of Object.keys(item)) {
-                if (item[key] instanceof Object) {
-                    for (let subItem of item[key]) {
-                        for(let subKey of Object.keys(subItem)) {
-                            obj[subKey] = subItem[subKey];
-                        }
-                    }
-                } else {
-                    obj[key] = item[key]; 
-                } 
-            } 
-            flatObjects.push(obj);
-        }
-        return flatObjects;
-    }
-
-    function composeChartsData(jsonData) {
-        jsonData = toFlatData(jsonData);
-
-        let columns = getNumericData(jsonData);
-
-        let chartData = {
-            legends: [],
-            xAxisName: [],
-            series: []
-        };
-
-        for (let item of jsonData) {
-            chartData.xAxisName.push(item['Component']);
-
-            let series = [];
-            let legend = [];
-
-            for (let column of columns) {
-                series.push([item[column]]);
-                legend.push(column);
-            }
-
-            chartData.series.push(series);
-            chartData.legends.push(legend);
-
-        }
-
-        return chartData;
-    }
-
-
     let chartsData = composeChartsData(jsonData);
     let chartsBlock = document.getElementById('generated-charts');
 
-    for (let i=0; i < chartsData.series.length; i++) {
+    for (let i = 0; i < chartsData.series.length; i++) {
         let chart = generateBarChart(
             'Metrics for ' + chartsData.xAxisName[i],
             chartsData.legends[i],
@@ -615,7 +349,6 @@
 
         chartsBlock.appendChild(chart);
     }
-
 </script>
 
 	

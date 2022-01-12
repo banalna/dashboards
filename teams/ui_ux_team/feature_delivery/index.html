@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.91.2" />
+<meta name="generator" content="Hugo 0.92.0" />
 <meta name="robots" content="index, follow">
 
 
@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Progress of delivery individual features through stages in pipeline
 ">
 
-<meta itemprop="wordCount" content="36">
+<meta itemprop="wordCount" content="149">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Feature Delivery"/>
 <meta name="twitter:description" content="Progress of delivery individual features through stages in pipeline
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" as="style">
-<link href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" as="style">
+<link href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -119,12 +119,12 @@
           
           
           
-          <main class="col-12 pr-md-5 pl-md-5" role="main">
+          <main class="col-12 pr-0 pl-0 pb-0" role="main">
             
   
 
             <nav aria-label="breadcrumb" class='td-breadcrumbs
-    '>
+    pl-md-5 pl-3'>
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="https://banalna.github.io/dashboards/">Home</a>
@@ -291,12 +291,12 @@
             var startItem = currPage * rowsShown + 1;
             var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
 
-            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
-                css('display', 'table-row').animate({ opacity: 1 }, 300);
+            var showItems = $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem);
+            showItems.css('display', 'table-row').animate({ opacity: 1 }, 300);
 
             $('#generated-table tbody tr:first').show();
 
-            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+            $('#shownRows').text(`${startItem}-${showItems.length}`);
         });
 
         //});
@@ -305,30 +305,51 @@
     }
 </script>
 	
+<script src='/dashboards/js/echarts.min.js'></script>
+<script src='/dashboards/js/echarts.config.js'></script>
+<script src='/dashboards/js/chart-generator.js'></script>
+
+
+
+
+
+
+    <script src='/dashboards/js/feature-delivery-gen.js'></script>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 <script>
-    
-        
-    
-
-    let content = document.getElementsByClassName('td-content')[0];
-    content.className = content.className.replace('bg-primary', ''); 
-    content.className = content.className.replace('border-top', '');
-
-    for (let element of content.children) {
-        if (element.id != 'under-construction') {
-            element.setAttribute('hidden', true);
-        }
-    }
+    let jsonData = JSON.parse("[\n    {\n        \"Feature\": \"Component 1\",\n        \"Status\": \"In progress\",\n        \"Component 1\": {\n            \"CI\": \"1.0.1\",\n            \"QA\": \"1.0.1\",\n            \"Stage\": \"N/A\",\n            \"Prod\": \"N/A\"\n        },\n        \"Component 2\": {\n            \"CI\": \"2.1.0\",\n            \"QA\": \"2.1.0\",\n            \"Stage\": \"2.0.0\",\n            \"Prod\": \"2.0.0\"\n        },\n        \"Component 3\": {\n            \"CI\": \"N/A\",\n            \"QA\": \"N/A\",\n            \"Stage\": \"N/A\",\n            \"Prod\": \"N/A\"\n        }\n    },\n    {\n        \"Feature\": \"Component 2\",\n        \"Status\": \"Planned\",\n        \"Component 1\": {\n            \"CI\": \"N/A\",\n            \"QA\": \"N/A\",\n            \"Stage\": \"N/A\",\n            \"Prod\": \"N/A\"\n        },\n        \"Component 2\": {\n            \"CI\": \"1.1.0\",\n            \"QA\": \"1.1.0\",\n            \"Stage\": \"N/A\",\n            \"Prod\": \"N/A\"\n        },\n        \"Component 3\": {\n            \"CI\": \"1.0.0\",\n            \"QA\": \"1.0.0\",\n            \"Stage\": \"N/A\",\n            \"Prod\": \"N/A\"\n        }\n    },\n    {\n        \"Feature\": \"Component 3\",\n        \"Status\": \"Completed\",\n        \"Component 1\": {\n            \"CI\": \"2.1.0\",\n            \"QA\": \"2.1.0\",\n            \"Stage\": \"3.0.0\",\n            \"Prod\": \"3.0.0\"\n        },\n        \"Component 2\": {\n            \"CI\": \"2.1.0\",\n            \"QA\": \"2.1.0\",\n            \"Stage\": \"2.0.0\",\n            \"Prod\": \"2.0.0\"\n        },\n        \"Component 3\": {\n            \"CI\": \"1.1.0\",\n            \"QA\": \"1.1.0\",\n            \"Stage\": \"2.0.0\",\n            \"Prod\": \"2.0.0\"\n        }\n    }\n]");
+    createTable(jsonData);
 </script>
 
-<div class="mx-auto text-center pb-0" id="under-construction">
-    <img src='https://banalna.github.io/dashboards/images/under_construction.svg' class="img-fluid mx-auto pb-3" style="max-width:45%;" 
-    alt="Under construction img">
-    <a href="#" onclick="history.back()">
-        <h3 class="mx-auto pt-2" style="color: #3357C6;">This dashboard is under construction</h3>
-    </a>
-    <h3 class="mx-auto" style="color: #101840;">Please, come again later</h3>
-</div>
+
+<script>
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById('generated-charts');
+
+    for (let i = 0; i < chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            'Metrics for ' + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+</script>
 
 	
 	

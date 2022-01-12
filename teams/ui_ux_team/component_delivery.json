@@ -1,0 +1,152 @@
+[
+    {
+        "Component": "Component 1",
+        "Type": "Library",
+        "Status": "Stable",
+        "Dev": "2.0.1",
+        "CI": "2.0.1",
+        "QA": "2.0.1",
+        "Stage": "2.0.1",
+        "Prod": "2.0.1"
+    },
+    {
+        "Component": "Component 2",
+        "Type": "Microservice",
+        "Status": "Planned",
+        "Dev": "N/A",
+        "CI": "N/A",
+        "QA": "N/A",
+        "Stage": "N/A",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 3",
+        "Type": "Microfronted",
+        "Status": "In progress",
+        "Dev": "1.1.5",
+        "CI": "1.1.5",
+        "QA": "1.0.3",
+        "Stage": "1.0.3",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 4",
+        "Type": "Library",
+        "Status": "Stable",
+        "Dev": "1.5.1",
+        "CI": "0.9.5",
+        "QA": "1.0.4",
+        "Stage": "1.1.0",
+        "Prod": "1.0.0"
+    },
+    {
+        "Component": "Component 5",
+        "Type": "Microfronted",
+        "Status": "In progress",
+        "Dev": "1.1.0",
+        "CI": "N/A",
+        "QA": "N/A",
+        "Stage": "1.0.0",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 6",
+        "Type": "Microfronted",
+        "Status": "In progress",
+        "Dev": "1.4.5",
+        "CI": "0.5.5",
+        "QA": "1.0.3",
+        "Stage": "1.4.3",
+        "Prod": "1.0.0"
+    },
+    {
+        "Component": "Component 7",
+        "Type": "Library",
+        "Status": "Planned",
+        "Dev": "0.0.1",
+        "CI": "N/A",
+        "QA": "N/A",
+        "Stage": "N/A",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 8",
+        "Type": "Microfronted",
+        "Status": "In progress",
+        "Dev": "1.1.5",
+        "CI": "1.1.5",
+        "QA": "1.0.3",
+        "Stage": "1.0.3",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 9",
+        "Type": "Library",
+        "Status": "Stable",
+        "Dev": "1.5.1",
+        "CI": "0.9.5",
+        "QA": "1.0.4",
+        "Stage": "1.1.0",
+        "Prod": "1.0.0"
+    },
+    {
+        "Component": "Component 10",
+        "Type": "Microfronted",
+        "Status": "In progress",
+        "Dev": "1.1.0",
+        "CI": "N/A",
+        "QA": "N/A",
+        "Stage": "1.0.0",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 11",
+        "Type": "Library",
+        "Status": "Stable",
+        "Dev": "2.0.0",
+        "CI": "1.5.1",
+        "QA": "1.7.1",
+        "Stage": "1.8.1",
+        "Prod": "1.5.0"
+    },
+    {
+        "Component": "Component 12",
+        "Type": "Microservice",
+        "Status": "Planned",
+        "Dev": "1.0.1",
+        "CI": "N/A",
+        "QA": "1.0.0",
+        "Stage": "N/A",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 13",
+        "Type": "Microservice",
+        "Status": "In progress",
+        "Dev": "1.1.5",
+        "CI": "1.1.5",
+        "QA": "1.0.3",
+        "Stage": "1.0.3",
+        "Prod": "N/A"
+    },
+    {
+        "Component": "Component 14",
+        "Type": "Library",
+        "Status": "Stable",
+        "Dev": "1.5.1",
+        "CI": "0.9.5",
+        "QA": "1.0.4",
+        "Stage": "1.1.0",
+        "Prod": "1.0.0"
+    },
+    {
+        "Component": "Component 15",
+        "Type": "Microfronted",
+        "Status": "In progress",
+        "Dev": "1.1.0",
+        "CI": "0.4.0",
+        "QA": "0.5.0",
+        "Stage": "1.0.0",
+        "Prod": "N/A"
+    }
+]

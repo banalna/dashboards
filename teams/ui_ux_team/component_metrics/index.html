@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.91.2" />
+<meta name="generator" content="Hugo 0.92.0" />
 <meta name="robots" content="index, follow">
 
 
@@ -33,7 +33,7 @@
 <meta itemprop="description" content="Coding metrics and compliance of components
 ">
 
-<meta itemprop="wordCount" content="111">
+<meta itemprop="wordCount" content="289">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Component Metrics Dashboard"/>
 <meta name="twitter:description" content="Coding metrics and compliance of components
@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" as="style">
-<link href="/dashboards/scss/main.min.f86d94fdabec1b07c39d0de05505c59f0b1102d421c8659cc30e5aa5e2a3b822.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" as="style">
+<link href="/dashboards/scss/main.min.5f46cc2da71cd38d1480433cd87e5bc925dd1d5238d2ec7932b6e292a81af64f.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -291,12 +291,12 @@
             var startItem = currPage * rowsShown + 1;
             var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
 
-            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
-                css('display', 'table-row').animate({ opacity: 1 }, 300);
+            var showItems = $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem);
+            showItems.css('display', 'table-row').animate({ opacity: 1 }, 300);
 
             $('#generated-table tbody tr:first').show();
 
-            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+            $('#shownRows').text(`${startItem}-${showItems.length}`);
         });
 
         //});
@@ -304,193 +304,53 @@
         $('#page-nav a.nav-num:first').click();
     }
 </script>
-	<div class="table-responsive pr-3 pl-3">
-<table class="generated-table table table-hover">
-    <thead>
-      <tr>
-        <th scope="col" rowspan="2">Component</th>
-        <th scope="col" rowspan="2">Type</th>
-        <th scope="col" rowspan="2">Priority</th>
-        <th class="text-center" colspan="3">
-          Status
-          <hr class="mb-2 mt-2">
-        </th>
-        <th class="text-center" colspan="4">
-          Metrics
-          <hr class="mb-2 mt-2">
-        </th>
-      </tr>
-      <tr>
-        <th class="text-center" scope="col">Implement</th>
-        <th class="text-center" scope="col">Readme</th>
-        <th class="text-center" scope="col">API Docs</th>
-        <th class="text-center" scope="col">Source (KLOC)</th>
-        <th class="text-center" scope="col">Test (KLOC)</th>
-        <th class="text-center" scope="col">Compliance</th>
-        <th class="text-center" scope="col">Covarage (%)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="m-0"></td>
-      </tr>
-      <tr>
-        <td>Component 1</td>
-        <td>Library</td>
-        <td class="hight-icon text-left"></td>
-        <td class="text-center">Stable</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 2</td>
-        <td>Microservice</td>
-        <td class="medium-icon text-left"></td>
-        <td class="text-center">Planned</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 3</td>
-        <td>Microfrontend</td>
-        <td class="hight-icon text-left"></td>
-        <td class="text-center">Stable</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 4</td>
-        <td>Library</td>
-        <td class="low-icon text-left"></td>
-        <td class="text-center">Active</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 5</td>
-        <td>Microservice</td>
-        <td class="hight-icon text-left"></td>
-        <td class="text-center">Planned</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 6</td>
-        <td>Microfrontend</td>
-        <td class="medium-icon text-left"></td>
-        <td class="text-center">Stable</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 7</td>
-        <td>Library</td>
-        <td class="low-icon text-left"></td>
-        <td class="text-center">Active</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 8</td>
-        <td>Microservice</td>
-        <td class="hight-icon text-left"></td>
-        <td class="text-center">Planned</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 9</td>
-        <td>Microfrontend</td>
-        <td class="medium-icon text-left"></td>
-        <td class="text-center">Stable</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-      <tr>
-        <td>Component 10</td>
-        <td>Microfrontend</td>
-        <td class="medium-icon text-left"></td>
-        <td class="text-center">Stable</td>
-        <td class="yes-icon"></td>
-        <td class="no-icon"></td>
-        <td class="yes-icon">12</td>
-        <td class="yes-icon">5</td>
-        <td class="no-icon">10</td>
-        <td class="warning-icon">60</td>
-      </tr>
-    </tbody>
-  </table>
-<div class="table-pagination row">
-  <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
-    <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-chevron-left"></i></a>
-      </li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item" aria-current="page">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link page-divider" href="#">...</a></li>
-      <li class="page-item"><a class="page-link" href="#">10</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-      </li>
-    </ul>
-  </nav>
-  <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
-    <p class="pt-2 pb-2 pr-3">Rows per page</p>
-    <div class="table-dropdown dropdown float-right">
-    <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"   aria-haspopup="true" aria-expanded="false">
-      10
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">10</a>
-      <a class="dropdown-item" href="#">25</a>
-      <a class="dropdown-item" href="#">50</a>
-      <a class="dropdown-item" href="#">100</a>
-    </div>
-  </div>
-  <p class="pl-4 pt-2 pb-2">Shown <span style="color: #3357C6;">1-10</span></p>
-  </div>
-</div>
-</div>
+	
+<script src='/dashboards/js/echarts.min.js'></script>
+<script src='/dashboards/js/echarts.config.js'></script>
+<script src='/dashboards/js/chart-generator.js'></script>
+
+
+
+
+
+
+    <script src='/dashboards/js/component-metrics-gen.js'></script>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<script>
+    let jsonData = JSON.parse("[\n    {\n        \"Component\": \"Component 1\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"40\",\n        \"Test (KLOC)\": \"25\",\n        \"Compliance\": \"32\",\n        \"Covarage (%)\": \"48\"\n    },\n    {\n        \"Component\": \"Component 2\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Medium\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"No\",\n        \"API Docs\": \"Yes\",\n        \"Source (KLOC)\": \"25\",\n        \"Test (KLOC)\": \"30\",\n        \"Compliance\": \"37\",\n        \"Covarage (%)\": \"95\"\n    },\n    {\n        \"Component\": \"Component 3\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Hight\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"12\",\n        \"Test (KLOC)\": \"64\",\n        \"Compliance\": \"15\",\n        \"Covarage (%)\": \"10\"\n    },\n    {\n        \"Component\": \"Component 4\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"No\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"32\",\n        \"Test (KLOC)\": \"11\",\n        \"Compliance\": \"12\",\n        \"Covarage (%)\": \"55\"\n    },\n    {\n        \"Component\": \"Component 5\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n        \"Implement\": \"Planned\",\n        \"Readme\": \"No\",\n        \"API Docs\": \"Yes\",\n        \"Source (KLOC)\": \"24\",\n        \"Test (KLOC)\": \"18\",\n        \"Compliance\": \"35\",\n        \"Covarage (%)\": \"75\"\n    },\n    {\n        \"Component\": \"Component 6\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"37\",\n        \"Test (KLOC)\": \"20\",\n        \"Compliance\": \"43\",\n        \"Covarage (%)\": \"27\"\n    },\n    {\n        \"Component\": \"Component 7\",\n        \"Type\": \"Library\",\n        \"Priority\": \"Low\",\n        \"Implement\": \"Active\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"Yes\",\n        \"Source (KLOC)\": \"14\",\n        \"Test (KLOC)\": \"7\",\n        \"Compliance\": \"15\",\n        \"Covarage (%)\": \"24\"\n    },\n    {\n        \"Component\": \"Component 8\",\n        \"Type\": \"Microservice\",\n        \"Priority\": \"Hight\",\n\n        \"Implement\": \"Planned\",\n        \"Readme\": \"No\",\n        \"API Docs\": \"Yes\",\n        \"Source (KLOC)\": \"46\",\n        \"Test (KLOC)\": \"23\",\n        \"Compliance\": \"34\",\n        \"Covarage (%)\": \"77\"\n    },\n    {\n        \"Component\": \"Component 9\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"Yes\",\n        \"API Docs\": \"No\",\n        \"Source (KLOC)\": \"46\",\n        \"Test (KLOC)\": \"30\",\n        \"Compliance\": \"25\",\n        \"Covarage (%)\": \"93\"\n    },\n    {\n        \"Component\": \"Component 10\",\n        \"Type\": \"Microfrontend\",\n        \"Priority\": \"Medium\",\n        \"Implement\": \"Stable\",\n        \"Readme\": \"No\",\n        \"API Docs\": \"Yes\",\n        \"Source (KLOC)\": \"40\",\n        \"Test (KLOC)\": \"8\",\n        \"Compliance\": \"55\",\n        \"Covarage (%)\": \"30\"\n    }\n]");
+    createTable(jsonData);
+</script>
+
+
+<script>
+    let chartsData = composeChartsData(jsonData);
+    let chartsBlock = document.getElementById('generated-charts');
+
+    for (let i = 0; i < chartsData.series.length; i++) {
+        let chart = generateBarChart(
+            'Metrics for ' + chartsData.xAxisName[i],
+            chartsData.legends[i],
+            chartsData.xAxisName[i],
+            chartsData.series[i]
+        );
+
+        chartsBlock.appendChild(chart);
+    }
+</script>
+
 	
 	
 	
