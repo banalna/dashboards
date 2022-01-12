@@ -1,36 +1,5 @@
-<script>
-	function toggleView(e) {
-		if (e.id == 'table-btn') {
-			$('#generated-table').collapse('show');
-			$('#generated-charts').collapse('hide');
-		} else {
-			$('#generated-table').collapse('hide');
-			$('#generated-charts').collapse('show');
-		}
-	}
-</script>
-
 <div class="td-content bg-primary border-top">
-	<div class="col-12 row pl-4 pr-0">
-		<h3 class="col-md-6 dashboard-title">{{ .Title }}</h3>
-		<!-- {{ with .Params.description }}<div class="lead pl-3">{{ . | markdownify }}</div>{{ end }} -->
-		<div class="col-md-6 m-auto table-buttons" data-toggle="buttons">
-			<div class="btn-group btn-group-toggle float-right">
-				<label class="btn active">
-					{{ with resources.Get "icons/table-icon.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
-					<input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked>
-				</label>
-				<label class="btn">
-					{{ with resources.Get "icons/chart-icon.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
-					<input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off">
-				</label>
-			</div>
-		</div>
-	</div>
-	<div class="pr-3 pl-3">
-		<hr class="m-0 mb-2" style="background-color:#C4C4C4;">
-	
-	</div>
+	{{ partial "chart-tab-toggle.html" . }}
 	<header class="article-meta m-0">
 		{{ $context := . }}
 		{{ if .Site.Params.Taxonomy.taxonomyPageHeader }}
@@ -45,7 +14,8 @@
 		{{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
 			{{ partial "reading-time.html" . }}
 		{{ end }}
-	</header>    
+	</header>
+	{{ partial "pagination.html" . }}
 	{{ .Content }}
 	{{ if (and (not .Params.hide_feedback) (.Site.Params.ui.feedback.enable) (.Site.GoogleAnalytics)) }}
 		{{ partial "feedback.html" .Site.Params.ui.feedback }}

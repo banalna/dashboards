@@ -1,0 +1,115 @@
+<div class="row collapse justify-content-center pr-4 pl-4 ml-0 mr-0 pb-2" id="generated-charts"></div>
+<div class="table-responsive collapse show pr-3 pl-3">
+    <div class="table-pagination row">
+        <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
+            <ul class="pagination" id="page-nav">
+                <li class="page-item" id="page-prev">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i
+                            class="fas fa-chevron-left"></i></a>
+                </li>
+
+                <li class="page-item" id="page-next">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
+            <p class="pt-2 pb-2 pr-3">Rows per page</p>
+            <div class="table-dropdown dropdown float-right">
+                <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    10
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item active" href="#">10</a>
+                    <a class="dropdown-item" href="#">25</a>
+                    <a class="dropdown-item" href="#">50</a>
+                    <a class="dropdown-item" href="#">100</a>
+                </div>
+            </div>
+            <p class="pl-4 pt-2 pb-2">Shown <span id="shownRows" style="color: #3357C6;">1-10</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Table pagination -->
+<script>
+    $(document).ready(function () {
+        definePagination(parseInt($('.dropdown-item.active').text()));
+
+        // rows per page
+        $('.dropdown-item').bind('click', function () {
+            $('.dropdown-item').removeClass('active');
+
+            $('#dropdownMenuButton').text(this.innerText);
+            $(this).addClass('active');
+
+            definePagination(parseInt(this.innerText));
+        });
+
+        // todo next/prev btns
+        $('#page-next a').bind('click', function () {
+            $('#page-nav li.active').next().find('a.nav-num').click();
+        });
+        $('#page-prev a').bind('click', function () {
+            $('#page-nav li.active').prev().find('a.nav-num').click();
+        });
+    });
+
+
+    function definePagination(rowsShown) {
+        const displayNum = 3;
+
+        var rowsTotal = $('#generated-table tbody tr').length;
+        var numPages = (rowsTotal - 1) / rowsShown;
+
+        $("li.page-item").slice(1, -1).remove();
+
+        for (i = 0; i < numPages; i++) {
+            var pageNum = i + 1;
+            //if (displayNum >= pageNum) {
+            $('#page-nav > li:last').before(`<li class="page-item ${i == 0 ? 'active' : ''}"><a class="page-link nav-num" href="#" rel="` + i + '">' + pageNum + '</a></li>');
+            //} else {
+            //    $('#page-nav > li:last').before('<li class="page-item  page-divider"><a class="page-link" href="#">...</a></li>');
+            //    $('#page-nav > li:last').before(`<li class="page-item ${i == 0 ? 'active' : ''}"><a class="page-link nav-num" href="#" rel="` + parseInt(numPages) + '">' + parseInt(numPages + 1) + '</a></li>');
+            //    break;
+            //}
+
+        }
+        $('#generated-table tbody tr').hide();
+        $('#generated-table tbody tr').slice(0, rowsShown + 1).show();
+
+        //$('#page-nav a.nav-num').bind('click', function () {
+        // add new buttons
+        // var firstNumBtnIndex = parseInt(this.innerText) - 1;
+        // var smallestNumBtnIndex = parseInt($('#page-nav > li.page-item')[1].innerText) - 1;
+        // var lastShown = $('#page-nav > li.page-divider').prev();
+        // console.log(parseInt(lastShown.text()), firstNumBtnIndex)
+        // 
+        // if (parseInt(numPages + 1) > firstNumBtnIndex && firstNumBtnIndex > smallestNumBtnIndex) {
+        //     $('#page-nav > li.page-item').slice(1, -1).slice(0, firstNumBtnIndex).remove()
+        //     lastShown.after(`<li class="page-item"><a class="page-link nav-num" href="#" rel="${lastShown.text()}">${parseInt(lastShown.text()) + 1}</a></li>`)
+        // }
+
+        // add listeners
+        $('#page-nav a.nav-num').bind('click', function () {
+            $('#page-nav li').removeClass('active');
+            $(this.parentElement).addClass('active');
+            var currPage = $(this).attr('rel');
+            var startItem = currPage * rowsShown + 1;
+            var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
+
+            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                css('display', 'table-row').animate({ opacity: 1 }, 300);
+
+            $('#generated-table tbody tr:first').show();
+
+            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+        });
+
+        //});
+
+        $('#page-nav a.nav-num:first').click();
+    }
+</script>

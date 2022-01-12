@@ -7,4 +7,4 @@ description: >
   Stability of environments and failure response timings
 ---
 
-{{< json_table "../table1.json" >}}
+{{< json_table "../component_metrics.json" >}}

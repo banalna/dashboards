@@ -4,48 +4,6 @@
 <script src='{{ "/js/chart-generator.js" | relURL }}'></script>
 
 
-
-<div class="row collapse justify-content-center pr-4 pl-4 ml-0 mr-0 pb-2" id="generated-charts"></div>
-<div class="table-responsive pr-3 pl-3">
-    <div class="table-pagination row">
-        <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
-            <ul class="pagination" id="page-nav">
-                <li class="page-item">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fas fa-chevron-left"></i></a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item" aria-current="page">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link page-divider" href="#">...</a></li>
-                <li class="page-item"><a class="page-link" href="#">10</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                </li>
-            </ul>
-        </nav>
-    
-        <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
-            <p class="pt-2 pb-2 pr-3">Rows per page</p>
-            <div class="table-dropdown dropdown float-right">
-                <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    10
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">10</a>
-                    <a class="dropdown-item" href="#">25</a>
-                    <a class="dropdown-item" href="#">50</a>
-                    <a class="dropdown-item" href="#">100</a>
-                </div>
-            </div>
-            <p class="pl-4 pt-2 pb-2">Shown <span style="color: #3357C6;">1-10</span></p>
-        </div>
-    </div>
-</div>
-
-
 {{ $path := .Get 0 }}
 {{ $fullPath := .Page.RelPermalink }}
 {{ $isRelative := or (eq (substr $path 0 2) "./") (eq (substr $path 0 3) "../")}}
@@ -212,7 +170,7 @@
         
         let table = document.createElement('table');
         table.id = 'generated-table';
-        table.setAttribute('class', 'generated-table table table-hover collapse show'); //show
+        table.setAttribute('class', 'generated-table table table-hover'); //show
         table.createTHead();
         table.createTBody();
 
@@ -353,32 +311,3 @@
     }
 
 </script>
-
-
-<!-- Table pagination -->
-
-<!-- <script>
-    $(document).ready(function () {
-        $('#generated-table').after('<div id="nav"></div>');
-        var rowsShown = 4;
-        var rowsTotal = $('#generated-table tbody tr').length;
-        var numPages = rowsTotal / rowsShown;
-        for (i = 0; i < numPages; i++) {
-            var pageNum = i + 1;
-            $('#page-nav').append('<li class="page-item"><a class="page-link" href="#">' + pageNum + '</a></li>');
-        }
-        $('#generated-table tbody tr').hide();
-        $('#generated-table tbody tr').slice(0, rowsShown).show();
-        $('#nav a:first').addClass('active');
-        $('#nav a').bind('click', function () {
-
-            $('#nav a').removeClass('active');
-            $(this).addClass('active');
-            var currPage = $(this).attr('rel');
-            var startItem = currPage * rowsShown;
-            var endItem = startItem + rowsShown;
-            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
-                css('display', 'table-row').animate({ opacity: 1 }, 300);
-        });
-    });
-</script> -->
