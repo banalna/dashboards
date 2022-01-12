@@ -100,12 +100,12 @@
             var startItem = currPage * rowsShown + 1;
             var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
 
-            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
-                css('display', 'table-row').animate({ opacity: 1 }, 300);
+            var showItems = $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem);
+            showItems.css('display', 'table-row').animate({ opacity: 1 }, 300);
 
             $('#generated-table tbody tr:first').show();
 
-            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+            $('#shownRows').text(`${startItem}-${showItems.length}`);
         });
 
         //});

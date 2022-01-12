@@ -7,4 +7,4 @@ description: >
   Progress of delivery individual components through stages in pipeline
 ---
 
-{{< under_construction >}}
+{{< json_table "../component_delivery.json" "component-delivery">}}

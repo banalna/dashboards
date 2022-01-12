@@ -173,6 +173,27 @@ $table-boredr: 1px solid $table-border-color !important;
         tr {
             border-bottom: $table-boredr;
         }
+
+        th {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 24px;
+
+            padding-top: 0px;
+            padding-bottom: 0px;
+            
+            border: none !important;
+            vertical-align: middle !important;
+            // text-align: center;
+
+            hr {
+                background-color: $table-border-color;
+            }
+
+            &:last-of-type {
+                border-right: $table-boredr;
+            }
+        }
     }
 }
 

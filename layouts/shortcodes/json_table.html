@@ -3,6 +3,24 @@
 <script src='{{ "/js/echarts.config.js" | relURL }}'></script>
 <script src='{{ "/js/chart-generator.js" | relURL }}'></script>
 
+<!-- <script src='{{ (printf "%s%s%s" "/js/component-" (.Get 1) "-gen.js") | relURL }}'></script> -->
+
+<!-- Adds new dashboard script type here -->
+{{ $dashboardType := .Get 1}}
+{{ if eq $dashboardType "component-metrics"}}
+    <script src='{{ "/js/component-metrics-gen.js" | relURL }}'></script>
+{{ else if eq $dashboardType "component-delivery"}}
+    <script src='{{ "/js/component-delivery-gen.js" | relURL }}'></script>
+{{ else if eq $dashboardType "component-quality"}}
+    <script src='{{ "/js/component-quality-gen.js" | relURL }}'></script>
+{{ else if eq $dashboardType "feature-delivery"}}
+    <script src='{{ "/js/feature-delivery-gen.js" | relURL }}'></script>
+{{ else if eq $dashboardType "feature-timing"}}
+    <script src='{{ "/js/feature-timing-gen.js" | relURL }}'></script>
+{{ else if eq $dashboardType "pipeline-metrics"}}
+    <script src='{{ "/js/pipeline-metrics-gen.js" | relURL }}'></script>
+{{ end }}
+
 
 {{ $path := .Get 0 }}
 {{ $fullPath := .Page.RelPermalink }}
@@ -16,290 +34,16 @@
 
 <!-- Loading and creating JSON tables -->
 <script>
-
-    
-    function findNestedObj(entireObj, keyToFind) {
-        let foundObj;
-        JSON.stringify(entireObj, (_, nestedValue) => {
-            if (nestedValue) {
-                foundObj = nestedValue;
-            }
-            return nestedValue;
-        });
-        return foundObj;
-    };
-
-    function createTable(items) {
-        let columns = [];
-        // get all column names
-        for (let key of Object.keys(items[0])) {
-            if (Array.isArray(items[0][key])) {
-                for (let subItem of items[0][key]) {
-                    columns = [...columns, ...Object.keys(subItem)];
-                }
-            } else {
-                columns.push(key);
-            }
-        }
-
-        let table = composeTable(items[0]);
-        let tr = table.tBodies[0].insertRow(0);
-        tr.insertCell(0).setAttribute('class', 'm-0');
-
-        for (let item of items) {
-            let tr = table.tBodies[0].insertRow(-1);
-            for (let column of columns) {
-                let td = tr.insertCell(-1);
-
-                if (item[column] == undefined) {
-                    for (let key of Object.keys(item)) {
-                        
-                        if (Array.isArray(item[key])) {
-                            var obj = item[key].filter((o) => o[column] != undefined)
-                            if (obj.length > 0) {
-                                td.innerText = obj[0][column];
-                                td.setAttribute('class', 'text-center')
-                                break;
-                            }
-                        }
-                    }
-                    
-                } else {
-                    td.innerText = item[column];
-                }
-
-                // set icon
-                switch (td.cellIndex) {
-                    case 'yes':
-                        td.setAttribute('class', 'yes-icon');
-                        td.textContent = '';
-                        break;
-                    case 'no':
-                        td.setAttribute('class', 'no-icon');
-                        td.textContent = '';
-                        break;
-                    case 2:
-                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon text-left');
-                        td.textContent = '';
-                        break;
-                    case 4:
-                    case 5:
-                        td.setAttribute('class', td.innerText.toLowerCase() + '-icon');
-                        td.textContent = '';
-                        break;
-                    case 6:
-                        if (parseInt(td.innerText.toLowerCase()) >= 30) {
-                            td.setAttribute('class', 'yes-icon');
-                        } else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                    case 7:
-                        if (parseInt(td.innerText.toLowerCase()) >= 25) {
-                            td.setAttribute('class', 'yes-icon');
-                        } else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                    case 8:
-                        if (parseInt(td.innerText.toLowerCase()) >= 50) {
-                            td.setAttribute('class', 'yes-icon');
-                        } else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                    case 9:
-                        if (parseInt(td.innerText.toLowerCase()) >= 30 && parseInt(td.innerText.toLowerCase()) <= 80) {
-                            td.setAttribute('class', 'warning-icon');
-                        } else if(parseInt(td.innerText.toLowerCase()) >= 90) {
-                            td.setAttribute('class', 'yes-icon');
-                        }
-                        else {
-                            td.setAttribute('class', 'no-icon');
-                        }
-                        break;
-                }
-            }
-        }
-
-        let pagination = document.getElementsByClassName('table-pagination')[0];
-        let container = pagination.parentElement;
-        container.insertBefore(table, pagination);
-    }
-
-    function composeTable(item) {
-        let tHead = [];
-        let rowspan = 1;
-
-        // detect rowscount
-        for (let key of Object.keys(item)) {
-            if (Array.isArray(item[key])) {
-                rowspan = 2;
-                break;
-            }
-        }
-
-         
-        if (rowspan > 1) {
-            let subColumns = [];
-            let columns = [];
-
-            for (let key of Object.keys(item)) {
-                let column = {};
-                column.rowspan = rowspan;
-                column.name = key;
-
-                if (Array.isArray(item[key])) {
-                    column.colspan = item[key].length;
-                    
-  
-                    for (let subItem of item[key]) {
-                        subColumns.push({ name: Object.keys(subItem)[0] });
-                    }
-                }
-                columns.push(column);
-            }
-            
-            tHead.push(columns);
-            tHead.push(subColumns);
-        } else {
-            // todo: for 1 level table
-            tHead = Object.keys(item);
-        }
-
-        
-        let table = document.createElement('table');
-        table.id = 'generated-table';
-        table.setAttribute('class', 'generated-table table table-hover'); //show
-        table.createTHead();
-        table.createTBody();
-
-        for (let level = 0; level < tHead.length; level++) {
-            let tr = table.tHead.insertRow(-1);
-
-            for (let column of tHead[level]) {
-                let th = document.createElement('th');
-                
-                if (level > 0) {
-                    th.setAttribute('scope', 'col');
-                    th.setAttribute('class', 'text-center');
-                } else {
-                    // first level prepare
-                    th.setAttribute('scope', 'col');
-
-                    if (column.colspan != undefined) {
-                        th.setAttribute('colspan', column.colspan);
-                        th.setAttribute('class', 'text-center');
-                    } else {
-                        th.setAttribute('rowspan', column.rowspan);
-                    }
-                }
-
-                if (column.colspan != undefined) {
-                    let hr = document.createElement('hr');
-                    hr.setAttribute('class', 'mb-2 mt-2');
-                    th.append(document.createTextNode(column.name), hr);
-                } else {
-                    th.append(document.createTextNode(column.name));
-                }
-                
-                tr.appendChild(th);
-            }
-        }
-
-        return table;
-    }
-
     let jsonData = JSON.parse({{ $JSON }});
     createTable(jsonData);
-
 </script>
 
 <!-- Generating charts -->
 <script>
-
-    function getRandomColors(count) {
-        colors = [];
-        let letters = '0123456789ABCDEF';
-        for (let i = 0; i < count; i++) {
-            let color = '#';
-            for (var j = 0; j < 6; j++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            colors.push(color);
-        }
-        return colors
-    }
-
-    function getNumericData(items) {
-        let columns = [];
-        for (let item of items) {
-            for (let column of Object.keys(item)) {
-                if (!isNaN(parseFloat(item[column])) && !columns.includes(column)) {
-                    columns.push(column);
-                } 
-            }
-        }
-        return columns;
-    }
-
-    function toFlatData(jsonData) {
-        let flatObjects = [];
-
-        for (let item of jsonData) {
-            let obj = {};
-
-            for (let key of Object.keys(item)) {
-                if (item[key] instanceof Object) {
-                    for (let subItem of item[key]) {
-                        for(let subKey of Object.keys(subItem)) {
-                            obj[subKey] = subItem[subKey];
-                        }
-                    }
-                } else {
-                    obj[key] = item[key]; 
-                } 
-            } 
-            flatObjects.push(obj);
-        }
-        return flatObjects;
-    }
-
-    function composeChartsData(jsonData) {
-        jsonData = toFlatData(jsonData);
-
-        let columns = getNumericData(jsonData);
-
-        let chartData = {
-            legends: [],
-            xAxisName: [],
-            series: []
-        };
-
-        for (let item of jsonData) {
-            chartData.xAxisName.push(item['Component']);
-
-            let series = [];
-            let legend = [];
-
-            for (let column of columns) {
-                series.push([item[column]]);
-                legend.push(column);
-            }
-
-            chartData.series.push(series);
-            chartData.legends.push(legend);
-
-        }
-
-        return chartData;
-    }
-
-
     let chartsData = composeChartsData(jsonData);
     let chartsBlock = document.getElementById('generated-charts');
 
-    for (let i=0; i < chartsData.series.length; i++) {
+    for (let i = 0; i < chartsData.series.length; i++) {
         let chart = generateBarChart(
             'Metrics for ' + chartsData.xAxisName[i],
             chartsData.legends[i],
@@ -309,5 +53,4 @@
 
         chartsBlock.appendChild(chart);
     }
-
 </script>
