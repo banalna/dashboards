@@ -30,7 +30,7 @@ function composeTable(columns) {
 
     let table = document.createElement('table');
     table.id = 'generated-table';
-    table.setAttribute('class', 'generated-table table table-hover');
+    table.setAttribute('class', 'generated-table table table-hover head-padding');
     table.createTHead();
     table.createTBody();
 

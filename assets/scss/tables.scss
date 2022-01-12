@@ -127,11 +127,14 @@ $table-boredr: 1px solid $table-border-color !important;
 .generated-table {
     white-space: nowrap;
 
-    // th,
-    // td {
-    //     padding-left: $table-cell-padding * 1.5 !important;
-    //     padding-right: $table-cell-padding * 1.5 !important;
-    // }
+    &.head-padding {
+        thead {
+            th {
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+            }
+        }
+    }
     
     thead {
 
@@ -192,6 +195,8 @@ $table-boredr: 1px solid $table-border-color !important;
 
             &:last-of-type {
                 border-right: $table-boredr;
+                // border-color: darken($table-border-color, $amount: 10) !important;
+                // border-width: 2px !important;
             }
         }
     }
