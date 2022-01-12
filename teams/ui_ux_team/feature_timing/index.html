@@ -42,8 +42,8 @@
 
 
 
-<link rel="preload" href="/dashboards/scss/main.min.7043a603c9b838d511995b74dfdf040e0d58eddf0a72478ae7ca4ca9ab3cd99e.css" as="style">
-<link href="/dashboards/scss/main.min.7043a603c9b838d511995b74dfdf040e0d58eddf0a72478ae7ca4ca9ab3cd99e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/dashboards/scss/main.min.3381ccf3fadade07b15acd21352a71e59599f70a3b13fbf5d59df32c76be97d9.css" as="style">
+<link href="/dashboards/scss/main.min.3381ccf3fadade07b15acd21352a71e59599f70a3b13fbf5d59df32c76be97d9.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -141,39 +141,39 @@
   </ol>
 </nav>
             
-<script>
-	function toggleView(e) {
-		if (e.id == 'table-btn') {
-			$('#generated-table').collapse('show');
-			$('#generated-charts').collapse('hide');
-		} else {
-			$('#generated-table').collapse('hide');
-			$('#generated-charts').collapse('show');
-		}
-	}
+<div class="td-content bg-primary border-top">
+	<script>
+    function toggleView(e) {
+        if (e.id == 'table-btn') {
+            console.log($('#generated-table').parentElement)
+            $('#generated-table').parent().collapse('show');
+            $('#generated-charts').collapse('hide');
+        } else {
+            $('#generated-table').parent().collapse('hide');
+            $('#generated-charts').collapse('show');
+        }
+    }
 </script>
 
-<div class="td-content bg-primary border-top">
-	<div class="col-12 row pl-4 pr-0">
-		<h3 class="col-md-6 dashboard-title">Feature Timming</h3>
-		
-		<div class="col-md-6 m-auto table-buttons" data-toggle="buttons">
-			<div class="btn-group btn-group-toggle float-right">
-				<label class="btn active">
-					<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 17C8 17.5523 8.44772 18 9 18h2C11.5523 18 12 17.5523 12 17V15C12 14.4477 11.5523 14 11 14H9C8.44772 14 8 14.4477 8 15v2zm0 5C8 22.5523 8.44772 23 9 23h2C11.5523 23 12 22.5523 12 22V20C12 19.4477 11.5523 19 11 19H9C8.44772 19 8 19.4477 8 20v2zM8 12C8 12.5523 8.44772 13 9 13h2C11.5523 13 12 12.5523 12 12V10C12 9.44772 11.5523 9 11 9H9c-.55228.0-1 .44772-1 1v2zm5 5C13 17.5523 13.4477 18 14 18H24C24.5523 18 25 17.5523 25 17V15C25 14.4477 24.5523 14 24 14H14C13.4477 14 13 14.4477 13 15v2zm0 5C13 22.5523 13.4477 23 14 23H24C24.5523 23 25 22.5523 25 22V20C25 19.4477 24.5523 19 24 19H14C13.4477 19 13 19.4477 13 20v2zM14 9C13.4477 9 13 9.44772 13 10v2C13 12.5523 13.4477 13 14 13H24C24.5523 13 25 12.5523 25 12V10C25 9.44772 24.5523 9 24 9H14z" fill="#3357c6"/></svg>
-					<input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked>
-				</label>
-				<label class="btn">
-					<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="16" width="4" height="7" rx="1" fill="#3357c6"/><rect x="14" y="9" width="4" height="14" rx="1" fill="#3357c6"/><rect x="8" y="12" width="4" height="11" rx="1" fill="#3357c6"/></svg>
-					<input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off">
-				</label>
-			</div>
-		</div>
-	</div>
-	<div class="pr-3 pl-3">
-		<hr class="m-0 mb-2" style="background-color:#C4C4C4;">
-	
-	</div>
+<div class="col-12 row pl-4 pr-0">
+    <h3 class="col-md-6 dashboard-title">Feature Timming</h3>
+    
+    <div class="col-md-6 m-auto table-buttons" data-toggle="buttons">
+        <div class="btn-group btn-group-toggle float-right">
+            <label class="btn active">
+                <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 17C8 17.5523 8.44772 18 9 18h2C11.5523 18 12 17.5523 12 17V15C12 14.4477 11.5523 14 11 14H9C8.44772 14 8 14.4477 8 15v2zm0 5C8 22.5523 8.44772 23 9 23h2C11.5523 23 12 22.5523 12 22V20C12 19.4477 11.5523 19 11 19H9C8.44772 19 8 19.4477 8 20v2zM8 12C8 12.5523 8.44772 13 9 13h2C11.5523 13 12 12.5523 12 12V10C12 9.44772 11.5523 9 11 9H9c-.55228.0-1 .44772-1 1v2zm5 5C13 17.5523 13.4477 18 14 18H24C24.5523 18 25 17.5523 25 17V15C25 14.4477 24.5523 14 24 14H14C13.4477 14 13 14.4477 13 15v2zm0 5C13 22.5523 13.4477 23 14 23H24C24.5523 23 25 22.5523 25 22V20C25 19.4477 24.5523 19 24 19H14C13.4477 19 13 19.4477 13 20v2zM14 9C13.4477 9 13 9.44772 13 10v2C13 12.5523 13.4477 13 14 13H24C24.5523 13 25 12.5523 25 12V10C25 9.44772 24.5523 9 24 9H14z" fill="#3357c6"/></svg>
+                <input type="radio" onclick="toggleView(this)" id="table-btn" autocomplete="off" checked>
+            </label>
+            <label class="btn">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="16" width="4" height="7" rx="1" fill="#3357c6"/><rect x="14" y="9" width="4" height="14" rx="1" fill="#3357c6"/><rect x="8" y="12" width="4" height="11" rx="1" fill="#3357c6"/></svg>
+                <input type="radio" onclick="toggleView(this)" id="chart-btn" autocomplete="off">
+            </label>
+        </div>
+    </div>
+</div>
+<div class="pr-3 pl-3">
+    <hr class="m-0 mb-2" style="background-color:#C4C4C4;">
+</div>
 	<header class="article-meta m-0">
 		
 		
@@ -188,7 +188,122 @@
 			
 		
 		
-	</header>    
+	</header>
+	<div class="row collapse justify-content-center pr-4 pl-4 ml-0 mr-0 pb-2" id="generated-charts"></div>
+<div class="table-responsive collapse show pr-3 pl-3">
+    <div class="table-pagination row">
+        <nav class="table-buttons col-sm-12 col-md-8 pt-2" aria-label="Table pagination">
+            <ul class="pagination" id="page-nav">
+                <li class="page-item" id="page-prev">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i
+                            class="fas fa-chevron-left"></i></a>
+                </li>
+
+                <li class="page-item" id="page-next">
+                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="row col-sm-12 col-md-4 pl-sm-5 justify-content-end">
+            <p class="pt-2 pb-2 pr-3">Rows per page</p>
+            <div class="table-dropdown dropdown float-right">
+                <button class="btn dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    10
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item active" href="#">10</a>
+                    <a class="dropdown-item" href="#">25</a>
+                    <a class="dropdown-item" href="#">50</a>
+                    <a class="dropdown-item" href="#">100</a>
+                </div>
+            </div>
+            <p class="pl-4 pt-2 pb-2">Shown <span id="shownRows" style="color: #3357C6;">1-10</span></p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        definePagination(parseInt($('.dropdown-item.active').text()));
+
+        
+        $('.dropdown-item').bind('click', function () {
+            $('.dropdown-item').removeClass('active');
+
+            $('#dropdownMenuButton').text(this.innerText);
+            $(this).addClass('active');
+
+            definePagination(parseInt(this.innerText));
+        });
+
+        
+        $('#page-next a').bind('click', function () {
+            $('#page-nav li.active').next().find('a.nav-num').click();
+        });
+        $('#page-prev a').bind('click', function () {
+            $('#page-nav li.active').prev().find('a.nav-num').click();
+        });
+    });
+
+
+    function definePagination(rowsShown) {
+        const displayNum = 3;
+
+        var rowsTotal = $('#generated-table tbody tr').length;
+        var numPages = (rowsTotal - 1) / rowsShown;
+
+        $("li.page-item").slice(1, -1).remove();
+
+        for (i = 0; i < numPages; i++) {
+            var pageNum = i + 1;
+            
+            $('#page-nav > li:last').before(`<li class="page-item ${i == 0 ? 'active' : ''}"><a class="page-link nav-num" href="#" rel="` + i + '">' + pageNum + '</a></li>');
+            //} else {
+            //    $('#page-nav > li:last').before('<li class="page-item  page-divider"><a class="page-link" href="#">...</a></li>');
+            //    $('#page-nav > li:last').before(`<li class="page-item ${i == 0 ? 'active' : ''}"><a class="page-link nav-num" href="#" rel="` + parseInt(numPages) + '">' + parseInt(numPages + 1) + '</a></li>');
+            //    break;
+            //}
+
+        }
+        $('#generated-table tbody tr').hide();
+        $('#generated-table tbody tr').slice(0, rowsShown + 1).show();
+
+        //$('#page-nav a.nav-num').bind('click', function () {
+        // add new buttons
+        // var firstNumBtnIndex = parseInt(this.innerText) - 1;
+        // var smallestNumBtnIndex = parseInt($('#page-nav > li.page-item')[1].innerText) - 1;
+        // var lastShown = $('#page-nav > li.page-divider').prev();
+        // console.log(parseInt(lastShown.text()), firstNumBtnIndex)
+        // 
+        // if (parseInt(numPages + 1) > firstNumBtnIndex && firstNumBtnIndex > smallestNumBtnIndex) {
+        //     $('#page-nav > li.page-item').slice(1, -1).slice(0, firstNumBtnIndex).remove()
+        //     lastShown.after(`<li class="page-item"><a class="page-link nav-num" href="#" rel="${lastShown.text()}">${parseInt(lastShown.text()) + 1}</a></li>`)
+        // }
+
+        // add listeners
+        $('#page-nav a.nav-num').bind('click', function () {
+            $('#page-nav li').removeClass('active');
+            $(this.parentElement).addClass('active');
+            var currPage = $(this).attr('rel');
+            var startItem = currPage * rowsShown + 1;
+            var endItem = startItem + rowsShown + (startItem == 0 ? 1 : 0);
+
+            $('#generated-table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                css('display', 'table-row').animate({ opacity: 1 }, 300);
+
+            $('#generated-table tbody tr:first').show();
+
+            $('#shownRows').text(`${startItem}-${endItem - 1}`);
+        });
+
+        //});
+
+        $('#page-nav a.nav-num:first').click();
+    }
+</script>
 	
 <script>
     
