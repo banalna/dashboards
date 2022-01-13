@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  app:
+    image: ${IMAGE}
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile 
+    ports:
+      - "8080:8080"

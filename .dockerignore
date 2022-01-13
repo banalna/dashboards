@@ -1,6 +1,4 @@
 /public
-public.zip
-/dist
 /resources
 .idea
 /idea
@@ -8,3 +6,4 @@ public.zip
 package-lock.json
 .env
 .hugo_build.lock
+/themes/*
