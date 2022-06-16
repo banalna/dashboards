@@ -24,16 +24,16 @@
         
         
         
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
 
 
 
 
 
 
-    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/component-delivery-gen.js&#39;&gt;&lt;/script&gt;
+    &lt;script src=&#39;https://banalna.github.io/dashboards/js/component-delivery-gen.js&#39;&gt;&lt;/script&gt;
 
 
 
@@ -83,16 +83,16 @@
         
         
         
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
 
 
 
 
 
 
-    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/component-metrics-gen.js&#39;&gt;&lt;/script&gt;
+    &lt;script src=&#39;https://banalna.github.io/dashboards/js/component-metrics-gen.js&#39;&gt;&lt;/script&gt;
 
 
 
@@ -142,16 +142,16 @@
         
         
         
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
 
 
 
 
 
 
-    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/component-quality-gen.js&#39;&gt;&lt;/script&gt;
+    &lt;script src=&#39;https://banalna.github.io/dashboards/js/component-quality-gen.js&#39;&gt;&lt;/script&gt;
 
 
 
@@ -201,16 +201,16 @@
         
         
         
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
 
 
 
 
 
 
-    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/feature-delivery-gen.js&#39;&gt;&lt;/script&gt;
+    &lt;script src=&#39;https://banalna.github.io/dashboards/js/feature-delivery-gen.js&#39;&gt;&lt;/script&gt;
 
 
 
@@ -260,16 +260,16 @@
         
         
         
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
 
 
 
 
 
 
-    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/feature-timing-gen.js&#39;&gt;&lt;/script&gt;
+    &lt;script src=&#39;https://banalna.github.io/dashboards/js/feature-timing-gen.js&#39;&gt;&lt;/script&gt;
 
 
 
@@ -319,16 +319,16 @@
         
         
         
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
-&lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.min.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/echarts.config.js&#39;&gt;&lt;/script&gt;
+&lt;script src=&#39;https://banalna.github.io/dashboards/js/chart-generator.js&#39;&gt;&lt;/script&gt;
 
 
 
 
 
 
-    &lt;script src=&#39;https://banalna.github.io/dashboards/dashboards/js/pipeline-metrics-gen.js&#39;&gt;&lt;/script&gt;
+    &lt;script src=&#39;https://banalna.github.io/dashboards/js/pipeline-metrics-gen.js&#39;&gt;&lt;/script&gt;
 
 
 
